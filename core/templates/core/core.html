@@ -1,10 +1,12 @@
+<!-- amélioration : les liens s'ouvrent dans un nouvel onglet
+   rajouter une flèche pour remonter -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
-    <meta charset="UTF-8">
-    <title>Bienvenu sur ma page index :)</title>
-    {% load static %}
+  <meta charset="UTF-8">
+  <title>Bienvenu sur ma page index :)</title>
+  {% load static %}
 </head>
 
 <!DOCTYPE html>
@@ -29,6 +31,7 @@
 
   <!-- Custom styles for this template -->
   <link href="{% static 'core/css/resume.min.css' %}" rel="stylesheet">
+  <link href="{% static 'core/css/change.css' %}" rel="stylesheet">
 
 </head>
 
@@ -36,9 +39,9 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
-      <span class="d-block d-lg-none">Clarence Taylor</span>
+      <span class="d-block d-lg-none">Adrien CLUPOT</span>
       <span class="d-none d-lg-block">
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{% static 'core/img/profile.jpg' %}" alt="">
+        <img id="img-profile" class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{% static 'core/img/portrait.png' %}" alt="">
       </span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,22 +50,22 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          <a class="nav-link js-scroll-trigger" href="#about">A propos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+          <a class="nav-link js-scroll-trigger" href="#experience">Exériences</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+          <a class="nav-link js-scroll-trigger" href="#formation">Formation</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+          <a class="nav-link js-scroll-trigger" href="#skills">Compétences</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
+          <a class="nav-link js-scroll-trigger" href="#interests">Centres d'Intérêt</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
+          <a class="nav-link js-scroll-trigger" href="#awards">Réussites</a>
         </li>
       </ul>
     </div>
@@ -72,25 +75,23 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
       <div class="w-100">
-        <h1 class="mb-0">Clarence
-          <span class="text-primary">Taylor</span>
+        <h1 class="mb-0">Adrien
+          <span class="text-primary">CLUPOT</span>
         </h1>
-        <div class="subheading mb-5">3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468 ·
-          <a href="mailto:name@email.com">name@email.com</a>
+        <div class="subheading mb-5">6 rue pierre de Ronsard, 24100 Bergerac · 06.46.55.59.88 ·
+          <a href="mailto:name@email.com">adrien.clupot@gmail.com</a>
         </div>
-        <p class="lead mb-5">I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
+        <p class="lead mb-5">J'ai un profil tourné vers la créativité, l'autocritique et la mise en commun d'idées. Je suis rigoureux mais pédagogue avec des connaissances sur la motivation, liée à mon expérience de professorat. Une majorité de ma formation s'est faite à distance en parallèle de mes voyages, m'obligeant à aller chercher l'information par moi-même. J'ai vécu plusieurs expériences à l'étranger ce qui m'a rendu mobile, ouvert d'esprit et apte à travailler en langues étrangères, dans une équipe pluriculturelle. Je suis à la recherche d'un endroit où m'établir pour plusieurs années.</p>
+
         <div class="social-icons">
-          <a href="#">
-            <i class="fab fa-linkedin-in"></i>
+          <a href="https://www.couchsurfing.com/people/adrienclupot" target="_blank">
+            <img class="logo" src="{%static 'core/img/cs.png' %}" alt="logo couchsurfing" ></img>
           </a>
-          <a href="#">
-            <i class="fab fa-github"></i>
+          <a href="https://github.com/" target="_blank">
+            <img class="logo" src="{%static 'core/img/git.png' %}" alt="logo github" ></img>
           </a>
-          <a href="#">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="#">
-            <i class="fab fa-facebook-f"></i>
+          <a href="https://www.linkedin.com/in/adrien-clupot-31ab41154/" target="_blank">
+            <img class="logo" src="{%static 'core/img/lki.png' %}" alt="logo linkedin" ></img>
           </a>
         </div>
       </div>
@@ -100,210 +101,435 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
       <div class="w-100">
-        <h2 class="mb-5">Experience</h2>
+        <h2 class="mb-5">Experiences</h2>
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
-            <h3 class="mb-0">Senior Web Developer</h3>
-            <div class="subheading mb-3">Intelitec Solutions</div>
-            <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+            <h3 class="mb-0">Professeur de Français Langue Etrangère (Géorgie)</h3>
+            <div class="subheading mb-3"><a href="https://ge.ambafrance.org/"> Ambassade de france en Géorgie </a></div>
+            <p>Emploi en qualité de professeur de langue dans trois bases avec des niveaux différents pour chaque classe. Le poste m'a demandé de m'adapter à un environnement militaire et à une adaption continue à un emploi du temps très évolutif. J'ai aussi fait passer des examens de langues de niveau A1 à B2. Expérience de vie en Géorgie en base militaire. Langue parlée au quotidien : anglais ou russe. <span class="imp"> J'en retiens l'importance de la probité dans la vie à plusieurs et la camaraderie d'une base militaire.</span></p>
           </div>
           <div class="resume-date text-md-right">
-            <span class="text-primary">March 2013 - Present</span>
+            <span class="text-primary">octobre 2018 - juillet 2019</span>
+          </div>
+        </div>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Employé de service de restauration (FR38)</h3>
+            <div class="subheading mb-3"><a href="https://www.crous-grenoble.fr/restaurant/ru-barnave-etudiant/"> Restauration Universitaire CROUS </a></div>
+            <p>Emploi en qualité d'employé de service de restauration. Service des plats, gestion approvisionnement, plonge, caisse, préparation boisson <span class="imp"> J'en garde une bonne capacité d'accueil et de bienveillance envers les clients ainsi qu'une grande polyvalence.</span></p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">février 2018 - juin 2018</span>
+          </div>
+        </div>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Directeur adjoint de centre de vacances (FR63)</h3>
+            <div class="subheading mb-3"><a href="https://www.gocolo.fr/"> goColo </a></div>
+            <p>Directeur adjoint d'environ 80 enfants d'âge 6-12 et de 6 animateurs sous ma responsabilité. Mes attributions étaient la gestion de mon équipe, de la logistique, du suivi du projet d'animation et des règles de sécurité. 3e expérience de direction.
+              <span class="imp"> J'en retire une capacité de résolution de conflit dans l'équipe améliorée.</span></p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">août 2017</span>
+          </div>
+        </div>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Directeur adjoint/Assistant Sanitaire(FR33)</h3>
+            <div class="subheading mb-3"><a href="https://www.ccgpfcheminots.com/"> colo sncf </a></div>
+            <p>80% assistant sanitaire / 20% directeur adjoint. Mes attributions sur ce poste étaient majoritairement d'ordre sanitaire que ce soit pour les enfants ou adultes lors de la gestion de l'infirmerie ou pour la passation de commande de matériel non alimentaire pour le centre. Mon rôle de directeur adjoint a consisté ici à accompagner la directrice et à mener certaines réunions. 2e expérience de direction
+             <span class="imp"> J'ai développé au cours de cette expérience une capacité à alterner entre des postures d'autorité, pédagogique, amusante ou rassurante et ce plusieurs fois par jour pour répondre aux situations.</span></p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">Juillet 2017 </span>
+          </div>
+        </div>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Professeur de Français Langues Etrangères (Russie)</h3>
+            <div class="subheading mb-3"><a href="http://www.afrus.ru/fr/saratov"> Alliance française de Saratov </a></div>
+            <p>Première réelle prise de poste en tant que professeur de langue et ce dans un contexte russophone. J'ai organisé mes cours moi-même sans formation préalable et j'ai appris sur le tas à partir de mes erreurs et des retours que j'ai demandé sur mon travail. J'ai participé à des conférences sur ce métier et n'ai pas hésité à aller demander de l'aide à mes pairs plus expérimentés. L'absence de ressources pédagogiques récentes m'a amené à créer mes propres outils en utilisant mes premières connaissances du web : HTML, CSS, Javascript. 
+             <span class="imp"> J'ai apris pendant cette expérience à planifier mes cours sur plusieurs mois et à créer des ressources pédagogiques multimédias.</span></p>
+           </div>
+           <div class="resume-date text-md-right">
+            <span class="text-primary">octobre 2016 - juin 2017</span>
+          </div>
+        </div>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Directeur centre de vacances (FR89)</h3>
+            <div class="subheading mb-3"><a href="https://avl.fr/"> Animation Vacances Loisir </a></div>
+            <p>Premier poste de direction, je me suis occupé de tout sur le centre, à l'exception de la livraison des denrées alimentaires, ce qui signifie : anticipation du séjour, montage du centre(hébergement marabout), recrutement de l'équipe, élaboration du projet pédagogique, location véhicule, prise de contact avec les services locaux (médecin, pharmacie, mairie ...), gestion du matériel pédagogique,  gestion du budget alloué, gestion de l'équipe, du contact avec les parents, ... 4 semaines sans sommeil, de loin l'expérience professionnelle la plus difficile.
+             <span class="imp"> J'ai développé au cours de cette expérience une capacité avoir une vision globale pour prendre des décisions et à organiser mon temps sans me laisser surprendre.</span></p>
+           </div>
+           <div class="resume-date text-md-right">
+            <span class="text-primary">Juillet 2016 </span>
+          </div>
+        </div>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Barman (FR63) </h3>
+            <div class="subheading mb-3"><a href="http://www.le1513.com/"> Crêperie le 1513 </a></div>
+            <p>Poste de barman dans une crêperie, j'ai préparé des commandes et j'ai aussi fait du service. L'équipe était assez restreinte et les commandes devaient être très réalisée très rapidement. 
+             <span class="imp"> J'ai appris à garder la tête froide dans le stress.</span></p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">septembre 2015 - novembre 2015 </span>
           </div>
         </div>
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
-            <h3 class="mb-0">Web Developer</h3>
-            <div class="subheading mb-3">Intelitec Solutions</div>
-            <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
+            <h3 class="mb-0">Animateur moto (FR27)</h3>
+            <div class="subheading mb-3"><a href="https://www.telligo.fr/a-fond-les-manettes"> animateur moto  </a></div>
+            <p>Un poste d'animateur en séjour spécialisé sport mécanique, j'ai assisté le prestataire sport mécanique pendant ses séances. Mon rôle a aussi été de préparer les enfants en amont en les aidant à anticiper la difficulté mais aussi à gérer leurs peurs. Cela demandait de prendre en paramètre leur rythme. De plus étant l'animateur le plus expérimenté j'ai dû prendre sous mon aile un stagiaire.    
+             <span class="imp"> J'ai amélioré ma compréhension de l'enfant et j'ai découvert le mentorat pendant un mois.</span></p>
+           </div>
+           <div class="resume-date text-md-right">
+            <span class="text-primary">Août 2015 </span>
           </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">December 2011 - March 2013</span>
+        </div>
+        
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Animateur itinérance (FR64)</h3>
+            <div class="subheading mb-3"><a href="https://www.laligue38.org/nos-colonies-de-vacances/"> La Ligue de l'Enseignement  </a></div>
+            <p>Un poste d'animateur en séjour en itinérance avec une 20aine d'ados, 2 vans et des tentes. Le séjour s'est déroulé dans le pays Basque. La directrice a fait appel à moi dans plusieurs situations délicates me donnant envie de devenir directeur à mon tour. 
+             <span class="imp"> J'ai pris conscience qu'il était temps de regarder vers la direction.</span></p>
+           </div>
+           <div class="resume-date text-md-right">
+            <span class="text-primary">Juillet 2015 </span>
           </div>
         </div>
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
-            <h3 class="mb-0">Junior Web Designer</h3>
-            <div class="subheading mb-3">Shout! Media Productions</div>
-            <p>Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">July 2010 - December 2011</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
-          <div class="resume-content">
-            <h3 class="mb-0">Web Design Intern</h3>
-            <div class="subheading mb-3">Shout! Media Productions</div>
-            <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">September 2008 - June 2010</span>
+            <h3 class="mb-0">Employé agricole (Allemagne)</h3>
+            <div class="subheading mb-3"><a href="https://wwoof.de/"> Wwoofing Allemagne  </a></div>
+            <p>J'ai travaillé dans une ferme agricole biologique en Allemagne près de Hanovre. J'ai fait du maraîchage et des travaux de construction. J'ai passé un mois avec des végétariens
+             <span class="imp"> J'ai pris conscience de la nécessité de consommer bio et local mais j'ai aussi beaucoup réfléchi sur la consommation de viande.</span></p>
+           </div>
+           <div class="resume-date text-md-right">
+            <span class="text-primary">Juin 2015 </span>
           </div>
         </div>
-
-      </div>
-
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
-      <div class="w-100">
-        <h2 class="mb-5">Education</h2>
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
-            <h3 class="mb-0">University of Colorado Boulder</h3>
-            <div class="subheading mb-3">Bachelor of Science</div>
-            <div>Computer Science - Web Development Track</div>
-            <p>GPA: 3.23</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">August 2006 - May 2010</span>
+            <h3 class="mb-0">Animateur Ski (FR74)</h3>
+            <div class="subheading mb-3"><a href="https://www.montreuil.fr/education-jeunesse/sejours-de-vacances"> La ville de Montreuil </a></div>
+            <p>Un poste d'animateur spécialisé ski pour jeunes issus de milieu défavorisé. Problème de drogue dans l'équipe d'animation mais classé sans suite pour cause de manque de personnel encadrant.
+             <span class="imp"> J'ai pris conscience que l'une des limites du cadre était les décisions menant à sa propre fin.</span></p>
+           </div>
+           <div class="resume-date text-md-right">
+            <span class="text-primary">février 2015</span>
           </div>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
-            <h3 class="mb-0">James Buchanan High School</h3>
-            <div class="subheading mb-3">Technology Magnet Program</div>
-            <p>GPA: 3.56</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">August 2002 - May 2006</span>
+            <h3 class="mb-0">Agent service restauration (FR63)</h3>
+            <div class="subheading mb-3"><a href="https://usine.crous-clermont.fr/restauration/"> Restaurant Universitaire Crous  </a></div>
+            <p>Un poste de plongeur au sein des cuisine du Restaurant Universitaire de Clermont-Ferrand. 
+             <span class="imp"> L'absence de chef a mené à l'anarchie.</span></p>
+           </div>
+           <div class="resume-date text-md-right">
+            <span class="text-primary">septembre 2014 - décembre 2014</span>
           </div>
         </div>
 
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Animateur Roller (FR33)</h3>
+            <div class="subheading mb-3"><a href="http://www.laligue33.org/"> La Ligue de l'Enseignement    </a></div>
+            <p>Un poste d'animateur spécialisé qui m'a demandé de préparer des cours pratiques mais aussi d'arriver à intégrer les adultes accompagnateurs. Colo assez spéciale avec beaucoup plus de problèmes de vie en collectivité que d'habitude menant à des renvois, des hospitalisations et la venu de la gendarmerie. 
+             <span class="imp"> J'en retiens l'importance d'une direction cohérente et unie lorsque la situation s'envenime.</span></p>
+           </div>
+           <div class="resume-date text-md-right">
+            <span class="text-primary">juillet 2014</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Agent service de restauration (FR31)</h3>
+            <div class="subheading mb-3"><a href="https://www.crous-toulouse.fr/restauration//"> Restauration universitaire </a></div>
+            <p>Mon premier poste dans une cuisine, j'y ai fait de la plonge et du nettoyage.
+             <span class="imp"> J'y ai développé des compétences sanitaires et une exigence de la propreté.</span></p>
+           </div>
+           <div class="resume-date text-md-right">
+            <span class="text-primary">mars 2014 - juillet 2014</span>
+          </div>
+        </div>
+        
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Animateur Ski (FR38)</h3>
+            <div class="subheading mb-3"><a href="http://www.laligue38.org/"> La Ligue de l'Enseignement  </a></div>
+            <p>Un poste d'animateur spécialisé ski pour jeunes issus de milieu défavorisé, beaucoup de blessés parmi les enfants suite à des négligences d'adultes. Colo éprouvante d'un point de vue physique : 6h de ski par jours avec seulement 4h de sommeil sur un mois.
+             <span class="imp"> J'ai pris conscience que mes capacités physiques étaient bien meilleures que ce que j'imaginais.</span></p>
+           </div>
+           <div class="resume-date text-md-right">
+            <span class="text-primary">février 2014</span>
+          </div>
+        </div>
+        
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Animateur colo adaptée (FR73)</h3>
+            <div class="subheading mb-3"><a href="https://www.anae.asso.fr/qui-sommes-nous/association-anae-vacances-accessibles/"> Association ANAE </a></div>
+            <p>Un poste d'animateur spécialisé handicap pour la période de Noël. J'ai passé ce séjour hivernal à apporter bonheur et réconfort à des handicapés moteur le plus souvent sans famille.
+             <span class="imp"> J'ai découvert la prise en charge du handicap et que ce n'était pas pour moi.</span></p>
+           </div>
+           <div class="resume-date text-md-right">
+            <span class="text-primary">décembre 2013</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Animateur (FR85)</h3>
+            <div class="subheading mb-3"><a href="http://www.gentiane-en-piste.fr/"> Gentiane en piste </a> devenu <a href="https://www.gocolo.fr/">  goColo </a> </div>
+            <p>Un poste d'animateur dans un grand centre au bord de la mer près de la presqu'île de Noirmoutier. J'y ai réalisé mes premiers convoyages (partir seul généralement pour récupérer des enfants à l'autre bout de la France et les amener au centre). C'était un séjour où les enfants et les équipes changeaient chaque semaine mais j'appartenais au noyau dur qui assurait la continuité. 
+             <span class="imp"> J'ai beaucoup appris sur l'animation et sur la relation animateur - prestataire.</span></p>
+           </div>
+           <div class="resume-date text-md-right">
+            <span class="text-primary">août 2013</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Employé de grande distribution (FR33)</h3>
+            <div class="subheading mb-3"><a href="https://www.carrefour.fr/magasin/market-bordeaux-ferry"> Carrefour Market </a></div>
+            <p>Un poste d'employé chez carrefour en contrat étudiant pendant mes années de licence psycho
+             <span class="imp"> J'y ai appris à m'auto-discipliner et à me lever chaque matin le week-end de bonne heure.</span></p>
+           </div>
+           <div class="resume-date text-md-right">
+            <span class="text-primary">août 2013 - mai 2011</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Animateur (FR43)</h3>
+            <div class="subheading mb-3"><a href="http://www.lepetitprince.asso.fr/"> Association le petit prince </a></div>
+            <p>Premier job en animation et première fois que je quittais la Gironde seul. Colo basée sur la communication non violente et la mixité sociale.
+             <span class="imp"> J'en retiens une grande partie de mes compétences de communication mais aussi mon goût prononcé pour la colo.</span></p>
+           </div>
+           <div class="resume-date text-md-right">
+            <span class="text-primary">août 2012</span>
+          </div>
+        </div>
+
+        </div>
       </div>
     </section>
 
-    <hr class="m-0">
+      <hr class="m-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
-      <div class="w-100">
-        <h2 class="mb-5">Skills</h2>
+      <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="formation">
+        <div class="w-100">
+          <h2 class="mb-5">Formation</h2>
 
-        <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-        <ul class="list-inline dev-icons">
-          <li class="list-inline-item">
-            <i class="fab fa-html5"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-css3-alt"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-js-square"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-angular"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-react"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-node-js"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-sass"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-less"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-wordpress"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-gulp"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-grunt"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-npm"></i>
-          </li>
-        </ul>
+          <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="resume-content">
+              <h3 class="mb-0">Openclassrooms</h3>
+              <div class="subheading mb-3"> <a href="https://openclassrooms.com/fr/paths/68-developpeur-dapplication-python">
+              Diplôme de développeur d'applications Python/Django
+              </a> </div>
+              <div>Informatique</div>
+              <p>en cours</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">depuis mai 2019</span>
+            </div>
+          </div>
 
-        <div class="subheading mb-3">Workflow</div>
-        <ul class="fa-ul mb-0">
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Mobile-First, Responsive Design</li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Cross Browser Testing &amp; Debugging</li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Cross Functional Teams</li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Agile Development &amp; Scrum</li>
-        </ul>
-      </div>
-    </section>
+          <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="resume-content">
+              <h3 class="mb-0">Université Genoble Alpe</h3>
+              <div class="subheading mb-3"> <a href="http://formations.univ-grenoble-alpes.fr/fr/catalogue/master-XB/arts-lettres-langues-ALL/master-didactique-des-langues-program-master-didactique-des-langues/parcours-didactique-des-langues-et-ingenierie-pedagogique-numerique-dilipem-subprogram-parcours-didactique-des-langues-et-ingenierie-pedagogique-numerique.html"> Master DILIPEM </a>
+              </div>
+              <div>Informatique - Didactique</div>
+              <p>MASTER 1</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Septembre 2017 - Juin 2018</span>
+            </div>
+          </div>
 
-    <hr class="m-0">
+          <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="resume-content">
+              <h3 class="mb-0">Université Blaise Pascal</h3>
+              <div class="subheading mb-3"> <a href="https://lcc.uca.fr/formation/licence/licence-langues-litteratures-civilisations-etrangeres-et-regionales/licence-llcer-parcours-russe--36306.kjsp">
+              Langues, Litteratures et Civilisation Etrangères et Régionales 
+              </a> </div>
+              <div>Linguistique</div>
+              <p>Licence</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Septembre 2014 - Juin 2017</span>
+            </div>
+          </div>
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
-      <div class="w-100">
-        <h2 class="mb-5">Interests</h2>
-        <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-        <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
-      </div>
-    </section>
+          <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="resume-content">
+              <h3 class="mb-0">Université Toulouse Jean Jaurès</h3>
+              <div class="subheading mb-3"> <a href="https://ufr-psycho.univ-tlse2.fr/accueil/navigation/l-ufr-de-psychologie/presentation-de-l-ufr/">
+              Licence3 de Psychologie
+              </a> </div>
+              <div>Psychologie</div>
+              <p>Licence3 (Redoublement)</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Septembre 2013 - Juin 2014</span>
+            </div>
+          </div>
 
-    <hr class="m-0">
+          <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="resume-content">
+              <h3 class="mb-0">Université Bordeaux 2 Segalen</h3>
+              <div class="subheading mb-3"> <a href="https://ufr-psycho.univ-tlse2.fr/accueil/navigation/l-ufr-de-psychologie/presentation-de-l-ufr/">
+              Licence3 de Psychologie
+              </a> </div>
+              <div>Psychologie</div>
+              <p>Licence1-2-3</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Septembre 2011 - Juin 2013</span>
+            </div>
+          </div>
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="awards">
-      <div class="w-100">
-        <h2 class="mb-5">Awards &amp; Certifications</h2>
-        <ul class="fa-ul mb-0">
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            Google Analytics Certified Developer</li>
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            Mobile Web Specialist - Google Certification</li>
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            1<sup>st</sup>
-            Place - University of Colorado Boulder - Emerging Tech Competition 2009</li>
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            1<sup>st</sup>
-            Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)</li>
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            2<sup>nd</sup>
-            Place - University of Colorado Boulder - Emerging Tech Competition 2008</li>
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            1<sup>st</sup>
-            Place - James Buchanan High School - Hackathon 2006</li>
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            3<sup>rd</sup>
-            Place - James Buchanan High School - Hackathon 2005</li>
-        </ul>
-      </div>
-    </section>
+        </div>
+      </section>
 
-  </div>
+      <hr class="m-0">
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+      <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
+        <div class="w-100">
+          <h2 class="mb-5">En Informatique</h2>
 
-  <!-- Plugin JavaScript -->
-  <script src="{% static 'core/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+          <div class="subheading mb-3">Langages</div>
+          <ul class="list-inline dev-icons">
+            <li class="list-inline-item">
+              <img class='logo' src="{% static 'core/img/html.png'%}" title ="html" alt=""> 
+            </li>
+            <li class="list-inline-item">
+              <img class='logo' src="{% static 'core/img/css.png'%}" title ="css" alt=""> 
+            </li>
+            <li class="list-inline-item">
+              <img class='logo' src="{% static 'core/img/js.png'%}" title ="javascript" alt=""> 
+            </li>
+            <li class="list-inline-item">
+              <img class='logo' src="{% static 'core/img/python.png'%}" title ="python" alt=""> 
+            </li>
+            <li class="list-inline-item">
+              <img class='logo' src="{% static 'core/img/sql.png'%}" title ="SQL" alt=""> 
+            </li>
+          </ul>
+          
+          <div class="subheading mb-3">librairies et Framework</div>
+          <ul class="list-inline dev-icons">
+            <li class="list-inline-item">
+              <img class='logo' src="{% static 'core/img/dj.jpg'%}" title ="Django" alt=""> 
+            </li>
+            <li class="list-inline-item">
+              <img class='logo' src="{% static 'core/img/flask.jpg'%}" title ="Flask" alt=""> 
+            </li>
+            <li class="list-inline-item">
+              <img class='logo' src="{% static 'core/img/pytest.png'%}" title ="Pytest" alt=""> 
+            </li>
+            <li class="list-inline-item">
+              <img class='logo' src="{% static 'core/img/bootstrap.png'%}" title ="Bootstrap" alt=""> 
+            </li>
+          </ul>
 
-  <!-- Custom scripts for this template -->
-  <script src="{% static 'core/js/resume.min.js' %}"></script>
+          <div class="subheading mb-3">Services en ligne</div>
+          <ul class="list-inline dev-icons">
+            <li class="list-inline-item">
+              <img class='logo' src="{% static 'core/img/git.png'%}" title ="github" alt=""> 
+            </li>
+            <li class="list-inline-item">
+              <img class='logo' src="{% static 'core/img/aws.jpg'%}" title ="Amazon Web Service" alt=""> 
+            </li>
+            <li class="list-inline-item">
+              <img class='logo' src="{% static 'core/img/heroku.png'%}" title ="Heroku" alt=""> 
+            </li>
+            <li class="list-inline-item">
+              <img class='logo' src="{% static 'core/img/draw.png'%}" title ="Draw" alt=""> 
+            </li>
+            <li class="list-inline-item">
+              <img class='logo' src="{% static 'core/img/trello.jpg'%}" title ="Trello" alt=""> 
+            </li>
+            <li class="list-inline-item">
+              <img class='logo' src="{% static 'core/img/travis.png'%}" title ="Travis" alt=""> 
+            </li>
+            <li class="list-inline-item">
+              <img class='logo' src="{% static 'core/img/sentry.png'%}" title ="Sentry" alt=""> 
+            </li>
+          </ul>
 
-</body>
+          <div class="subheading mb-3">Méthode de travail</div>
+          <ul class="fa-ul mb-0">
+            <li>Test Driven Development</li>
+            <li>Scrum</li>
+            <li>Diagrammes UML</li>
+            <li>Versioning Github</li>
+          </ul>
+        </div>
+      </section>
 
-</html>
+      <hr class="m-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
+        <div class="w-100">
+          <h2 class="mb-5">Centres d'intérêt</h2>
+          <p>En dehors du code, j'aime explorer cela peut passer par visiter chacun des petits villages autour de chez moi comme aller visiter un département voisin, une région ou un pays. Mon exploration se fait majoritairement avec vélo, saccoches et tente mais il m'arrive d'utiliser le bus ou la voiture. Je suis attiré par la nature et les rencontres pour partager de bons moments avec des amis ou inconnus. C'est encore plus fun en parlant d'autres langues.</p>
+          <p class="mb-0">Lorsque la météo ne me permet pas de sortir (ou pendant un confinement), je joue en ligne ou alors j'étudie, une habitude devenue un plaisir. J'aime apprendre, résoudre des problèmes, m'améliorer et produire. Le code répond à tout cela</p>
+        </div>
+      </section>
+
+      <hr class="m-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="awards">
+        <div class="w-100">
+          <h2 class="mb-5">Réussite personnelle</h2>
+          <ul class="fa-ul mb-0">
+            <li>
+              Vivre un an dans une base militaire,
+            </li>
+            <li>
+              Réaliser un Poitier - Kaunas(Lituanie) à vélo,
+            <li>
+              Avoir passé mes oraux de licence 3 en Russie devant un jury russophone,
+            </li>
+            <li>
+              Avoir été directeur de colonie de vacances, 
+            </li>
+            <li>
+              Avoir appris à danser,
+            </li>
+            <li>
+              Avoir obtenu mon <a href="https://www.nageur-sauveteur.com/BNSSA">BNSSA </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{% static 'core/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+ 
+    <!-- Custom scripts for this template -->
+    <script src="{% static 'core/js/resume.min.js' %}"></script>
+
+  </body>
+
+  </html>
