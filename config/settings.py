@@ -23,9 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '#91@b+!b2f-*y(&3x8zzszg!lt)p948c#7=*q6adhr)6%i9v+i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if os.environ.get('ENV') == 'PRODUCTION':
+    DEBUG = False
+else:
+    DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["cv_adrien_clupot.herokuapp.com"]
 
 
 # Application definition
@@ -49,6 +52,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+ 
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -107,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Paris'
 
 USE_I18N = True
 
@@ -121,3 +126,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+if os.environ.get('ENV') == 'PRODUCTION':
+
+    # Static files settings
+    PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+    STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+
+    # Extra places for collectstatic to find static files.
+    STATICFILES_DIRS = (
+        os.path.join(PROJECT_ROOT, 'static'),
+    )
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
