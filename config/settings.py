@@ -28,7 +28,7 @@ if os.environ.get('ENV') == 'PRODUCTION':
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ["cv_adrien_clupot.herokuapp.com"]
+ALLOWED_HOSTS = ["cv-adrien-clupot.herokuapp.com"]
 
 
 # Application definition
@@ -137,4 +137,5 @@ if os.environ.get('ENV') == 'PRODUCTION':
     STATICFILES_DIRS = (
         os.path.join(PROJECT_ROOT, 'static'),
     )
+
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
