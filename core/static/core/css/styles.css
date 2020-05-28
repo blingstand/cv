@@ -7429,7 +7429,7 @@ button.bg-dark:focus {
 }
 
 .shadow-lg {
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+  box-shadow: 1rem 1rem 0.1rem rgba(0,0,0,0.5) !important;
 }
 
 .shadow-none {
@@ -10221,4 +10221,60 @@ ul.square{
 
 .text-indent{
   text-indent: 1rem;
+}
+
+.navhr{
+  background: #fff; 
+  height: 0.2rem; 
+  text-align: center;
+}
+.italic{
+  font-style: italic;
+}
+.cardBox{
+  perspective: 20rem;
+  margin: 2rem;
+  height: 11rem;
+}
+.my-card{
+  position: relative;
+  width: 10rem;
+  height: 12rem;
+  transform-style: preserve-3d; 
+  transition: .5s ease; 
+  
+}
+.card-front, .card-back{
+  position: absolute; 
+  top: 0;
+  left: 0; 
+  width: 150px;
+  height: 150px;
+  color: #fff;
+  backface-visibility: hidden;
+}
+.card-front{
+  display: flex; 
+  font-size: 40px;
+  justify-content: center;
+  align-items: center; 
+}
+.card-back{
+  display: flex; 
+  font-size: 30px;
+  justify-content: center;
+  align-items: center; 
+}
+.cardBox:hover .my-card{
+  transform: rotateY(180deg);
+}
+.card-back{
+  transform: rotateY(180deg);
+}
+.card-front{
+  transform: rotateY(0deg);
+}
+#minicv{
+  width: 10rem;
+  height: 10rem;
 }

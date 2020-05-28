@@ -28,7 +28,7 @@ if os.environ.get('ENV') == 'PRODUCTION':
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ["cv-adrien-clupot.herokuapp.com"]
+ALLOWED_HOSTS = ["cv-adrien-clupot.herokuapp.com", '127.0.0.1']
 
 
 # Application definition
@@ -127,7 +127,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 if os.environ.get('ENV') == 'PRODUCTION':
-
+    print("prod")
     # Static files settings
     PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
