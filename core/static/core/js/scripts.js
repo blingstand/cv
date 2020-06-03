@@ -50,7 +50,6 @@
             const txtButton = $(this).text()
             
             $(dico[txtButton]).toggle(1000);
-            console.log($(this).css("background-color"))   
             if ($(this).css("background-color") =="rgb(202, 125, 96)"){
                 $(this).css("background-color", "rgb(128, 51, 0)");
                 $(this).css("font-weight","bold");
