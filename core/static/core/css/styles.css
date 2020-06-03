@@ -10198,20 +10198,23 @@ ul.square{
 .listing-project{ 
   background: white;
   list-style-type: none; 
-  width: 46rem;
+  width: 100%;
+  overflow: hidden: ; 
 }
 
 #cap{
-  width: 40rem;
+  width: 34rem;
   }
-.bg-velo{
-    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.1) 0%, 
-      rgba(92, 77, 66, 0.5) 100%), url("../assets/img/fond-velo.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 34rem;
-    margin-top: 2rem; 
+@media (min-width: 992px) {
+  .bg-velo{
+      background: linear-gradient(to bottom, rgba(92, 77, 66, 0.1) 0%, 
+        rgba(92, 77, 66, 0.5) 100%), url("../assets/img/fond-velo.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      margin-top: 2rem; 
+      box-sizing: border-box; 
+    }
   }
 .bg-white{
   background: white;
@@ -10278,3 +10281,5 @@ ul.square{
   width: 10rem;
   height: 10rem;
 }
+.become-bold:hover{
+  font-weight: bold; }

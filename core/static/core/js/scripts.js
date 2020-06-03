@@ -42,7 +42,7 @@
     
     $(document).ready(function(){
         // hide all experiences
-        $('.resume-exp').hide();
+        $('.resume-section-content').hide();
         // show class experiences
         const dico = {professorat: ".prof", animation: ".anim", 
         direction: ".dir", autres: ".aut"}; 
