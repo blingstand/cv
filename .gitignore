@@ -2,3 +2,6 @@
 /__pycache__/
 config/settings/production.py
 config/staticfiles/
+env/
+sas.sh
+sass/

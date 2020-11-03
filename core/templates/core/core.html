@@ -25,63 +25,18 @@
   <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
   <!-- Core theme CSS (includes Bootstrap)-->
-  <link href="{% static 'core/css/styles.css'%}" rel="stylesheet" />
+  <link href="{% static 'core/css/style.css'%}" rel="stylesheet" />
 </head>
 
 <body id="page-top">
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-    <p class="text-white italic">mis à jour le 22/10</p>
-    <span class="d-block d-lg-none"><a class="navbar-brand js-scroll-trigger" href="#page-top">Adrien CLUPOT</a></span>
-    <span class="d-none d-lg-block">
-      <div class="cardBox">
-        <div class="my-card">
-          <div class="card-front">
-            <img id="img-profile" class="img-fluid img-profile rounded-circle mx-auto mb-3 shadow-lg" src="{% static 'core/assets/img/portrait.png' %}" alt="">
-          </div>
-          <div class="card-back" title="obtenir mon cv">
-            <a href="{%static 'core/assets/pdf/CV_Dev_Python_Django.pdf'%}"><img id="minicv" class="shadow-lg"src="{% static 'core/assets/img/minicv.png' %}" alt=""></a>
-          </div>
-        </div>
-      </div>
-    </span>
-
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#about">A propos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#offer">Offre</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#experience">Expériences </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#formation">Formation</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#skills">Compétences</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#interests">Centres d'Intérêt</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#awards">Réussites</a>
-        </li>
-        <hr class="m-2 navhr">
-      </ul>
-
-    </div>
+   {% include "core/nav.html"%}
   </nav>
-      
+  <section class="right-part">
     {% block content %}
     {% endblock %}
-    
+  </section>
 
 
       <!-- Bootstrap core JS-->
