@@ -1,0 +1,39 @@
+@mixin load_skill_circle($size-container-skill: 1, $speed-rotate: 10s){
+  #container-skill {
+    grid-column: 1; 
+    width: 18rem * $size-container-skill;
+    height: 18rem * $size-container-skill;
+    margin: 1rem auto;
+    border: 1px solid #000;
+    position: relative;
+    border-radius: 50%;
+    animation: spin $speed-rotate linear infinite;
+  }
+  .centered-skill-circle{
+      grid-column: 1/3 !important; 
+    }
+
+  .skill {
+    text-transform: uppercase;
+    width: 4.3rem * $size-container-skill;
+    height: 4.3rem * $size-container-skill;
+  	display: flex; 
+    font-size: 0.9rem; 
+  	justify-content: center; 
+  	align-items: center; 
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    background: #cc941b;
+    animation: spin $speed-rotate linear reverse infinite;
+    &:hover {
+      cursor: pointer;
+      background-color: lighten(orange, 10);
+    }
+  }
+  @keyframes spin {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+}

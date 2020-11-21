@@ -1,0 +1,37 @@
+<header class="very-center-c">
+	<h1 class="">Mon Expérience Professionnelle</h1>
+	<p class="subheading ">Classée par ordre chronologique chacune d'entre elle appartient à une catégorie représentée par un bouton.</p>
+</header>
+<article>
+	<div class="container-exp-button very-center-r">
+		{% for btn in all_btn%}
+		<p><button id="cat{{forloop.counter}}" class="display-button">{{btn}}</button></p>
+		{% endfor %}	
+	</div>
+	<div class="paragraphe" id="paragraphe-exp">
+		<p id="hint-exp" class="visible hint"> Cliquez sur un bouton pour afficher son contenu</p>
+		{% for ep in exp_prof%}
+		<div class="hidden exp-content {{ep.category}}">
+			
+			<div class="first-line">
+				<div class="first-line-left-part">
+					<div class="title">
+						<h3 class="exp">{{ep.job}}</h3>
+						<div class="container-triangle">
+							<div class="triangle"></div>
+						</div>
+					</div>
+					<p class="subheading"><a href="{{ep.url}}" target="_blank"> {{ep.employer}}</a>
+					</p>
+				</div>
+				<p class="first-line-right-part">
+					<span class="exp-period">{{ep.period}}</span>
+				</p>
+			</div>
+
+			<p class="description hidden">{{ep.description|safe}}
+			</p>
+		</div>
+		{%endfor%}
+	</div>
+</article>

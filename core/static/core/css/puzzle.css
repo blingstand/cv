@@ -1,0 +1,210 @@
+.puzzle-table {
+  height: 35rem;
+  width: 60rem;
+  background-color: teal;
+  display: flex;
+}
+
+.projet {
+  width: 12rem;
+  height: 12rem;
+  margin: 1rem;
+  position: relative;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.projet.text {
+  display: block;
+  color: #fff;
+  font-size: 2.4rem;
+  text-align: center;
+  padding: 3.8rem 0 0 2.4rem;
+  position: relative;
+  background: transparent !important;
+}
+
+.projet1 {
+  z-index: 3;
+  width: 12rem;
+  height: 12rem;
+  margin: 1rem;
+  position: relative;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  background-color: #fff;
+}
+.projet1 .t {
+  background-color: inherit;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  -webkit-border-radius: 8rem;
+  -moz-border-radius: 8rem;
+  border-radius: 8rem;
+  top: -3rem;
+  left: 4rem;
+  opacity: 0;
+}
+.projet1 .l {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  -webkit-border-radius: 8rem;
+  -moz-border-radius: 8rem;
+  border-radius: 8rem;
+  background-color: inherit;
+  top: 4rem;
+  left: -1rem;
+  background-color: teal;
+  opacity: 0;
+}
+.projet1 .r {
+  background-color: inherit;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  -webkit-border-radius: 8rem;
+  -moz-border-radius: 8rem;
+  border-radius: 8rem;
+  top: 4rem;
+  left: 11rem;
+}
+.projet1 .b {
+  background-color: inherit;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  -webkit-border-radius: 8rem;
+  -moz-border-radius: 8rem;
+  border-radius: 8rem;
+  top: 11rem;
+  left: 4rem;
+  opacity: 0;
+}
+
+.projet2 {
+  z-index: 2;
+  width: 12rem;
+  height: 12rem;
+  margin: 1rem;
+  position: relative;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  background-color: #36c;
+}
+.projet2 .t {
+  background-color: inherit;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  -webkit-border-radius: 8rem;
+  -moz-border-radius: 8rem;
+  border-radius: 8rem;
+  top: -3rem;
+  left: 4rem;
+  opacity: 0;
+}
+.projet2 .l {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  -webkit-border-radius: 8rem;
+  -moz-border-radius: 8rem;
+  border-radius: 8rem;
+  background-color: inherit;
+  top: 4rem;
+  left: -1rem;
+  background-color: teal;
+}
+.projet2 .r {
+  background-color: inherit;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  -webkit-border-radius: 8rem;
+  -moz-border-radius: 8rem;
+  border-radius: 8rem;
+  top: 4rem;
+  left: 11rem;
+}
+.projet2 .b {
+  background-color: inherit;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  -webkit-border-radius: 8rem;
+  -moz-border-radius: 8rem;
+  border-radius: 8rem;
+  top: 11rem;
+  left: 4rem;
+  opacity: 0;
+}
+
+.projet3 {
+  z-index: 1;
+  width: 12rem;
+  height: 12rem;
+  margin: 1rem;
+  position: relative;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  background-color: #4a009a;
+}
+.projet3 .t {
+  background-color: inherit;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  -webkit-border-radius: 8rem;
+  -moz-border-radius: 8rem;
+  border-radius: 8rem;
+  top: -3rem;
+  left: 4rem;
+  opacity: 0;
+}
+.projet3 .l {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  -webkit-border-radius: 8rem;
+  -moz-border-radius: 8rem;
+  border-radius: 8rem;
+  background-color: inherit;
+  top: 4rem;
+  left: -1rem;
+  background-color: teal;
+}
+.projet3 .r {
+  background-color: inherit;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  -webkit-border-radius: 8rem;
+  -moz-border-radius: 8rem;
+  border-radius: 8rem;
+  top: 4rem;
+  left: 11rem;
+  opacity: 0;
+}
+.projet3 .b {
+  background-color: inherit;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  -webkit-border-radius: 8rem;
+  -moz-border-radius: 8rem;
+  border-radius: 8rem;
+  top: 11rem;
+  left: 4rem;
+}
+
+/*# sourceMappingURL=puzzle.css.map */

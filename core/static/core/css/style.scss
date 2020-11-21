@@ -1,65 +1,439 @@
-/* page of scss style fro nav */ 
+/* page of scss style for nav */ 
 
 /* easy to modify */
 
+@import "libs/mixins.scss";
+@import "libs/skill.scss";
+@import "libs/responsive.scss";
+
+@import "split/body.scss";
+@import "split/main.scss";
+@import "split/nav.scss";
+
 //color
-$primary: #bd5100; 
-$secondary: lighten(teal, 5);
+$primary: #cc6a1b; 
+$secondary: #00b8e6;
+$bg-paragraphe: #eef6f5; 
+$color-text: #001133;  
 
 //nav
-$size-portrait: 120;
-$space-nav-list: 20; 
-$space-between-div: 2.7; 
-$width-right-part: 80%;
+$size_portrait: 10;
+$space_between_div: 1; 
+$width-body-part: 85%;
+$screen-size: 50; 
 
-//right-part
 $base-pad: 2; 
+$border-color: black;
+::-webkit-scrollbar {
+	display: none;
+}
+*, ::before, ::after {
+	box-sizing: border-box; 
+	margin:  0;
+	padding:  0; 
+}
+
+$media_query: (
+	$mobile: 12px, $tablet: 14px, $tablet-landscape: 14px,
+	$laptop: 16px, $desktop: 25px);
+
+@each $name_mq, $size_font in $media_query {
+	@media #{$name_mq}{
+		html{
+			font-size: $size-font; 
+		}
+	}
+}
 
 body{
-	display: flex; 
-	background-color: white;
-	font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	@include load_body(); 
 }
-nav{
+// @media #{$tablet}{
+// 	body{
+// 		display: block;
+// 		overflow-y: scroll; 
+// 	}
+// }
+//grand format
+@media #{$tablet-landscape}{
+	nav{
+		@include load_nav(); 
+	}
+}
+// @media #{$tablet}{
+	// 	nav{
+	// 		width: 100%;
+	// 		margin-bottom: 2rem; 
+	// 		text-align: center; 
+	// 		.nav-maj{
+	// 			display: none;
+	// 		}
+	// 		.nav-container-portrait{
+	// 			margin:0;
+	// 			text-align: center;
+	// 			.front-card{
+	// 				margin: 1rem;
+	// 				width: 100%;
+	// 			} 
+	// 			.back-card{
+	// 				display:none;
+	// 			}
+	// 		}
+	// 		.nav-menu{
+	// 			margin: 3rem;
+	// 			.nav-menu-ul{
+	// 				.nav-menu-ul-li{
 
-	background-color: $primary;
-	border: 1px black solid; 
-	width: (100% - $width-right-part);
-	color: white; 
-	.maj{
-		
-		font-style: italic; 
-	}
-	.front-card, .maj, .nav-list{
-		text-align: center;
-		margin: $space-between-div * 1rem 0; 
-	}
-	.back-card{
-		display: none; 
-	}
-	#portrait{
-		width: $size-portrait * 1px; 
-		border-radius: 15rem; 
-	}
-	.nav-list{
-		list-style-type: none;
-		padding: 0; 
-		li{
-			margin: ($space-nav-list * 1px) 0;
-		}
-		a{
-			text-decoration: none;
-			color: white;
-			&:hover{
-				font-weight: bold; 
+	// 				}
+	// 			}
+	// 		}
+
+	// 	}
+// }
+
+//body-part
+main{
+	@include load_main();
+	// my-resume
+		.social-icons{
+			display: flex; 
+
+			.container-logo{
+				text-align: center; 
+				margin: 0 2rem;
 			}
 		}
+		.logo{
+			width: 2rem;
+		}
+		.logo:hover{
+			background-color: #00b8e6;
+			border-radius: 50%; 
+		}
+	// my_offer	
+		#paragraphe-offer{
+			font-size: 1rem; 
+			grid-row: 1/7; 
+			padding: 1rem;
+			#ul-offer{
+				width: 90%;
+				font-size: 0.8rem;
+				margin: 0rem 5% 1rem 5%;
+				list-style-type: circle;
+			}
+			.ulcol-3{
+				margin-bottom: 0; 
+				text-align: center; 
+				li{
+					list-style: none; 
+					-webkit-column-count: 3;
+					-moz-column-count: 3;
+					column-count: 3; 
+				} 
+			}
+		}
+	// my_exp , mettre mediaquery ici
+		.container-exp-button{
+			grid-row: 1/2; 
+			flex-direction: row;
+			justify-content: space-around;
+			width: 100%;
+			button{
+				background-color: $primary;
+				height: 170%; 
+				width: 12rem; //MQ ici
+				font-size: 1rem; 
+				border-radius: 10rem; 
+				cursor: pointer; 
+				&:hover{
+					background-color: darken($primary, 10);
+				}
+			}
+		}
+		#paragraphe-exp{
+			grid-row: 2/7; 
+			.first-line{
+				cursor: pointer;
+				display: grid;
+				grid-template-columns: 75% 25%;
+				.first-line-left-part{
+					margin-left: 1.5rem; 
+					.title{
+						display: grid; 
+						grid-template-columns: 75% 25%;
+						.exp{
+							margin-bottom: 0; 
+							text-align: left;
+							cursor: pointer;  
+						}
+						.container-triangle{
+							text-align: center; 
+							.triangle{
+								cursor: pointer; 
+								content: "";
+								width: 0;
+								height: 0;
+								border-top: 20px solid black;
+								border-right: 16px solid transparent;
+								border-left: 16px solid transparent;
+								position: relative; 
+								margin-top: -0.5rem;
+								bottom: -1rem;
+								left: 2rem; 
+							}
+							.triangle-up {
+								transform:rotate(180deg);
+							}
+						}
+					}
+					.subheading{
+						margin-left: 0;
+						margin-bottom: 1rem; 
+					}
+				}
+				.first-line-right-part{
+					font-size: 0.8rem; 
+					text-align: right; 
+					color: $primary;
+					font-weight: bold; 
+				}
+			}
+			.description{
+				background-color:  #d9e6f2;
+				padding: 1rem;
+				margin: 0 1rem 2rem 1rem;  
+			}
+		}		
+	// my_education
+		#formation{
+			background-color: #fff;
+			article{
+				display: grid;
+				grid-template-columns: 30% 70%;  
+				grid-template-rows: 100%; 
+				align-items: center; 
+				width: 100%; 
+				margin: 0; 
+			}
+			.container-button-educ{
+				grid-column:1; 
+				grid-row: 1; 
+				text-align: center; 
+				display: grid; 
+				grid-template-columns: 20% 60% 20%; 
+				.arrow{
+					grid-column:2;
+					font-weight: bold; 
+					clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 9% 51%, 0% 0%);
+					height: 3rem;
+					cursor: pointer;
+					font-size: 0.8rem;
+					background-color: #fff;
+					width: 13rem;
+					margin: 1rem 0; 
+					text-align: center;
+				}
+			}
+			#paragraphe-educ{
+				grid-column:2; 
+				grid-row: 1; 
+				width: 95%;
+				height: inherit;
+				.first-line{
+					display: grid;
+					grid-template-columns: 70% 30%; 
+					.title-line{
+						grid-column: 1; 
+						text-align: left; 
+					}
+					.subheading{
+						margin-bottom: 1rem;
+					}
+					.degree{
+						margin-bottom: 1rem; 
+						text-decoration: underline; 
+					}
+					.exp-period{
+						color: $primary;
+						font-weight: bold; 
+					}
+
+				}
+				.description{
+					background-color: #d9e6f2;
+					margin-left: 2rem; 
+					.projects{
+						list-style: circle; 
+						margin-left: 2rem; 
+					}
+				}
+
+
+			}
+				
+		}	
+	// skill
+
+		#paragraphe-skill{
+			display: grid; 
+			grid-template-columns: 40% 60%; 
+			grid-row: 1/7;
+		    margin: 0 auto;
+		    padding-top: 3rem;
+		    width: 90%;
+		    height: 90%; 
+			@include load_skill_circle($size-container-skill:1,  $speed-rotate:18s); 
+
+		}
+		.border {
+			display: inline-block;
+			height: 22rem;
+			padding: 0;
+			margin: 0;
+			display: none;
+			visibility: hidden; 
+			opacity: 0; 
+			@include corner-borders(1rem, 1.5rem);
+			& .content {
+				display: grid;
+				grid-template-rows: 35% 1fr; 
+				box-sizing: border-box;
+				position: relative;
+				padding: 5px;
+				width: 50%; 
+				height: 100%;
+				z-index: 1;
+				font-size: 1.2rem; 
+				.content-top{
+					grid-row: 1/2; 
+					.title-comp{
+						text-align: center; 
+						margin: 0.5rem;
+						font-size: 1.2rem; 
+					}
+					.middle-bar{
+						width: 70%;
+						margin: 0rem 15%;
+					}
+					.skill-level {
+						display: flex;
+						height: 2em;
+						width: 28rem;
+						margin: 1rem 0.5rem;
+						background-color: rgba(128, 128, 158, 0.4);
+					}
+					.skill-level span, {
+						background: #cc941b;
+						margin: 0.5rem 0.3rem 0.3rem 0.5rem;
+						border-radius: 50%; 
+						border: 1px solid black;
+						width: 16px;
+						height: 12px;
+						display: inline-block;
+					}
+				}
+				.content-bottom{
+					grid-row: 2/3 ;
+					margin: 1rem 0 ;
+					font-size: 1rem; 
+					padding: 1rem; 
+					& .underline{
+						text-decoration: underline;}
+					}
+				}
+			}
+	// hobbies
+		.bg-velo{
+			grid-row: 2/6; 
+			display: grid; 
+			grid-template-rows: 1fr 60% 1fr; 
+			background: linear-gradient(to bottom, rgba(92, 77, 66, 0.1) 0%, 
+				rgba(92, 77, 66, 0.5) 100%), url("../assets/img/fond-velo.jpg");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: 90% 100%;
+			margin: 0rem 5rem; 
+			padding: 0rem 3rem;
+			box-sizing: border-box; 
+
+			#paragraphe-hobbies{
+				grid-row: 2; 
+			}
+		}
+	//success
+		#success{
+			height: 100%;
+			margin-bottom: 1rem; 
+		}
+		.paragraphe-success{
+			margin: 3rem auto;
+			#checkbox-container{
+			    height: 100%;
+				margin: 2rem 0 auto 2rem; 
+				font-size: 1.5rem; 
+				opacity: 1; 
+				transition-duration: 2s; 
+				li{
+					list-style-type: none;
+					margin: 0 0 0.5rem 0;
+
+				}
+			}
+				/**
+				 * Code for checkboxes
+				 */
+				 .checkbox {
+				 	position: relative;
+				 	width: 1rem;
+				 	height: 1rem;
+				 	margin-right: 3rem;
+				 	cursor: pointer;
+				 	appearance: none;
+				 	outline: 0;
+				 	&:before {
+				 		content: '';
+				 		position: absolute;
+				 		left: 0;
+				 		top: 0;
+				 		z-index: 1;
+				 		width: 1rem;
+				 		height: 1rem;
+				 		border: 2px solid $border-color;
+				 		transition: all 0.3s ease-in-out;
+				 	}
+
+				 	&:checked:before {
+				 		height: 50%;
+
+				 		transform: rotate(-45deg);
+
+				 		border-top-style: none;
+				 		border-right-style: none;
+				 	}
+				 	.checkbox--deep-orange:checked:before {
+				 		border-color: #ff5722;
+				 	}
+				 }
+				}
+			}
+
+
+//loops 
+@for $i from 1 through 4 {
+	.ulcol-#{$i}{
+		-webkit-column-count: $i;
+		-moz-column-count: $i;
+		column-count: $i; 
+	} 
+	.w-#{$i*25}{
+		width: $i*25 * 1%; 
+	}
+	.h-#{$i*25}{
+		min-height: $i*25 * 1%; 
 	}
 }
-section.right-part{
-	width: $width-right-part; 
-	background-color: $secondary; 
-	padding: $base-pad * 1rem; 
-
-
+@for $i from 1 through 10 {
+	.show-#{$i} span:nth-child(n+#{$i+1}){
+		background-color: white !important; 
+	}
 }

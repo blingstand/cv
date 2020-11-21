@@ -1,9 +1,4 @@
-/*!
-    * Start Bootstrap - Resume v6.0.0 (https://startbootstrap.com/template-overviews/resume)
-    * Copyright 2013-2020 Start Bootstrap
-    * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-resume/blob/master/LICENSE)
-    */
-    (function ($) {
+/*(function ($) {
     "use strict"; // Start of use strict
 
     // Smooth scrolling using jQuery easing
@@ -39,50 +34,254 @@
     $("body").scrollspy({
         target: "#sideNav",
     });
+}*/
+
+// this script is for my exp resume part 
+
+//*** VARIABLES ***
+let hint = document.getElementById("hint")
+
+//*** CALCULS   ***
+const GetTriangle = function(e){
+        if (e.target.className.search('triangle') != -1){
+            return e.target
+        }else{
+            return e.target.nextElementSibling
+        }
+    }
+const GetNumberVisibleChildren = function(paragraphe){
+    count = 0
+    for (child of paragraphe.children){
+        if (child.className.search("visible") != -1){
+            count ++ 
+        }
+    }
+    return count
+}
+//*** FUNCTIONS ***
+    const DisplayHide = (input, localStorClass, hintId) =>{
+        //value in local storage
+        console.log(localStorage)
+        if (localStorage.getItem(localStorClass)!== null){
+            //remove visible element
+            elemsToHide = Array.from(document.getElementsByClassName(localStorage.getItem(localStorClass)))
+            elemsToHide.forEach(
+                (elem) => {elem.classList.toggle("visible")}
+                )
+            if (localStorage.getItem(localStorClass) !== input.id){
+                elemsToDisplay = Array.from(document.getElementsByClassName(input.id))
+                elemsToDisplay.forEach(
+                    (elem) => {elem.classList.toggle("visible")}
+                )
+                localStorage.removeItem(localStorClass)
+                localStorage.setItem(localStorClass, input.id);
+                console.log(localStorage.getItem(localStorClass)) 
+                return
+            }
+                localStorage.removeItem(localStorClass)
+                console.log(localStorage)
+                document.getElementById(hintId).classList.add("visible")
+                console.log(document.getElementById(hintId))
+
+        }else{
+            elemsToDisplay = Array.from(document.getElementsByClassName(input.id))
+            console.log(input.id, elemsToDisplay)
+            elemsToDisplay.forEach(
+                (elem) => {elem.classList.toggle("visible")}
+            )
+            localStorage.setItem(localStorClass, input.id); 
+            console.log("***")
+            console.log(document.getElementById(hintId))
+            document.getElementById(hintId).classList.toggle("visible")
+        }
+    }
+
+//display description when user clicks on btn for exp and educ
+    const displayDescription = function(){
+        for (butt of document.getElementsByClassName('display-button')){
+            // click on display_button to 
+            butt.onclick = (elem) => { 
+                hintId = "hint-educ" 
+                if (elem.target.className.search("arrow") == -1){
+                    hintId = "hint-exp"  
+                }
+                DisplayHide(elem.target, "visible", hintId)
+            }
+        }
+    }
+    //click on title to display description
+    for (title of document.getElementsByClassName('first-line')){
+        title.onclick = function(e){
+            let paragraphe = document.getElementById("paragraphe-exp")
+            console.log('***')
+            if (e.target.tagName == "A"){
+                return
+            }
+            if (paragraphe.id == "paragraphe-educ"){
+                return
+            }
+            let description = e.target.parentElement.parentElement.parentElement.nextElementSibling
+            centerParagraphe    =   paragraphe.offsetTop + (paragraphe.offsetHeight/2)
+            titlePosition    =   e.target.offsetTop
+            needToScrollDown = centerParagraphe - titlePosition
+            let triangle = GetTriangle(e)
+            if (description.className.search("description") != -1){
+                description.classList.toggle("hidden");
+                triangle.classList.toggle('triangle-up')
+                if (needToScrollDown < 40){
+                    paragraphe.scrollBy(0, paragraphe.offsetHeight/2)
+                }else{
+                    paragraphe.scrollBy(0, 0 - paragraphe.offsetHeight/2 + 20)
+
+                }
+            }
+        }
+    }
+// }
+//myskill part 
+    let paragrapheSkill = document.getElementById("paragraphe-skill")
+    if (paragrapheSkill){
+        heightParagrapheSkill = paragrapheSkill.offsetHeight
+        console.log('paragrapheSkill:', paragrapheSkill)
+        let radius = heightParagrapheSkill / 3.2; // adjust to move out skills in and out 
+        let fields = $('.skill'),
+          container = $('#container-skill'),
+          width = container.width(),
+          height = container.height();
+        let angle = 0,
+          step = (2 * Math.PI) / fields.length;
+        fields.each(function() {
+          var x = Math.round(width / 2 + radius * Math.cos(angle) - $(this).width() / 2);
+          var y = Math.round(height / 2 + radius * Math.sin(angle) - $(this).height() / 2);
+          if (window.console) {
+            console.log($(this).text(), x, y);
+          }
+          $(this).css({
+            left: x + 'px',
+            top: y + 'px'
+          });
+          angle += step;
+        });
+    }
     
-    $(document).ready(function(){
-        // hide all experiences
-        $('.resume-section-content').hide();
-        // show class experiences
-        const dico = {professorat: ".prof", animation: ".anim", 
-        direction: ".dir", autres: ".aut"}; 
-        $(".togg").click(function(){ 
-            const txtButton = $(this).text()
-            
-            $(dico[txtButton]).toggle(1000);
-            if ($(this).css("background-color") =="rgb(202, 125, 96)"){
-                $(this).css("background-color", "rgb(128, 51, 0)");
-                $(this).css("font-weight","bold");
+
+    containerSkill = document.getElementById("container-skill")
+
+    for (element of document.getElementsByClassName("skill")){
+        element.onclick = function(e){
+            console.log("***")
+            console.log("id = " + e.target.id)
+            console.log("ls = ")
+            console.log(localStorage)
+            if (localStorage.getItem("visible")!== null){
+                console.log('Cet item est visible')
+                console.log(localStorage.getItem("visible"))
+                idElemToHide = "desc-" + localStorage.getItem("visible")
+                elemToHide = document.getElementById(idElemToHide)
+                elemToHide.classList.toggle('visible')
+                console.log('Cet item a été effacé')
+                if (localStorage.getItem("visible") !== e.target.id){
+                    description = document.getElementById("desc-" + e.target.id)
+                    description.classList.toggle('visible')
+                    localStorage.clear()
+                    localStorage.setItem("visible", e.target.id);
+                    console.log('Cet item est visible')
+                    console.log(localStorage.getItem("visible"))
+                    return
+                }
+                    localStorage.clear()
+                    containerSkill.classList.toggle('centered-skill-circle')
             }else{
-                $(this).css("background-color", "rgb(202, 125, 96)");
-                $(this).css("font-weight","normal");
-            }  
-            $([document.documentElement, document.body]).animate({
-                scrollTop: $("#experience").offset().top
-                }, 2000);          
-        });
-        // ****
-        $('.resume-educ').hide();
-        $('.listing-project').hide();
-        $(".opener").click(function(){
-            $(".opener").toggle();
-            $(this).toggle();
-            //recup id
-            const id = $(this).attr("id");
-            //add id to resum-form
-            const name_class = ".educ-"+id;
-            //open resum-form-id 
-            $(name_class).toggle(1000);
-            $([document.documentElement, document.body]).animate({
-                scrollTop: $("#formation").offset().top
-                }, 2000);
-        });
-        $(".listing").click(function(){
-            $(".listing-project").toggle(1000);
-            $([document.documentElement, document.body]).animate({
-                scrollTop: $("#formation").offset().top
-                }, 2000);
-        });
-             
+                description = document.getElementById("desc-" + e.target.id)
+                description.classList.toggle('visible')
+                localStorage.setItem("visible", e.target.id);
+                containerSkill.classList.toggle('centered-skill-circle')
+            }
+        }
+    }
+
+//success part
+    navSuccess = document.getElementById('nav-success')
+    allSuccessLi = document.getElementsByClassName("li-success")
+    const sleep = ms => {
+      return new Promise(resolve => setTimeout(resolve, ms))
+    }
+    const elems = Array.from(document.getElementsByClassName('checkbox'))
+    elems.reverse()
+    const checkTheBox = elem => {
+      return sleep(200).then(v => {
+        elem.parentElement.classList.toggle('opacity-0')
+        elem.checked = true
+        if (elem.id == 'ch1'){
+            return sleep(800).then(v =>{
+                elem.checked = false
+            })
+        }
+      })
+    }
+
+    const forLoop = async _ => {
+      for (let index = 0; index < elems.length; index++) {
+        const elem = elems[index]
+        const checkedBox = await checkTheBox(elem)
+      }
+    }
+
+    firstLi = allSuccessLi[0]
+    if (firstLi.firstElementChild.checked != false){
+        firstLi.firstElementChild.checked = false
+        }
+
+    let topOfWindow = $("#success").offset().top;
+    visible = false
+    $(".main-part").scroll(function () {
+        console.log($(".main-part"))
+        var successPart = $("#success").offset().top;
+        calc = parseFloat(100 - (successPart/topOfWindow) * 100).toFixed(0)
+        // console.log( calc, '%')
+        if (calc >= 95){
+            console.log(visible)
+            if (visible == false){
+                console.log('trigger now !! ')
+                forLoop()
+                visible = true
+            }
+        }
     });
-})(jQuery); // End of use strict
+    navSuccess.onclick = () => {
+        // document.getElementById('checkbox-container').classList.toggle('visible')
+        forLoop()
+        visible = true
+    }
+const main = function(){
+    localStorage.clear()
+    console.log(localStorage)
+    displayDescription()
+}
+main()
+
+    // $(document).ready(function(){
+    //     // hide all experiences
+    //     $('.resume-section-content').hide();
+    //     // show class experiences
+    //     const dico = {professorat: ".prof", animation: ".anim", 
+    //     direction: ".dir", autres: ".aut"}; 
+    //     $(".togg").click(function(){ 
+    //         const txtButton = $(this).text()
+            
+    //         $(dico[txtButton]).toggle(1000);
+    //         if ($(this).css("background-color") =="rgb(202, 125, 96)"){
+    //             $(this).css("background-color", "rgb(128, 51, 0)");
+    //             $(this).css("font-weight","bold");
+    //         }else{
+    //             $(this).css("background-color", "rgb(202, 125, 96)");
+    //             $(this).css("font-weight","normal");
+    //         }  
+    //         $([document.documentElement, document.body]).animate({
+    //             scrollTop: $("#experience").offset().top
+    //             }, 2000);          
+    //     });
+        // ****
+
+    // });
+// })(jQuery); // End of use strict

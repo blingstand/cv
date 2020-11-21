@@ -1,0 +1,17 @@
+
+<header class="">
+	<h1 class="">Réussites Personnelles
+	</h1>
+	<p class="subheading">Les défis que je me lance ont toujours devancé mes choix personnels</p>
+</header>
+<div class="paragraphe paragraphe-success">
+	<ul id="checkbox-container">
+		{% for sucess in all_success%}
+		<li class="li-success opacity-0 ">
+			<input class="checkbox checkbox--blue" type="checkbox" id="ch{{forloop.counter}}" >
+			<label for="ch{{forloop.counter}}">{{sucess|safe}}</label>
+		</li>
+		{% endfor%}
+	</ul>
+</div>
+

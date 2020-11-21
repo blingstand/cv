@@ -1,0 +1,39 @@
+{% load static %}
+<header class="">
+	<h1 class="">Mes Compétences </h1>
+	<p class="subheading "> Ce site est en lui-même une preuve de mes compétences
+	</p>
+</header>
+<article>		
+	<div id="paragraphe-skill" class="paragraphe">
+		<div id="container-skill" class="centered-skill-circle">
+			<div id="sql" class="skill"> sql</div>
+			<div id="sass" class="skill">html <br>css <br>sass</div>
+			<div id="js" class="skill">js</div>
+			<div id="python" class="skill">python</div>
+			<div id="django" class="skill">django</div>
+			<div id="deployment" class="skill">deployment</div>
+		</div>
+		{% for skill in skills %}
+		<div id="desc-{{skill.id}}" class="border border-1">
+			<div  class="content">
+				<div class="content-top">
+					<h4 class="title-comp"> {{skill.title}} </h4>  
+					<div class="skill-level very-center-r show-{{skill.level}}"> niveau : 
+						{{ten_spans|safe}}
+					</div>
+					<hr class="middle-bar">
+				</div>
+				<div  class="content-bottom very-center-c">
+					<p>
+						<span class="underline">Acquis</span> : {{skill.done}}
+					</p>
+					<p>
+						<span class="underline"> Objectifs</span> : {{skill.to_do}} 
+					</p>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</article>

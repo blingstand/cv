@@ -1,0 +1,58 @@
+// contain the properties for whole body
+@mixin load_body(){
+	
+	overflow: hidden; 
+	height:  100vh;
+	width:  100%;
+	display:  grid;
+	grid-template-columns: 15% 1fr; 
+	background-color: $secondary;
+	font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	.bg-white-trans{
+		background-color: #fff;
+		opacity: 0.4;
+		cursor: pointer;
+		transition-duration: 2s;
+		&:hover{
+			opacity: 1;
+		}
+	}
+	.hidden{
+		display: none; 
+	}
+	.hint{
+		margin: 0 25% ; 
+		text-align: center; 
+		display:none;  
+	}
+	.imp{
+		font-weight: bold; 
+	}
+	.opacity-0{
+		opacity:0;
+	}
+	.opacity-1{
+		opacity:1;
+	}
+	.pointer{
+		cursor: pointer; 
+	}
+	.very-center-c{
+		display: flex;
+		flex-direction: column; 
+		align-items: center;
+		justify-content: center;
+	}
+	.very-center-r{
+		display: flex;
+		flex-direction: row; 
+		align-items: center;
+		justify-content: space-around;
+	}
+	.visible{
+		display:block !important; 
+		visibility: visible !important ;
+		opacity: 1 !important;   
+		transition-delay: 200ms;
+	}
+}
