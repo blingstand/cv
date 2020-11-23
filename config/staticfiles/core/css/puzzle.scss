@@ -1,0 +1,40 @@
+@import "libs/mix_puzzle.scss";
+$size_wanted: 2; 
+.puzzle-table{
+  height: 35rem;
+  width: 60rem; 
+  background-color: teal;
+  display: flex; 
+}
+.projet{
+  @include piece_puzzle($size_wanted); 
+}
+.projet.text{
+  @include text_piece($size_wanted); 
+}
+.projet1{
+  z-index: 3;
+  @include piece_puzzle($size_wanted);
+  background-color: #fff;
+  @include piece($size:$size_wanted, $type: 'begin', $bgc: teal); 
+}
+.projet2{
+  z-index: 2;
+  @include piece_puzzle($size_wanted);
+  background-color: #36c;
+  @include piece($size:$size_wanted, $type: 'middle', $bgc: teal); 
+}
+.projet3{
+  z-index: 1;
+  @include piece_puzzle($size_wanted);
+  background-color: #4a009a;
+  @include piece($size:$size_wanted, $type: 'return', $bgc: teal); 
+}
+
+
+// .projet2,
+// .projet2 span {
+//   @include piece($size:2, $type: 'begin', $bgc: teal); 
+
+//   background-color: #00008B; 
+// }

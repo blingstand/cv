@@ -1,0 +1,47 @@
+@mixin triangle($color: black, $size: 10, $direction: 'down'){
+	&::after{
+		content: "";
+		width: 0; 
+		height: 0; 
+		border-top : $size * 1px solid $color;
+		border-right : $size * 1px solid transparent;
+		border-left : $size * 1px solid transparent;
+		position: relative; 
+		bottom: -2rem;
+		left: 2rem;  
+		transform: rotate(180); 
+	}
+}
+//https://codepen.io/timrross/pen/XMwVbV > thx timrross :)
+@mixin corner-borders($corner-width: 1px, $corner-size: 5px, $color-border: grey, $color-background: white) {
+    position: relative;
+    border: $corner-width solid $color-border;
+    background-color: $color-background;
+
+    &::before {
+      content: "";
+      z-index: 0;
+      position: absolute;
+      top: -$corner-width;
+      bottom: -$corner-width;
+      left: $corner-size;
+      right: $corner-size;
+      background-color: $color-background;
+    }
+
+    &::after {
+      content: "";
+      z-index: 0;
+      position: absolute;
+      top: $corner-size;
+      bottom: $corner-size;
+      left: -$corner-width;
+      right: -$corner-width;
+      background-color: $color-background;
+    }
+}
+
+
+
+
+	

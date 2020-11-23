@@ -1,0 +1,18 @@
+$small: 480px;
+$medium: 768px;
+$big: 1024px;
+$udge: 1600px;
+
+$mobile:"only screen and (max-width: #{$small}) ";
+$tablet: 'only screen and (max-width: #{$medium})' ;
+$tablet-landscape: 'only screen and (min-width: #{$medium + 1})' ;
+$laptop: 'only screen and (min-width: #{$big})' ;
+$desktop: 'only screen and (min-width: #{$udge})' ;
+
+/*
+0		480			768			1024		1600
+				   pt chgt
+mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
+	titre en haut	 |		titre latéral
+
+*/

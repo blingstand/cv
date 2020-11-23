@@ -1,0 +1,77 @@
+@mixin b-radius($size:1){
+  -webkit-border-radius: 4rem * $size;
+  -moz-border-radius: 4rem * $size;
+  border-radius: 4rem * $size;
+}   
+@mixin piece_puzzle($size:1) { 
+    width: 6rem * $size;
+    height: 6rem * $size;
+    margin: 0.5rem *$size;
+    position: relative;
+    -webkit-border-radius: .5rem * $size;
+    -moz-border-radius: .5rem * $size;
+    border-radius: .5rem * $size;
+    cursor: pointer;
+}
+
+@mixin around($size:1){
+    width: 2rem * $size;
+    height: 2rem * $size;
+    position: absolute;
+    @include b-radius($size); 
+} 
+@mixin text_piece($size:1) {
+  display: block;
+  color: #fff;
+  font-size: 1.2rem * $size;
+  text-align: center;
+  padding: 1.9rem * $size 0 0 1.2rem * $size;
+  position: relative;
+  background: transparent !important;
+}
+
+@mixin piece($size:1, $type:'begin', $bgc:transparent){
+    & .t {
+        background-color: inherit;
+        @include around($size); 
+        top: -1.5rem * $size;
+        left: 2rem * $size;
+        @if $type == "begin"{
+            opacity: 0;
+        }@else if $type == 'middle'{
+            opacity: 0; 
+        }@else if $type == "return"{
+            opacity: 0;
+        }   
+    }
+    & .l { 
+        @include around($size);
+        background-color: inherit;
+        top: 2rem * $size;
+        left: -.5rem * $size;
+        background-color: $bgc;
+        @if $type == "begin"{
+            opacity: 0;
+        }          
+    }
+    & .r {
+        background-color: inherit;
+        @include around($size);
+        top: 2rem * $size;
+        left: 5.5rem * $size;
+        @if $type == "return"{
+            opacity: 0;
+        }  
+    }
+    & .b { 
+        background-color: inherit;
+        @include around($size);
+        top: 5.5rem * $size;
+        left: 2rem * $size;
+        @if $type == "begin"{
+            opacity: 0;
+        }@else if $type == 'middle'{
+            opacity: 0;  
+        }
+    }
+}
