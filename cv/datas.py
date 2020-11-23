@@ -1,4 +1,4 @@
-all_btn = [ 'PROFESSORAT', 'DIRECTION', 'ANIMATION', 'AUTRES']
+all_btn = [ 'PROGRAMATION', 'PROFESSORAT', 'DIRECTION', 'ANIMATION', 'AUTRES']
 all_success = [
 "Travailler en tant que développeur,", 
 "Finir ma formation de développeur Python/Django,", 
@@ -12,12 +12,34 @@ all_success = [
 ]
 exp_prof = [
 {
+'category': 'cat4',
+'job': "Intérimaire (FR24)",
+'url': 'https://www.proman-emploi.fr/agences/bergerac' ,
+'employer': 'Proman Bergerac', 
+'period': 'en cours depuis octobre 2019' ,
+'description': '''Toutes sortes de missions ne demandant pas de qualifications, que je tiens à faire pour gagner ma vie sans avoir recours aux prestations sociales. Je les ai cumulées avec les heures de formation en développement d'application. <span class="imp"> Cela me permet de gader un contact avec la réalité et de me rappeler d'où je viens.</span>''' },
+{
+'category': 'cat0',
+'job': "Développeur d'Applications Python Django (Stage)",
+'url': 'https://www.spa24bergerac.org/' ,
+'employer': 'Spa de Bergerac(24)', 
+'period': 'juillet - octobre 2020' ,
+'description': '''Expérience de développeur d'applications Python/Django. J'ai démarché le client, par téléphone pour obtenir un entretien. Pendant celui-ci j'ai analysé des besoins / envies. Je me suis entendu avec le client sur un produit à concevoir. Je suis resté en contact pendant la conception en organisant des appels et des rencontres. J'ai livré de manière hebdomadaire mon travail à la fin de chaque sprint.<span class="imp"> L'interaction avec le client a été la partie la plus difficile mais aussi celle sur laquelle j'ai le plus appris.</span>''' },
+{
 'category': 'cat1',
 'job': 'Professeur de Français Langue Etrangère (Ge)' ,
 'url': 'https://ge.ambafrance.org/' ,
 'employer': 'Ambassade de france en Géorgie', 
 'period': 'octobre 2018 - juillet 2019' ,
 'description': '''Expérience de vie en Géorgie en base militaire. Langue parlée au quotidien : anglais ou russe. Emploi en qualité de professeur de langue dans trois bases avec des niveaux différents pour chaque classe. Le poste m'a demandé de m'adapter à un environnement militaire avec un emploi du temps évolutif. J'ai aussi fait passer des examens de langues de niveau A1 à B2. <span class="imp"> J'en retiens l'importance de la probité dans la vie à plusieurs et la camaraderie d'une base militaire.</span>'''
+},
+{
+'category': 'cat0',
+'job': 'Concepteur Pédagogique (FR38)' ,
+'url': 'https://www.afgrenoble.org/fr/' ,
+'employer': 'Alliance Française de Grenoble', 
+'period': 'mars 2018 - juin 2018' ,
+'description': '''Stage de conception pédagogique. J'ai mis en place un parcours pédagogique pour un niveau faux débutant intermédiaire (A2). Il m'a été demandé de former les agents à l'utilisation d'une plateforme (<a href='https://apolearn.com/'>Apolearn</a>), de créer un parcours avec eux et d'utiliser mes compétences en programmation pour faire des "compléments d'apprentissage" sous forme de petits jeux.<span class="imp"> J'en ai gardé une très bonne impression et l'envie de continuer à m'investir dans le rôle de technicien.</span>'''
 },
 {
 'category': 'cat4',
@@ -175,18 +197,34 @@ educ= [
 'text_url': "OpenClassrooms",
 'thematic': "Programmation", 
 'level': "Diplôme niveau 6 (Bac+3/4)",
-'description': """ <ul class="projects"> <span class="">Voici mes projets (retouvables sur github)</span><li class=""><a href="">projet8 - site web avec Django</a></li><li class="">projet7 - chat avec Flask</li><li class="">projet6 - rédaction dossier spécifications techniques</li><li class="">projet5 - importer des données d'une api dans une base de données <br>relationnelle</li><li class="">projet4 - rédaction dossier spécification fonctionnelle, diagramme UML</li><li class="">projet3 - mini jeu en pygame (POO)</li><li class="">projet2 - découverte github</li><li class="">projet1 - projet de bienvenue</li></ul>""", 
-'period': "mai 2019 - octobre 2020",
+'description': """ <ul class="projects">
+	<span class="">Voici mes projets (retouvables sur github)</span>
+
+	<li class=""><a href="#">projet13 - site pour la SPA</a></li>
+	<li class="">projet12 - Construction d'un outil de veille</li>
+	<li class="">projet11 - Amélioration + Tests de mon App du projet 8 </li>
+	<li class="">projet10 - Déploiement de mon App du projet 8</li>
+	<li class="">projet9 - Documentation d'une application fictive</li>
+	<li class=""><a href="#">projet8 - Site web avec Django</a></li>
+	<li class=""><a href="#">projet7 - Chat avec Flask</a></li>
+	<li class="">projet6 - Rédaction dossier spécifications techniques</li>
+	<li class="">projet5 - Importer des données d'une api dans une base de données <br>relationnelle</li>
+	<li class="">projet4 - Rédaction dossier spécification fonctionnelle, diagramme UML</li>
+	<li class="">projet3 - Mini jeu en pygame (POO)</li>
+	<li class="">projet2 - Découverte github</li>
+	<li class="">projet1 - Projet de bienvenue</li></ul>""", 
+'period': "mai 2019 - oct 2020",
 },
 {
 'category' : 'cat6',
-'degree' : "Diplôme d'Ingénieur Pédagogique" ,
-'url': "http://formations.univ-grenoble-alpes.fr/fr/catalogue/master-XB/arts-lettres-langues-ALL/",
+'degree' : "Diplôme de Concepteur Pédagogique Numérique " ,
+'url': "http://formations.univ-grenoble-alpes.fr/fr/catalogue/master-XB/arts-lettres-langues-ALL/master-didactique-des-langues-program-master-didactique-des-langues/parcours-didactique-des-langues-et-ingenierie-pedagogique-numerique-dilipem-subprogram-parcours-didactique-des-langues-et-ingenierie-pedagogique-numerique.html",
 'text_url': 'Université Grenoble Alpes',
 'thematic': "DILIPEM" , 
 'level': "Maîtrise",
-'description': """<p>L'enseignement universitaire ne me m'apportant pas ce dont j'avais besoin j'ai préféré arrêter.</p><p>Durant cette année j'ai réalisé des projets de conception pédagogique pour l'université mais aussi dans le cadre d'un stage à l'alliance française de Grenoble. Lors d'un projet j'ai réalisé mon site web web en html, css, javascript et php qui hébergeait des ressources et exercices pédagogiques.</p>""", 
-'period': "Septembre 2017 - Juin 2018",
+'description': """<p class="text">Durant cette année j'ai réalisé des projets de conception pédagogique pour l'Université mais aussi dans le cadre d'un stage à l'Alliance Française de Grenoble. Lors de l'un d'eux j'ai conçu un site web en html, css, javascript et php qui hébergeait des ressources et exercices pédagogiques.</p>
+<p class="text">L'enseignement universitaire ne me m'apportant pas ce dont j'avais besoin j'ai préféré ne pas continuer en Master 2.</p>""", 
+'period': "2017 - 2018",
 },
 {
 'category' : 'cat7',
@@ -195,8 +233,8 @@ educ= [
 'text_url': 'Université Clermont-Ferrand - Blaise Pascal',
 'thematic': "Linguistique", 
 'level': "Licence",
-'description': """Pendant cette licence j'ai appris à parler russe courrament, à étudier une culture et une langue. J'ai aussi participé à des cours sur l'enseignment du français langue étrangère.""" , 
-'period': "Septembre 2014 - Juin 2017",
+'description': """<p class="text">Pendant cette licence j'ai appris à parler russe courrament, à étudier une culture et une langue.J'ai aussi participé à des cours sur l'enseignment du français langue étrangère.</p> <p class="text">La troisième année je suis parti en Russie pour y rester 10 mois.</p>""" , 
+'period': "2014 - 2017",
 },
 {
 'category' : "cat8",
@@ -205,18 +243,18 @@ educ= [
 'text_url': 'Université Toulouse 2 - Jean Jaurès',
 'thematic': "Psychologie", 
 'level': "Licence",
-'description': "J'ai appris beaucoup de chose mais j'en retiens réellement que des connaissances pycho-sociales, pycho-conitives et neurobiologiques (mémoire et motivation), que je mobilise encore dans mon quotidien.", 
-'period': "Septembre 2013 - Juin 2014",
+'description': """<p class="text">De cette dernière années en Psychologie j'ai retenu des connaissances pycho-sociales, pycho-conitives et neurobiologiques (mémoire et motivation), que je mobilise encore dans mon quotidien, que ce soit pour mes cours ou pour mon développement personnel.</p>""", 
+'period': "2013 - 2014",
 },
 {
-'category' : "cat9",
+'category' : "cat8",
 'degree' : "Diplôme de Psychologue",
 'url': "https://jechoisis.u-bordeaux.fr/Choisir/Sciences-humaines-et-sociales/Licence-de-Psychologie",
 'text_url': 'Université Bordeaux 2 - Victor Segalen',
 'thematic': "Psychologie" , 
 'level': "Licence",
-'description': "J'ai découvert ce qu'est l'université, comment raisonner, argumenter, rédiger et chercher des informations en croisant mes sources." , 
-'period': "Septembre 2011 - Juin 2013",
+'description': """<p class="text">J'ai découvert l'Université, l'autonomie et l'organisation du travail personnel, mais aussi comment raisonner, argumenter, rédiger et chercher des informations en croisant mes sources.</p>""" , 
+'period': "2011 - 2013",
 },
 ]
 skills =[ 
@@ -231,36 +269,36 @@ skills =[
 "id" : "python", 
 "title": "Python", 
 "level": "8", 
-"done": "Je peux faire à peu près tout ce que je veux avec python car je sais chercher l'information, me former et l'appliquer. ", 
-"to_do": "Arrêter de tout faire 'from scratch' et réinventer sans cesse la roue, pour cela je dois faire de la veille sur les librairies existantes et sur les bonnes pratiques.",
+"done": "Je peux faire à peu près tout ce que je veux avec python car je sais chercher l'information, me former et appliquer. ", 
+"to_do": "Arrêter de tout faire 'from scratch' et réinventer sans cesse la roue, pour cela je dois améliorer ma connaissances des librairies existantes.",
 }, 
 {
 "id" : "django", 
 "title": "Django", 
 "level": "8", 
-"done": "J'ai une vision globale de ce framework au sens où j'ai compris les settings, comment déployer mes apps, comment utiliser le 'matériel' déjà là.", 
-"to_do": "Apprendre à modifier le 'matériel' déjà là voir à en créer de nouveau. ",
+"done": "J'ai une vision globale de ce framework au sens où j'ai compris les settings, comment déployer mes apps, comment utiliser le 'matériel' à disposition.", 
+"to_do": "Apprendre à modifier le 'matériel' à disposition, ou encore à en créer de nouveau. ",
 }, 
 {
 "id" : "deployment", 
 "title": "Déploiement", 
 "level": "4", 
-"done": "Je me considère encore débutant même si je connais suffisamment AWS pour déployer mes apps, de même pour heroku. J'ai aussi compris comment utiliser Nginx, Gunicorn, Travis, Sentry, Git. Je débute avec Docker mais j'ai compris son intérêt.", 
+"done": "Je me considère encore débutant même si je connais suffisamment AWS pour déployer mes apps, de même pour Heroku. J'ai aussi compris comment utiliser Nginx, Gunicorn, Travis, Sentry, Git. Je débute avec Docker mais j'ai compris son intérêt.", 
 "to_do": "Me développer avec Docker et améliorer ma compréhension d'AWS. Déployer une app sur un autre cloud, DigitalOcean par exemple.",
 }, 
 {
 "id" : "sql", 
 "title": "SQL", 
 "level": "8", 
-"done": "J'ai bien compris le fonctionnement des bases de données de manières générale, je connais les fonctionnalités avancées pour organiser ses tables mais aussi créer des profils utilisateurs avec des règles précises. Les deux que j'utilise le plus sont MySQL et PostgreSQL.", 
-"to_do": "Je ne connais rien au nosql et dois faire un projet avec pour me familiariser.",
+"done": "Je maîtrise le fonctionnement des bases de données de manières générale, je connais les fonctionnalités avancées pour organiser ses tables mais aussi créer des profils utilisateurs avec des règles précises. Les deux que j'utilise le plus sont MySQL et PostgreSQL.", 
+"to_do": "Je dois encore découvrir le NoSQL en faisant un projet avec pour me familiariser.",
 }, 
 {
 "id" : "sass", 
 "title": "HTML/CSS/SASS", 
 "level": "6", 
 "done": "Je connais bien ces trois technologies. Je continue à me former sur SASS même si je connais les fonctionnalités de base, je sais comment utiliser les variables, les mixins, passer du SCSS en SASS.",
-"to_do": "Je cherche à rendre mon travail plus fluide en améliorant les animations que je crée pour qu'elle soit un plus pour le site sans tomber dans le trop d'animation.",
+"to_do": "Je cherche à rendre mon travail plus fluide en ajoutant des amélioration.",
 }]
 ten_spans = """
 <span>&nbsp;</span>

@@ -1,6 +1,5 @@
 // contain the properties for whole body
 @mixin load_body(){
-	
 	overflow: hidden; 
 	height:  100vh;
 	width:  100%;
@@ -16,6 +15,10 @@
 		&:hover{
 			opacity: 1;
 		}
+	}
+	.bg-primary{
+		color: white;
+		background-color: $primary !important; 
 	}
 	.hidden{
 		display: none; 
@@ -54,5 +57,10 @@
 		visibility: visible !important ;
 		opacity: 1 !important;   
 		transition-delay: 200ms;
+	}
+	@for $i from 1 through 5 {
+		.mt-#{$i} {
+			margin-top: $i * 1rem; 
+		}
 	}
 }

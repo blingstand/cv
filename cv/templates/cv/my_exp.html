@@ -1,11 +1,11 @@
-<header class="very-center-c">
+<header class="">
 	<h1 class="">Mon Expérience Professionnelle</h1>
 	<p class="subheading ">Classée par ordre chronologique chacune d'entre elle appartient à une catégorie représentée par un bouton.</p>
 </header>
 <article>
 	<div class="container-exp-button very-center-r">
 		{% for btn in all_btn%}
-		<p><button id="cat{{forloop.counter}}" class="display-button">{{btn}}</button></p>
+		<p><button id="cat{{forloop.counter0}}" class="display-button">{{btn}}</button></p>
 		{% endfor %}	
 	</div>
 	<div class="paragraphe" id="paragraphe-exp">

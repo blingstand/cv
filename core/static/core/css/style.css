@@ -49,7 +49,7 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: 15% 1fr;
-  background-color: #00b8e6;
+  background-color: #066084;
   font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 body .bg-white-trans {
@@ -60,6 +60,10 @@ body .bg-white-trans {
 }
 body .bg-white-trans:hover {
   opacity: 1;
+}
+body .bg-primary {
+  color: white;
+  background-color: #cc6a1b !important;
 }
 body .hidden {
   display: none;
@@ -99,11 +103,28 @@ body .visible {
   opacity: 1 !important;
   transition-delay: 200ms;
 }
+body .mt-1 {
+  margin-top: 1rem;
+}
+body .mt-2 {
+  margin-top: 2rem;
+}
+body .mt-3 {
+  margin-top: 3rem;
+}
+body .mt-4 {
+  margin-top: 4rem;
+}
+body .mt-5 {
+  margin-top: 5rem;
+}
 
 @media only screen and (min-width: 769px) {
   nav {
     color: white;
-    background-color: #cc941b;
+    background: #fcaa3e;
+    background: #fc8a3e;
+    background: radial-gradient(circle, #fc8a3e 4%, #e77400 68%, #e74900 88%);
     color: #001133;
     display: grid;
     transition-duration: 2s;
@@ -170,11 +191,12 @@ main {
   display: grid;
   grid-template-rows: repeat(7, 38rem);
   overflow-y: scroll;
-  background-color: #00b8e6;
+  background-color: #066084;
   padding: 1%;
   margin: 0;
 }
 main .container {
+  overflow-y: scroll;
   display: grid;
   grid-template-rows: repeat(4, 1fr);
 }
@@ -192,6 +214,7 @@ main .container header h1, main .container header .subheading {
   color: #001133;
 }
 main .container header h1 {
+  color: #d9e6f2;
   font-size: 3rem;
   margin: 2% 3% 0 3%;
   text-align: left;
@@ -210,7 +233,6 @@ main .container article {
   display: grid;
   grid-template-rows: repeat(6, 1fr);
   flex-direction: column;
-  background-color: crimson;
 }
 main .container .paragraphe {
   grid-row: 2/6;
@@ -230,6 +252,10 @@ main .container .paragraphe .text {
   margin-bottom: 1rem;
   width: 100%;
 }
+main #paragraphe-resume {
+  grid-row: 1/7;
+  justify-content: space-around;
+}
 main .social-icons {
   display: flex;
 }
@@ -238,7 +264,7 @@ main .social-icons .container-logo {
   margin: 0 2rem;
 }
 main .logo {
-  width: 2rem;
+  width: 3rem;
 }
 main .logo:hover {
   background-color: #00b8e6;
@@ -251,8 +277,9 @@ main #paragraphe-offer {
 }
 main #paragraphe-offer #ul-offer {
   width: 90%;
-  font-size: 0.8rem;
-  margin: 0rem 5% 1rem 5%;
+  font-size: 1rem;
+  background-color: #d9e6f2;
+  padding: 0rem 5% 1rem 5%;
   list-style-type: circle;
 }
 main #paragraphe-offer .ulcol-3 {
@@ -271,19 +298,22 @@ main .container-exp-button {
   justify-content: space-around;
   width: 100%;
 }
-main .container-exp-button button {
-  background-color: #cc6a1b;
-  height: 170%;
-  width: 12rem;
+main .container-exp-button .display-button {
+  background-color: white;
+  height: 3rem;
+  width: 8.5rem;
   font-size: 1rem;
   border-radius: 10rem;
   cursor: pointer;
+  color: #001133;
 }
-main .container-exp-button button:hover {
-  background-color: #9f5315;
+main .container-exp-button .display-button:hover {
+  color: white;
+  background-color: #cc6a1b;
 }
 main #paragraphe-exp {
   grid-row: 2/7;
+  height: auto;
 }
 main #paragraphe-exp .first-line {
   cursor: pointer;
@@ -336,9 +366,6 @@ main #paragraphe-exp .description {
   padding: 1rem;
   margin: 0 1rem 2rem 1rem;
 }
-main #formation {
-  background-color: #fff;
-}
 main #formation article {
   display: grid;
   grid-template-columns: 30% 70%;
@@ -387,7 +414,11 @@ main #formation #paragraphe-educ .first-line .degree {
   margin-bottom: 1rem;
   text-decoration: underline;
 }
-main #formation #paragraphe-educ .first-line .exp-period {
+main #formation #paragraphe-educ .first-line .first-line-right-part {
+  text-align: right;
+  padding-right: 1rem;
+}
+main #formation #paragraphe-educ .first-line .first-line-right-part .exp-period {
   color: #cc6a1b;
   font-weight: bold;
 }
@@ -423,8 +454,8 @@ main #paragraphe-skill .centered-skill-circle {
 }
 main #paragraphe-skill .skill {
   text-transform: uppercase;
-  width: 4.3rem;
-  height: 4.3rem;
+  width: 6rem;
+  height: 6rem;
   display: flex;
   font-size: 0.9rem;
   justify-content: center;
@@ -517,9 +548,12 @@ main .border .content .content-top .skill-level span {
 }
 main .border .content .content-bottom {
   grid-row: 2/3;
-  margin: 1rem 0;
+  margin: 0;
   font-size: 1rem;
   padding: 1rem;
+}
+main .border .content .content-bottom p {
+  margin-bottom: 0.5rem;
 }
 main .border .content .content-bottom .underline {
   text-decoration: underline;
@@ -557,6 +591,7 @@ main .paragraphe-success #checkbox-container {
   transition-duration: 2s;
 }
 main .paragraphe-success #checkbox-container li {
+  background-color: #d9e6f2;
   list-style-type: none;
   margin: 0 0 0.5rem 0;
 }

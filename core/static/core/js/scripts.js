@@ -38,17 +38,17 @@
 
 // this script is for my exp resume part 
 
+
+secondPsychoArrow = document.getElementById('cat9')
+secondPsychoArrow.style.display = 'none'
 //*** VARIABLES ***
 let hint = document.getElementById("hint")
 
 //*** CALCULS   ***
-const GetTriangle = function(e){
-        if (e.target.className.search('triangle') != -1){
-            return e.target
-        }else{
-            return e.target.nextElementSibling
-        }
-    }
+const GetTriangle = function(elem){
+    return elem.nextElementSibling.children[0]
+}
+
 const GetNumberVisibleChildren = function(paragraphe){
     count = 0
     for (child of paragraphe.children){
@@ -61,13 +61,15 @@ const GetNumberVisibleChildren = function(paragraphe){
 //*** FUNCTIONS ***
     const DisplayHide = (input, localStorClass, hintId) =>{
         //value in local storage
-        console.log(localStorage)
+        input.classList.add('bg-primary')
         if (localStorage.getItem(localStorClass)!== null){
             //remove visible element
             elemsToHide = Array.from(document.getElementsByClassName(localStorage.getItem(localStorClass)))
             elemsToHide.forEach(
                 (elem) => {elem.classList.toggle("visible")}
                 )
+            btn_colored = document.getElementById(localStorage.getItem(localStorClass))
+            btn_colored.classList.remove('bg-primary')
             if (localStorage.getItem(localStorClass) !== input.id){
                 elemsToDisplay = Array.from(document.getElementsByClassName(input.id))
                 elemsToDisplay.forEach(
@@ -75,23 +77,17 @@ const GetNumberVisibleChildren = function(paragraphe){
                 )
                 localStorage.removeItem(localStorClass)
                 localStorage.setItem(localStorClass, input.id);
-                console.log(localStorage.getItem(localStorClass)) 
                 return
             }
                 localStorage.removeItem(localStorClass)
-                console.log(localStorage)
-                document.getElementById(hintId).classList.add("visible")
-                console.log(document.getElementById(hintId))
+                document.getElementById(hintId).classList.toggle("visible")
 
         }else{
             elemsToDisplay = Array.from(document.getElementsByClassName(input.id))
-            console.log(input.id, elemsToDisplay)
             elemsToDisplay.forEach(
                 (elem) => {elem.classList.toggle("visible")}
             )
             localStorage.setItem(localStorClass, input.id); 
-            console.log("***")
-            console.log(document.getElementById(hintId))
             document.getElementById(hintId).classList.toggle("visible")
         }
     }
@@ -113,18 +109,28 @@ const GetNumberVisibleChildren = function(paragraphe){
     for (title of document.getElementsByClassName('first-line')){
         title.onclick = function(e){
             let paragraphe = document.getElementById("paragraphe-exp")
-            console.log('***')
+            
             if (e.target.tagName == "A"){
                 return
             }
             if (paragraphe.id == "paragraphe-educ"){
                 return
             }
-            let description = e.target.parentElement.parentElement.parentElement.nextElementSibling
+            console.log('>>>')
+            console.log(e.target.className)
+            if(e.target.className.search("exp") != -1){
+                elem = e.target
+            }else if (e.target.className.search("container-triangle") != -1){
+                elem = e.target.previousElementSibling
+            }else{
+                elem = e.target.parentElement.previousElementSibling
+            }
+            console.log(elem)
+            let description = elem.parentElement.parentElement.parentElement.nextElementSibling
             centerParagraphe    =   paragraphe.offsetTop + (paragraphe.offsetHeight/2)
-            titlePosition    =   e.target.offsetTop
+            titlePosition    =   elem.offsetTop
             needToScrollDown = centerParagraphe - titlePosition
-            let triangle = GetTriangle(e)
+            let triangle = GetTriangle(elem)
             if (description.className.search("description") != -1){
                 description.classList.toggle("hidden");
                 triangle.classList.toggle('triangle-up')
@@ -215,6 +221,7 @@ const GetNumberVisibleChildren = function(paragraphe){
         if (elem.id == 'ch1'){
             return sleep(800).then(v =>{
                 elem.checked = false
+                elem.parentElement.classList.toggle('bg-primary')
             })
         }
       })
