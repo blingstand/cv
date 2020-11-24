@@ -2,14 +2,37 @@
 	<h1 class="">Mon Expérience Professionnelle</h1>
 	<p class="subheading ">Classée par ordre chronologique chacune d'entre elle appartient à une catégorie représentée par un bouton.</p>
 </header>
-<article>
+<article id="article-exp">
 	<div class="container-exp-button very-center-r">
 		{% for btn in all_btn%}
 		<p><button id="cat{{forloop.counter0}}" class="display-button">{{btn}}</button></p>
 		{% endfor %}	
 	</div>
+
 	<div class="paragraphe" id="paragraphe-exp">
-		<p id="hint-exp" class="visible hint"> Cliquez sur un bouton pour afficher son contenu</p>
+		<p id="hint-exp" class="visible hint"> Cliquez sur un bouton ci-dessus pour découvrir les autres. <br>Voici ma dernière expérience (en dehors de l'intérim)</p>
+		
+		<div id="example-exp" class="visible exp-content">
+			<div class="first-line">
+				<div class="first-line-left-part">
+					<div class="title">
+						<h3 class="exp">Développeur d'App Python Django (FR24)</h3>
+						<div class="container-triangle">
+							<div class="triangle"></div>
+						</div>
+					</div>
+					<p class="subheading"><a href="https://www.spa24bergerac.org/" target="_blank"> Spa de Bergerac</a>
+					</p>
+				</div>
+				<p class="first-line-right-part">
+					<span class="exp-period">juillet - octobre 2020</span>
+				</p>
+			</div>
+
+			<p class="description">
+				Expérience de développeur d'applications Python/Django. J'ai démarché par téléphone des clients,  jusqu'à avoir un rendez-vous. Pendant l'entretien j'ai analysé les besoins du clients. Je me suis entendu avec celui-ci sur un produit à concevoir. Je suis resté en contact pendant la conception en organisant des appels et des rencontres. J'ai livré de manière hebdomadaire mon travail à la fin de chaque sprint.<span class="imp"> L'interaction avec le client a été la partie la plus difficile mais aussi la plus formatrice.</span>
+			</p>
+		</div>
 		{% for ep in exp_prof%}
 		<div class="hidden exp-content {{ep.category}}">
 			

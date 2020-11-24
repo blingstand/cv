@@ -5,6 +5,7 @@
 @import "libs/mixins.scss";
 @import "libs/skill.scss";
 @import "libs/responsive.scss";
+@import "libs/rotating_border.scss";
 
 @import "split/body.scss";
 @import "split/main.scss";
@@ -14,7 +15,7 @@
 $primary: #cc6a1b; 
 $secondary: #066084;
 $third_color : #d9e6f2;
-$bg-paragraphe: #eef6f5; 
+$fourth-color: #eef6f5; 
 $color-text: #001133;  
 
 //nav
@@ -32,10 +33,13 @@ $border-color: black;
 	box-sizing: border-box; 
 	margin:  0;
 	padding:  0; 
+	scroll-behavior: smooth;
+	scrollbar-width: none;
+
 }
 
 $media_query: (
-	$mobile: 12px, $tablet: 14px, $tablet-landscape: 14px,
+	$mobile: 12px, $tablet-and-lower: 14px, $tablet-landscape: 14px,
 	$laptop: 16px, $desktop: 25px);
 
 @each $name_mq, $size_font in $media_query {
@@ -56,46 +60,63 @@ body{
 // 	}
 // }
 //grand format
+
+@media #{$tablet-and-lower}{
+	body{
+		display: flex; 
+		flex-direction:  column;
+		scroll-y: auto;
+
+	}
+	nav{
+		position: fixed;
+		background-color: $primary;
+		width: 100%;
+		height: 4rem;
+		margin-bottom: 2rem; 
+		text-align: center; 
+
+		.nav-maj{
+			display: none;
+		}
+		.nav-container-portrait{
+			display: none;
+		}
+		.nav-menu{
+
+			display: flex; 
+			flex-direction:  row;
+			justify-content: space-around;
+			align-items: center; 
+			height: 100%;
+			.nav-menu-stars{
+				display: none; 
+			}
+			.nav-menu-ul{
+
+				.nav-menu-ul-li{
+					display: block;
+					a{
+						font-size: 1rem; 
+						color: white;
+						text-decoration: none; 
+					}
+
+				}
+			}
+		}
+
+	}
+}
+
 @media #{$tablet-landscape}{
 	nav{
 		@include load_nav(); 
 	}
-}
-// @media #{$tablet}{
-	// 	nav{
-	// 		width: 100%;
-	// 		margin-bottom: 2rem; 
-	// 		text-align: center; 
-	// 		.nav-maj{
-	// 			display: none;
-	// 		}
-	// 		.nav-container-portrait{
-	// 			margin:0;
-	// 			text-align: center;
-	// 			.front-card{
-	// 				margin: 1rem;
-	// 				width: 100%;
-	// 			} 
-	// 			.back-card{
-	// 				display:none;
-	// 			}
-	// 		}
-	// 		.nav-menu{
-	// 			margin: 3rem;
-	// 			.nav-menu-ul{
-	// 				.nav-menu-ul-li{
-
-	// 				}
-	// 			}
-	// 		}
-
-	// 	}
-// }
-
 //body-part
-main{
-	@include load_main();
-	// my-resume
+	main{
+		@include load_main();
+		// my-resume
 		#paragraphe-resume{
 			grid-row: 1/7;
 			justify-content: space-around;
@@ -112,10 +133,10 @@ main{
 			width: 3rem;
 		}
 		.logo:hover{
-			background-color: #00b8e6;
+			background-color: $secondary;
 			border-radius: 50%; 
 		}
-	// my_offer	
+		// my_offer	
 		#paragraphe-offer{
 			font-size: 1rem; 
 			grid-row: 1/7; 
@@ -127,7 +148,10 @@ main{
 				padding: 0rem 5% 1rem 5%;
 				list-style-type: circle;
 			}
-			.ulcol-3{
+			#evoluting-skill-title{
+				margin-top: 1rem
+			}
+			.evoluting-skill{
 				margin-bottom: 0; 
 				text-align: center; 
 				li{
@@ -138,16 +162,22 @@ main{
 				} 
 			}
 		}
-	// my_exp , mettre mediaquery ici
+		// my_exp
+		#article-exp{
+			display: grid;
+			grid-template-columns: 10% 1fr 10%; 
+		}
 		.container-exp-button{
-			grid-row: 1/2; 
+			grid-row: 1;
+			grid-column: 2;  
 			flex-direction: row;
+			width: 100%;
 			justify-content: space-around;
 			width: 100%;
 			.display-button{
 				background-color: white;
 				height: 3rem; 
-				width: 8.5rem; //MQ ici
+				width: 8.5rem; 
 				font-size: 1rem; 
 				border-radius: 10rem; 
 				cursor: pointer; 
@@ -160,6 +190,8 @@ main{
 		}
 		#paragraphe-exp{
 			grid-row: 2/7; 
+			grid-column: 2; 
+			width: 100%;
 			height: auto;
 			.first-line{
 				cursor: pointer;
@@ -208,12 +240,14 @@ main{
 				}
 			}
 			.description{
+				text-indent: 1rem; 
 				background-color:  #d9e6f2;
 				padding: 1rem;
 				margin: 0 1rem 2rem 1rem;  
+
 			}
 		}		
-	// my_education
+		// my_education
 		#formation{
 			article{
 				display: grid;
@@ -240,6 +274,10 @@ main{
 					width: 13rem;
 					margin: 1rem 0; 
 					text-align: center;
+					&:hover{
+						color: white;
+						background-color: $primary;
+					}
 				}
 			}
 			#paragraphe-educ{
@@ -282,19 +320,19 @@ main{
 
 
 			}
-				
+
 		}	
-	// skill
+		// skill
 
 		#paragraphe-skill{
 			display: grid; 
 			grid-template-columns: 40% 60%; 
 			grid-row: 1/7;
-		    margin: 0 auto;
-		    padding-top: 3rem;
-		    width: 90%;
-		    height: 90%; 
-			@include load_skill_circle($size-container-skill:1,  $speed-rotate:18s); 
+			margin: 0 auto;
+			padding-top: 3rem;
+			width: 90%;
+			height: 90%; 
+			@include load_skill_circle($size-container-skill:1,  $speed-rotate:25s); 
 
 		}
 		.border {
@@ -351,16 +389,16 @@ main{
 					padding: 1rem;
 					p{
 						margin-bottom: 0.5rem; } 
-					& .underline{
-						text-decoration: underline;}
+						& .underline{
+							text-decoration: underline;}
+						}
 					}
 				}
-			}
-	// hobbies
+		// hobbies
 		.bg-velo{
 			grid-row: 2/6; 
 			display: grid; 
-			grid-template-rows: 1fr 60% 1fr; 
+			grid-template-rows: 1fr 70% 1fr; 
 			background: linear-gradient(to bottom, rgba(92, 77, 66, 0.1) 0%, 
 				rgba(92, 77, 66, 0.5) 100%), url("../assets/img/fond-velo.jpg");
 			background-position: center;
@@ -371,10 +409,12 @@ main{
 			box-sizing: border-box; 
 
 			#paragraphe-hobbies{
+				@include load-rotating-border($border-color:$secondary);
+				padding: 2rem 1rem ; 
 				grid-row: 2; 
 			}
 		}
-	//success
+		//success
 		#success{
 			height: 100%;
 			margin-bottom: 1rem; 
@@ -382,7 +422,7 @@ main{
 		.paragraphe-success{
 			margin: 3rem auto;
 			#checkbox-container{
-			    height: 100%;
+				height: 100%;
 				margin: 2rem 0 auto 2rem; 
 				font-size: 1.5rem; 
 				opacity: 1; 
@@ -394,41 +434,42 @@ main{
 
 				}
 			}
-				/**
-				 * Code for checkboxes
-				 */
-				 .checkbox {
-				 	position: relative;
-				 	width: 1rem;
-				 	height: 1rem;
-				 	margin-right: 3rem;
-				 	cursor: pointer;
-				 	appearance: none;
-				 	outline: 0;
-				 	&:before {
-				 		content: '';
-				 		position: absolute;
-				 		left: 0;
-				 		top: 0;
-				 		z-index: 1;
-				 		width: 1rem;
-				 		height: 1rem;
-				 		border: 2px solid $border-color;
-				 		transition: all 0.3s ease-in-out;
-				 	}
+					/**
+					 * Code for checkboxes
+					 */
+					 .checkbox {
+					 	position: relative;
+					 	width: 1rem;
+					 	height: 1rem;
+					 	margin-right: 3rem;
+					 	cursor: pointer;
+					 	appearance: none;
+					 	outline: 0;
+					 	&:before {
+					 		content: '';
+					 		position: absolute;
+					 		left: 0;
+					 		top: 0;
+					 		z-index: 1;
+					 		width: 1rem;
+					 		height: 1rem;
+					 		border: 2px solid $border-color;
+					 		transition: all 0.3s ease-in-out;
+					 	}
 
-				 	&:checked:before {
-				 		height: 50%;
+					 	&:checked:before {
+					 		height: 50%;
 
-				 		transform: rotate(-45deg);
+					 		transform: rotate(-45deg);
 
-				 		border-top-style: none;
-				 		border-right-style: none;
-				 	}
-				 	.checkbox--deep-orange:checked:before {
-				 		border-color: #ff5722;
-				 	}
-				 }
+					 		border-top-style: none;
+					 		border-right-style: none;
+					 	}
+					 	.checkbox--deep-orange:checked:before {
+					 		border-color: #ff5722;
+					 	}
+					 }
+					}
 				}
 			}
 

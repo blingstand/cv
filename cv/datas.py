@@ -5,10 +5,10 @@ all_success = [
 "Vivre un an dans une base militaire,",
 "Réaliser un Poitiers - Kaunas(Lituanie) à vélo,", 
 "Réussir mes oraux de licence devant un jury russophone,",
-"Avoir été directeur de centre de vacances,",
-"Avoir appris à danser,", 
-"Avoir obtenu mon <a href='https://www.nageur-sauveteur.com/BNSSA'>BNSSA,</a>",
-"Avoir traversé la France à moto,"
+"Devenir directeur de centre de vacances,",
+"Apprendre à danser,", 
+"Obtenir mon <a href='https://www.nageur-sauveteur.com/BNSSA'>BNSSA,</a>",
+"Traverser la France à moto,"
 ]
 exp_prof = [
 {
@@ -20,11 +20,11 @@ exp_prof = [
 'description': '''Toutes sortes de missions ne demandant pas de qualifications, que je tiens à faire pour gagner ma vie sans avoir recours aux prestations sociales. Je les ai cumulées avec les heures de formation en développement d'application. <span class="imp"> Cela me permet de gader un contact avec la réalité et de me rappeler d'où je viens.</span>''' },
 {
 'category': 'cat0',
-'job': "Développeur d'Applications Python Django (Stage)",
+'job': "Développeur d'App Python Django (FR24)",
 'url': 'https://www.spa24bergerac.org/' ,
-'employer': 'Spa de Bergerac(24)', 
+'employer': 'Spa de Bergerac', 
 'period': 'juillet - octobre 2020' ,
-'description': '''Expérience de développeur d'applications Python/Django. J'ai démarché le client, par téléphone pour obtenir un entretien. Pendant celui-ci j'ai analysé des besoins / envies. Je me suis entendu avec le client sur un produit à concevoir. Je suis resté en contact pendant la conception en organisant des appels et des rencontres. J'ai livré de manière hebdomadaire mon travail à la fin de chaque sprint.<span class="imp"> L'interaction avec le client a été la partie la plus difficile mais aussi celle sur laquelle j'ai le plus appris.</span>''' },
+'description': '''Expérience de développeur d'applications Python/Django. J'ai démarché par téléphone des clients,  jusqu'à avoir un rendez-vous. Pendant l'entretien j'ai analysé les besoins du clients. Je me suis entendu avec celui-ci sur un produit à concevoir. Je suis resté en contact pendant la conception en organisant des appels et des rencontres. J'ai livré de manière hebdomadaire mon travail à la fin de chaque sprint.<span class="imp"> L'interaction avec le client a été la partie la plus difficile mais aussi la plus formatrice.</span>''' },
 {
 'category': 'cat1',
 'job': 'Professeur de Français Langue Etrangère (Ge)' ,

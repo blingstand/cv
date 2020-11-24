@@ -1,0 +1,33 @@
+
+@mixin load-rotating-border($speed:3s, $transition:4s, $border-color:teal, $border-size:0.2rem){
+  @keyframes rotating-border{
+  25%{
+    border: $border-size transparent solid; 
+    border-right: $border-size $border-color solid;
+    border-left: $border-size $border-color solid; 
+  }  
+  50%{
+    border: $border-size transparent solid; 
+    border-top: $border-size $border-color solid; 
+    border-bottom: $border-size $border-color solid; 
+  }  
+  75%{
+    border: $border-size transparent solid; 
+    border-right: $border-size $border-color solid;
+    border-left: $border-size $border-color solid;  
+  }  
+  100%{
+    border: $border-size transparent solid; 
+    border-top: $border-size $border-color solid; 
+    border-bottom: $border-size $border-color solid; 
+  }  
+}
+  border: $border-size transparent solid; 
+  border-top: $border-size $border-color solid; 
+  animation: rotating-border $speed infinite; 
+  transition: opacity $transition; 
+  &:hover{
+    border: $border-size transparent solid !important;
+    opacity: 0.9;  
+  }  
+}

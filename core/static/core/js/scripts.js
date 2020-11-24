@@ -59,7 +59,7 @@ const GetNumberVisibleChildren = function(paragraphe){
     return count
 }
 //*** FUNCTIONS ***
-    const DisplayHide = (input, localStorClass, hintId) =>{
+    const DisplayHide = (input, localStorClass, hintId, exampleId) =>{
         //value in local storage
         input.classList.add('bg-primary')
         if (localStorage.getItem(localStorClass)!== null){
@@ -80,7 +80,9 @@ const GetNumberVisibleChildren = function(paragraphe){
                 return
             }
                 localStorage.removeItem(localStorClass)
+                console.log('--1--')
                 document.getElementById(hintId).classList.toggle("visible")
+                document.getElementById(exampleId).classList.toggle("visible")
 
         }else{
             elemsToDisplay = Array.from(document.getElementsByClassName(input.id))
@@ -88,7 +90,10 @@ const GetNumberVisibleChildren = function(paragraphe){
                 (elem) => {elem.classList.toggle("visible")}
             )
             localStorage.setItem(localStorClass, input.id); 
+            console.log('--2--' + exampleId)
             document.getElementById(hintId).classList.toggle("visible")
+            document.getElementById(exampleId).classList.toggle("visible")
+
         }
     }
 
@@ -97,11 +102,16 @@ const GetNumberVisibleChildren = function(paragraphe){
         for (butt of document.getElementsByClassName('display-button')){
             // click on display_button to 
             butt.onclick = (elem) => { 
-                hintId = "hint-educ" 
+                
                 if (elem.target.className.search("arrow") == -1){
                     hintId = "hint-exp"  
-                }
-                DisplayHide(elem.target, "visible", hintId)
+                    exampleId = "example-exp"
+                DisplayHide(elem.target, "exp-visible", hintId, exampleId)
+                }else{
+                    hintId = "hint-educ" 
+                    exampleId = "example-educ"
+                    DisplayHide(elem.target, "educ-visible", hintId, exampleId)
+                }  
             }
         }
     }
@@ -179,20 +189,20 @@ const GetNumberVisibleChildren = function(paragraphe){
             console.log("id = " + e.target.id)
             console.log("ls = ")
             console.log(localStorage)
-            if (localStorage.getItem("visible")!== null){
+            if (localStorage.getItem("skill-visible")!== null){
                 console.log('Cet item est visible')
-                console.log(localStorage.getItem("visible"))
-                idElemToHide = "desc-" + localStorage.getItem("visible")
+                console.log(localStorage.getItem("skill-visible"))
+                idElemToHide = "desc-" + localStorage.getItem("skill-visible")
                 elemToHide = document.getElementById(idElemToHide)
                 elemToHide.classList.toggle('visible')
                 console.log('Cet item a été effacé')
-                if (localStorage.getItem("visible") !== e.target.id){
+                if (localStorage.getItem("skill-visible") !== e.target.id){
                     description = document.getElementById("desc-" + e.target.id)
                     description.classList.toggle('visible')
                     localStorage.clear()
-                    localStorage.setItem("visible", e.target.id);
+                    localStorage.setItem("skill-visible", e.target.id);
                     console.log('Cet item est visible')
-                    console.log(localStorage.getItem("visible"))
+                    console.log(localStorage.getItem("skill-visible"))
                     return
                 }
                     localStorage.clear()
@@ -200,7 +210,7 @@ const GetNumberVisibleChildren = function(paragraphe){
             }else{
                 description = document.getElementById("desc-" + e.target.id)
                 description.classList.toggle('visible')
-                localStorage.setItem("visible", e.target.id);
+                localStorage.setItem("skill-visible", e.target.id);
                 containerSkill.classList.toggle('centered-skill-circle')
             }
         }
@@ -242,7 +252,7 @@ const GetNumberVisibleChildren = function(paragraphe){
     let topOfWindow = $("#success").offset().top;
     visible = false
     $(".main-part").scroll(function () {
-        console.log($(".main-part"))
+        // console.log($(".main-part"))
         var successPart = $("#success").offset().top;
         calc = parseFloat(100 - (successPart/topOfWindow) * 100).toFixed(0)
         // console.log( calc, '%')
