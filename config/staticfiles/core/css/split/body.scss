@@ -24,9 +24,13 @@
 		display: none; 
 	}
 	.hint{
-		margin: 0 25% ; 
+		margin: 0 15% ; 
 		text-align: center; 
 		display:none;  
+		margin-bottom: 2rem; 
+	}
+	#example-exp, #example-educ{
+		display: none;
 	}
 	.imp{
 		font-weight: bold; 
