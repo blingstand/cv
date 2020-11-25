@@ -37,3 +37,15 @@
     }
   }
 }
+@mixin load_small_skill_circle($size-container-skill: 1, $speed-rotate: 10s){
+  @include load_skill_circle; 
+  #container-skill {
+    width: 10rem * $size-container-skill;
+    height: 10rem * $size-container-skill;
+  }
+  
+  .skill {
+    width: 5rem * $size-container-skill;
+    height: 5rem * $size-container-skill;
+  }
+}

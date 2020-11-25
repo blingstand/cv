@@ -154,7 +154,7 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     display: none;
   }
 
-  .very-center, main .container-exp-button p, main #paragraphe-resume .social-icons {
+  .very-center, .paragraphe-success #checkbox-container, main #paragraphe-skill, main #formation article .container-button-educ div, main #experiences .container-exp-button p, body .social-icons {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -164,6 +164,19 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     scroll-behavior: smooth;
     scroll-y: auto;
     transition-duration: 500ms;
+  }
+  body .social-icons {
+    width: 100%;
+  }
+  body .social-icons .logo {
+    width: 3rem;
+  }
+  body .hint {
+    text-align: center;
+    display: none;
+  }
+  body .example-exp, body .example-educ {
+    display: none;
   }
 
   nav {
@@ -182,16 +195,22 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
   nav .nav-container-portrait {
     display: none;
   }
+  nav #menu-social-icons-grp {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.5rem;
+  }
   nav #menu-toggle {
     margin-left: 85%;
+    margin-top: 5%;
     position: sticky;
     position: -webkit-sticky;
     text-align: right;
     display: block;
     margin-right: 2rem;
-    margin-top: 1rem;
     font-size: 2rem;
     z-index: 3;
+    height: 4rem;
   }
   nav .nav-menu {
     height: 18rem;
@@ -203,7 +222,7 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     background-color: #cc6a1b;
     width: 100%;
     transition: 1s;
-    transform: translateY(-2rem);
+    transform: translateY(-6rem);
   }
   nav .nav-menu .nav-menu-stars {
     display: none;
@@ -228,7 +247,7 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     padding: 1%;
     margin: 0 default;
     display: grid;
-    grid-template-rows: repeat(7, 14%);
+    grid-template-rows: repeat(7, 100vh);
     margin-top: 4rem;
     width: 100%;
   }
@@ -302,53 +321,104 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     text-align: left;
     display: flex;
   }
+  main section.container header:hover {
+    transform: inherit;
+  }
   main section.container .paragraphe {
     grid-row: 1/6;
     margin: 0 10px;
     width: auto;
+    transition: transform 2s, height 4s;
+  }
+  main section.container .paragraphe:hover {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transform: translateY(-17vh);
+    height: 75vh !important;
   }
   main .additional_info {
     display: none;
   }
   main #paragraphe-resume .social-icons {
-    width: 100%;
-  }
-  main #paragraphe-resume .social-icons .logo {
-    width: 3rem;
+    display: none;
   }
   main #offer .subheading {
     display: none;
   }
-  main #paragraphe-offer {
-    height: 100%;
-    transition: 5s;
-  }
-  main #paragraphe-offer:active {
-    transform: translateY(-4%);
-    height: 120%;
-  }
-  main #paragraphe-offer #ul-offer {
+  main #offer #paragraphe-offer #ul-offer {
     background-color: #d9e6f2;
     list-style: circle;
     padding: 0rem 5% 1rem 5%;
   }
-  main #paragraphe-offer #ul-offer li {
+  main #offer #paragraphe-offer #ul-offer li {
     margin-bottom: 0.2rem;
   }
-  main #paragraphe-offer .evoluting-skill-title {
+  main #offer #paragraphe-offer .evoluting-skill-title {
     margin: 1rem;
   }
-  main #paragraphe-offer .evoluting-skill {
+  main #offer #paragraphe-offer .evoluting-skill {
     margin-bottom: 0;
     text-align: center;
     -webkit-column-count: 3;
     -moz-column-count: 3;
     column-count: 3;
   }
-  main #paragraphe-offer .evoluting-skill li {
+  main #offer #paragraphe-offer .evoluting-skill li {
     list-style: none;
   }
-  main .container-exp-button {
+  main #experiences {
+    grid-template-rows: repeat(8, 1fr);
+  }
+  main #experiences header {
+    grid-row: 1;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  main #experiences header .subheading {
+    display: none;
+  }
+  main #experiences article {
+    grid-row: 2/9;
+  }
+  main #experiences article #example-exp {
+    display: none;
+  }
+  main #experiences article .paragraphe {
+    grid-row: 2/7;
+    height: 85%;
+  }
+  main #experiences article .paragraphe:hover {
+    scroll-padding-top: 0;
+    transform: translateY(0);
+    display: block;
+  }
+  main #experiences article .paragraphe .exp-content {
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+  }
+  main #experiences article .paragraphe .exp-content .title h3 {
+    text-align: left;
+    font-size: 1.2rem;
+  }
+  main #experiences article .paragraphe .exp-content .container-triangle {
+    display: none;
+  }
+  main #experiences article .paragraphe .exp-content .first-line-right-part {
+    margin-top: 0.5rem;
+  }
+  main #experiences article .paragraphe .exp-content .first-line-right-part .exp-period {
+    font-weight: bold;
+    color: #cc6a1b;
+  }
+  main #experiences article .paragraphe .exp-content .description {
+    padding-bottom: 1rem;
+    text-indent: 1rem;
+    background-color: #d9e6f2;
+    margin: 3px 0;
+    padding: 5px;
+  }
+  main #experiences .container-exp-button {
     grid-row: 1;
     display: grid;
     margin: 0 1rem;
@@ -356,20 +426,263 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: 0.5fr 0.5fr;
   }
-  main .container-exp-button p .display-button {
-    width: 70%;
-    border-radius: 2rem 2rem 0 0;
-    height: 1rem;
+  main #experiences .container-exp-button p .display-button {
+    width: 80%;
+    border-radius: 10px 10px 0 0;
+    height: 1.5rem;
   }
-  main .container-exp-button p:last-child {
+  main #experiences .container-exp-button p:last-child {
     grid-column: 1/3;
     padding: 0 25%;
   }
-  main #paragraphe-exp {
+  main #formation {
+    grid-template-rows: repeat(8, 1fr);
+  }
+  main #formation article {
+    grid-row: 2/9;
+  }
+  main #formation article #example-educ {
+    display: none;
+  }
+  main #formation article .container-button-educ {
+    grid-row: 1;
+    display: grid;
+    margin: 0 1rem;
+    text-align: center;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 0.5fr 0.5fr;
+  }
+  main #formation article .container-button-educ div {
+    width: 95%;
+    background-color: #fff;
+    border-radius: 10px 10px 0 0;
+    height: 1.5rem;
+  }
+  main #formation article .paragraphe {
     grid-row: 2/7;
     height: 85%;
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+  }
+  main #formation article .paragraphe:hover {
+    scroll-padding-top: 0;
+    transform: translateY(0);
+    display: block;
+  }
+  main #formation article .paragraphe .title h3 {
+    text-align: left;
+    font-size: 1.2rem;
+  }
+  main #formation article .paragraphe .container-triangle {
+    display: none;
+  }
+  main #formation article .paragraphe .first-line-right-part {
+    margin-top: 0.5rem;
+  }
+  main #formation article .paragraphe .first-line-right-part .exp-period {
+    font-weight: bold;
+    color: #cc6a1b;
+  }
+  main #formation article .paragraphe .description {
+    padding-bottom: 1rem;
+    text-indent: 1rem;
+    background-color: #d9e6f2;
+    margin: 3px 0;
+    padding: 5px;
+  }
+  main #paragraphe-skill {
+    margin: 0 auto;
+    padding-top: 3rem;
+    width: 90%;
+    height: 90%;
+  }
+  main #paragraphe-skill:hover {
+    height: 83vh !important;
+  }
+  main #paragraphe-skill #container-skill {
+    grid-column: 1;
+    width: 18rem;
+    height: 18rem;
+    margin: 1rem auto;
+    border: 1px solid #000;
+    position: relative;
+    border-radius: 50%;
+    animation: spin 10s linear infinite;
+  }
+  main #paragraphe-skill .centered-skill-circle {
+    grid-column: 1/3 !important;
+  }
+  main #paragraphe-skill .skill {
+    text-transform: uppercase;
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    font-size: 0.9rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    background: #cc941b;
+    animation: spin 10s linear reverse infinite;
+  }
+  main #paragraphe-skill .skill:hover {
+    cursor: pointer;
+    background-color: #ffb733;
+  }
+  @keyframes spin {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+  main #paragraphe-skill #container-skill {
+    width: 10rem;
+    height: 10rem;
+  }
+  main #paragraphe-skill .skill {
+    width: 5rem;
+    height: 5rem;
+  }
+  main #paragraphe-skill .border {
+    height: 22rem;
+    display: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    border: 1rem solid grey;
+    background-color: white;
+  }
+  main #paragraphe-skill .border::before {
+    content: "";
+    z-index: 0;
+    position: absolute;
+    top: -1rem;
+    bottom: -1rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    background-color: white;
+  }
+  main #paragraphe-skill .border::after {
+    content: "";
+    z-index: 0;
+    position: absolute;
+    top: 1.5rem;
+    bottom: 1.5rem;
+    left: -1rem;
+    right: -1rem;
+    background-color: white;
+  }
+  main #paragraphe-skill .border .content {
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    padding: 5px;
+    z-index: 1;
+    font-size: 1rem;
+    overflow-y: scroll;
+    height: 35vh;
+  }
+  main #paragraphe-skill .border .content .content-top {
+    grid-row: 1/2;
+  }
+  main #paragraphe-skill .border .content .content-top .title-comp {
+    text-align: center;
+    margin: 0.5rem;
+    font-size: 1.2rem;
+  }
+  main #paragraphe-skill .border .content .content-top .middle-bar {
+    width: 70%;
+    margin: 0rem 15%;
+  }
+  main #paragraphe-skill .border .content .content-top .skill-level-big {
+    display: none;
+  }
+  main #paragraphe-skill .border .content .content-top .skill-level-small {
+    display: flex;
+    height: 2em;
+    margin: 1rem 0.5rem;
+    background-color: rgba(128, 128, 158, 0.4);
+  }
+  main #paragraphe-skill .border .content .content-top .skill-level-small span {
+    background: #cc941b;
+    margin: 0.5rem 0.3rem 0.3rem 0.5rem;
+    border-radius: 50%;
+    border: 1px solid black;
+    width: 16px;
+    height: 12px;
+    display: inline-block;
+  }
+  main #paragraphe-skill .border .content-bottom {
+    grid-row: 2/3;
+    margin: 0;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  main #paragraphe-skill .border .content-bottom p {
+    margin-bottom: 0.5rem;
+  }
+  main #paragraphe-skill .border .content-bottom .underline {
+    text-decoration: underline;
   }
 }
+#success {
+  display: grid;
+  grid-template-columns: 100vw;
+  height: 100%;
+  margin-bottom: 1rem;
+}
+#success header {
+  grid-row: 1;
+}
+#success .paragraphe {
+  grid-row: 2/5;
+}
+
+.paragraphe-success {
+  margin: 3rem auto;
+}
+.paragraphe-success #checkbox-container {
+  flex-direction: column;
+  height: 100%;
+  font-size: 1.2rem;
+  opacity: 1;
+  transition-duration: 2s;
+}
+.paragraphe-success #checkbox-container li {
+  background-color: #d9e6f2;
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+}
+.paragraphe-success .checkbox {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  appearance: none;
+  outline: 0;
+}
+.paragraphe-success .checkbox:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid black;
+  transition: all 0.3s ease-in-out;
+}
+.paragraphe-success .checkbox:checked:before {
+  height: 50%;
+  transform: rotate(-45deg);
+  border-top-style: none;
+  border-right-style: none;
+}
+.paragraphe-success .checkbox .checkbox--deep-orange:checked:before {
+  border-color: #ff5722;
+}
+
 @media only screen and (min-width: 769px) {
   body {
     background-color: #066084;
@@ -469,7 +782,7 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     color: white;
     text-align: center;
   }
-  nav #menu-toggle {
+  nav #menu-toggle, nav #menu-social-icons-grp {
     display: none;
   }
   nav .nav-container-portrait {
@@ -662,7 +975,7 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     grid-row: 2/7;
     grid-column: 2;
     width: 100%;
-    height: auto;
+    height: 20rem;
   }
   main #paragraphe-exp .first-line {
     cursor: pointer;
@@ -884,14 +1197,17 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     width: 70%;
     margin: 0rem 15%;
   }
-  main .border .content .content-top .skill-level {
+  main .border .content .content-top .skill-level-small {
+    display: none;
+  }
+  main .border .content .content-top .skill-level-big {
     display: flex;
     height: 2em;
     width: 28rem;
     margin: 1rem 0.5rem;
     background-color: rgba(128, 128, 158, 0.4);
   }
-  main .border .content .content-top .skill-level span {
+  main .border .content .content-top .skill-level-big span {
     background: #cc941b;
     margin: 0.5rem 0.3rem 0.3rem 0.5rem;
     border-radius: 50%;

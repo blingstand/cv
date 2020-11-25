@@ -12,14 +12,17 @@
 			<div id="js" class="skill">js</div>
 			<div id="python" class="skill">python</div>
 			<div id="django" class="skill">django</div>
-			<div id="deployment" class="skill">deployment</div>
+			<div id="deploiement" class="skill">deployment</div>
 		</div>
 		{% for skill in skills %}
 		<div id="desc-{{skill.id}}" class="border border-1">
 			<div  class="content">
 				<div class="content-top">
 					<h4 class="title-comp"> {{skill.title}} </h4>  
-					<div class="skill-level very-center-r show-{{skill.level}}"> Niveau : 
+					<div class="skill-level-big very-center-r show-{{skill.level}}"> Niveau : 
+						{{ten_spans|safe}}
+					</div>
+					<div class="skill-level-small very-center-r show-{{skill.level}}">  
 						{{ten_spans|safe}}
 					</div>
 					<hr class="middle-bar">

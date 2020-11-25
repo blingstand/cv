@@ -1,0 +1,19 @@
+//loops 
+@for $i from 1 through 4 {
+	.ulcol-#{$i}{
+		-webkit-column-count: $i;
+		-moz-column-count: $i;
+		column-count: $i; 
+	} 
+	.w-#{$i*25}{
+		width: $i*25 * 1%; 
+	}
+	.h-#{$i*25}{
+		min-height: $i*25 * 1%; 
+	}
+}
+@for $i from 1 through 10 {
+	.show-#{$i} span:nth-child(n+#{$i+1}){
+		background-color: white !important; 
+	}
+}

@@ -280,7 +280,7 @@ skills =[
 "to_do": "Apprendre à modifier le 'matériel' à disposition, ou encore à en créer de nouveau. ",
 }, 
 {
-"id" : "deployment", 
+"id" : "deploiement", 
 "title": "Déploiement", 
 "level": "4", 
 "done": "Je me considère encore débutant même si je connais suffisamment AWS pour déployer mes apps, de même pour Heroku. J'ai aussi compris comment utiliser Nginx, Gunicorn, Travis, Sentry, Git. Je débute avec Docker mais j'ai compris son intérêt.", 
