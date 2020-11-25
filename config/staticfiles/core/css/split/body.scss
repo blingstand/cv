@@ -1,10 +1,6 @@
 // contain the properties for whole body
 @mixin load_body(){
-	overflow: hidden; 
-	height:  100vh;
-	width:  100%;
-	display:  grid;
-	grid-template-columns: 15% 1fr; 
+
 	background-color: $secondary;
 	font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	.bg-white-trans{

@@ -41,8 +41,16 @@
 
 secondPsychoArrow = document.getElementById('cat9')
 secondPsychoArrow.style.display = 'none'
+
 //*** VARIABLES ***
 let hint = document.getElementById("hint")
+btnToggleMenu = document.getElementById('menu-toggle')
+navMenu = document.getElementsByClassName('nav-menu')[0]
+navMenuUlLi = Array.from(document.getElementsByClassName('nav-menu-ul-li'))
+navSuccess = document.getElementById('nav-success')
+allSuccessLi = document.getElementsByClassName("li-success")
+
+const elems = Array.from(document.getElementsByClassName('checkbox'))
 
 //*** CALCULS   ***
 const GetTriangle = function(elem){
@@ -59,7 +67,7 @@ const GetNumberVisibleChildren = function(paragraphe){
     return count
 }
 //*** FUNCTIONS ***
-    const DisplayHide = (input, localStorClass, hintId, exampleId) =>{
+const DisplayHide = (input, localStorClass, hintId, exampleId) =>{
         //value in local storage
         input.classList.add('bg-primary')
         if (localStorage.getItem(localStorClass)!== null){
@@ -74,21 +82,21 @@ const GetNumberVisibleChildren = function(paragraphe){
                 elemsToDisplay = Array.from(document.getElementsByClassName(input.id))
                 elemsToDisplay.forEach(
                     (elem) => {elem.classList.toggle("visible")}
-                )
+                    )
                 localStorage.removeItem(localStorClass)
                 localStorage.setItem(localStorClass, input.id);
                 return
             }
-                localStorage.removeItem(localStorClass)
-                console.log('--1--')
-                document.getElementById(hintId).classList.toggle("visible")
-                document.getElementById(exampleId).classList.toggle("visible")
+            localStorage.removeItem(localStorClass)
+            console.log('--1--')
+            document.getElementById(hintId).classList.toggle("visible")
+            document.getElementById(exampleId).classList.toggle("visible")
 
         }else{
             elemsToDisplay = Array.from(document.getElementsByClassName(input.id))
             elemsToDisplay.forEach(
                 (elem) => {elem.classList.toggle("visible")}
-            )
+                )
             localStorage.setItem(localStorClass, input.id); 
             console.log('--2--' + exampleId)
             document.getElementById(hintId).classList.toggle("visible")
@@ -96,17 +104,42 @@ const GetNumberVisibleChildren = function(paragraphe){
 
         }
     }
+const sleep = ms => {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+//for the nav bar
+if (window.innerWidth <= 768){
+    btnToggleMenu.onclick = () => {
+        console.log('click')
+        navMenu.classList.toggle('visible')
+    }
+    navMenuUlLi.forEach(entry => {
+        entry.onclick = () => {
+            console.log(entry)
+            if (entry.children[0].id == "success"){
+                forLoop()
+                visible = true
+            }
+            navMenu.classList.toggle('visible')
+            console.log(navMenu.className)
+            sleep(800).then(() => {
+                console.log('scroll')
+                scrollBy(0, -60)
+            })
+        }
+    })
+}
 
 //display description when user clicks on btn for exp and educ
-    const displayDescription = function(){
-        for (butt of document.getElementsByClassName('display-button')){
+const displayDescription = function(){
+    for (butt of document.getElementsByClassName('display-button')){
             // click on display_button to 
             butt.onclick = (elem) => { 
-                
+
                 if (elem.target.className.search("arrow") == -1){
                     hintId = "hint-exp"  
                     exampleId = "example-exp"
-                DisplayHide(elem.target, "exp-visible", hintId, exampleId)
+                    DisplayHide(elem.target, "exp-visible", hintId, exampleId)
                 }else{
                     hintId = "hint-educ" 
                     exampleId = "example-educ"
@@ -155,29 +188,29 @@ const GetNumberVisibleChildren = function(paragraphe){
     }
 // }
 //myskill part 
-    let paragrapheSkill = document.getElementById("paragraphe-skill")
-    if (paragrapheSkill){
-        heightParagrapheSkill = paragrapheSkill.offsetHeight
-        console.log('paragrapheSkill:', paragrapheSkill)
+let paragrapheSkill = document.getElementById("paragraphe-skill")
+if (paragrapheSkill){
+    heightParagrapheSkill = paragrapheSkill.offsetHeight
+    console.log('paragrapheSkill:', paragrapheSkill)
         let radius = heightParagrapheSkill / 3.2; // adjust to move out skills in and out 
         let fields = $('.skill'),
-          container = $('#container-skill'),
-          width = container.width(),
-          height = container.height();
+        container = $('#container-skill'),
+        width = container.width(),
+        height = container.height();
         let angle = 0,
-          step = (2 * Math.PI) / fields.length;
+        step = (2 * Math.PI) / fields.length;
         fields.each(function() {
           var x = Math.round(width / 2 + radius * Math.cos(angle) - $(this).width() / 2);
           var y = Math.round(height / 2 + radius * Math.sin(angle) - $(this).height() / 2);
           if (window.console) {
             console.log($(this).text(), x, y);
-          }
-          $(this).css({
+        }
+        $(this).css({
             left: x + 'px',
             top: y + 'px'
-          });
-          angle += step;
         });
+        angle += step;
+    });
     }
     
 
@@ -205,8 +238,8 @@ const GetNumberVisibleChildren = function(paragraphe){
                     console.log(localStorage.getItem("skill-visible"))
                     return
                 }
-                    localStorage.clear()
-                    containerSkill.classList.toggle('centered-skill-circle')
+                localStorage.clear()
+                containerSkill.classList.toggle('centered-skill-circle')
             }else{
                 description = document.getElementById("desc-" + e.target.id)
                 description.classList.toggle('visible')
@@ -217,41 +250,36 @@ const GetNumberVisibleChildren = function(paragraphe){
     }
 
 //success part
-    navSuccess = document.getElementById('nav-success')
-    allSuccessLi = document.getElementsByClassName("li-success")
-    const sleep = ms => {
-      return new Promise(resolve => setTimeout(resolve, ms))
-    }
-    const elems = Array.from(document.getElementsByClassName('checkbox'))
-    elems.reverse()
-    const checkTheBox = elem => {
-      return sleep(200).then(v => {
-        elem.parentElement.classList.toggle('opacity-0')
-        elem.checked = true
-        if (elem.id == 'ch1'){
-            return sleep(800).then(v =>{
-                elem.checked = false
-                elem.parentElement.classList.toggle('bg-primary')
-            })
-        }
-      })
-    }
 
-    const forLoop = async _ => {
-      for (let index = 0; index < elems.length; index++) {
-        const elem = elems[index]
-        const checkedBox = await checkTheBox(elem)
-      }
+elems.reverse()
+const checkTheBox = elem => {
+  return sleep(200).then(v => {
+    elem.parentElement.classList.toggle('opacity-0')
+    elem.checked = true
+    if (elem.id == 'ch1'){
+        return sleep(800).then(v =>{
+            elem.checked = false
+            elem.parentElement.classList.toggle('bg-primary')
+        })
     }
+})
+}
 
-    firstLi = allSuccessLi[0]
-    if (firstLi.firstElementChild.checked != false){
-        firstLi.firstElementChild.checked = false
-        }
+const forLoop = async _ => {
+  for (let index = 0; index < elems.length; index++) {
+    const elem = elems[index]
+    const checkedBox = await checkTheBox(elem)
+}
+}
 
-    let topOfWindow = $("#success").offset().top;
-    visible = false
-    $(".main-part").scroll(function () {
+firstLi = allSuccessLi[0]
+if (firstLi.firstElementChild.checked != false){
+    firstLi.firstElementChild.checked = false
+}
+
+let topOfWindow = $("#success").offset().top;
+visible = false
+$(".main-part").scroll(function () {
         // console.log($(".main-part"))
         var successPart = $("#success").offset().top;
         calc = parseFloat(100 - (successPart/topOfWindow) * 100).toFixed(0)
@@ -265,17 +293,17 @@ const GetNumberVisibleChildren = function(paragraphe){
             }
         }
     });
-    navSuccess.onclick = () => {
-        // document.getElementById('checkbox-container').classList.toggle('visible')
-        forLoop()
-        visible = true
+    // navSuccess.onclick = () => {
+    //     // document.getElementById('checkbox-container').classList.toggle('visible')
+    //     forLoop()
+    //     visible = true
+    // }
+    const main = function(){
+        localStorage.clear()
+        console.log(localStorage)
+        displayDescription()
     }
-const main = function(){
-    localStorage.clear()
-    console.log(localStorage)
-    displayDescription()
-}
-main()
+    main()
 
     // $(document).ready(function(){
     //     // hide all experiences
@@ -285,7 +313,7 @@ main()
     //     direction: ".dir", autres: ".aut"}; 
     //     $(".togg").click(function(){ 
     //         const txtButton = $(this).text()
-            
+
     //         $(dico[txtButton]).toggle(1000);
     //         if ($(this).css("background-color") =="rgb(202, 125, 96)"){
     //             $(this).css("background-color", "rgb(128, 51, 0)");

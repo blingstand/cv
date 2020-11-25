@@ -17,6 +17,9 @@
 		color: white;
 		text-align: center; 
 	}
+	#menu-toggle{
+		display: none ;	
+		}
 	.nav-container-portrait{
 		display: grid;
 		grid-template-columns: 12% 76% 12%; 
