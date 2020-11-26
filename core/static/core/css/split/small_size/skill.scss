@@ -1,0 +1,83 @@
+@mixin load_small_skill{
+	header h1{
+		font-size: 2.6rem;
+	}
+	#paragraphe-skill{
+		grid-row: 2/7; 
+		@extend .very-center; 
+		margin: 0 10vw 0 0;
+		padding-top: 3rem;
+		width: 90vw;
+		height: 45vh; 
+		&:hover{
+			display:grid;
+			grid-template-rows: 50% 50%;  
+			transform: translateY(-20vh);
+			height: 85vh;
+		}
+
+		@include load_small_skill_circle($size-container-skill:1,  $speed-rotate:25s); 
+
+		.border {
+			height: 39vh;
+			display: none; 
+			padding: 0;
+			margin: 0;
+
+			@include corner-borders(1rem, 1.5rem);
+
+			& .content {
+				display: block;
+				box-sizing: border-box;
+				position: relative;
+				padding: 5px;
+				z-index: 1;
+				font-size: 1rem; 
+				overflow-y: scroll;
+				height: 34vh;
+				.content-top{
+					grid-row: 1/2; 
+					.title-comp{
+						text-align: center; 
+						margin: 0.5rem;
+						font-size: 1.2rem; 
+					}
+					.middle-bar{
+						width: 70%;
+						margin: 0rem 15%;
+					}
+					.skill-level-big{
+						display:none;
+						.skill-level-small {
+							display: flex;
+							height: 2em;
+							margin: 1rem 0.5rem;
+							background-color: rgba(128, 128, 158, 0.4);
+						}
+						.skill-level-small span, {
+							background: #cc941b;
+							margin: 0.5rem 0.3rem 0.3rem 0.5rem;
+							border-radius: 50%; 
+							border: 1px solid black;
+							width: 16px;
+							height: 12px;
+							display: inline-block;
+						}
+					}
+				}
+				.content-bottom{
+					grid-row: 2/3 ;
+					margin: 0 ;
+					font-size: 1rem; 
+					padding: 1rem;
+					p{
+						margin-bottom: 0.5rem; 
+						& .underline{
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+	}
+}

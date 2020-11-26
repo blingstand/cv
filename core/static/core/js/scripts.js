@@ -42,6 +42,7 @@
 secondPsychoArrow = document.getElementById('cat9')
 secondPsychoArrow.style.display = 'none'
 
+
 //*** VARIABLES ***
 let hint = document.getElementById("hint")
 let btnToggleMenu = document.getElementById('menu-toggle')
@@ -51,8 +52,11 @@ let navSuccess = document.getElementById('nav-success')
 let allSuccessLi = document.getElementsByClassName("li-success")
 let sectionEduc = document.getElementById('formation')
 let limitSmallBiggScreen = 768
-
+containerSkill = document.getElementById("container-skill")
 const elems = Array.from(document.getElementsByClassName('checkbox'))
+paragrapheSuccess = document.getElementsByClassName("paragraphe-success")[0]
+
+
 
 //*** CALCULS   ***
 const GetTriangle = function(elem){
@@ -107,18 +111,72 @@ const DisplayHide = (input, localStorClass, hintId, exampleId) =>{
     const sleep = ms => {
       return new Promise(resolve => setTimeout(resolve, ms))
   }
+  const DisplayHideSkill = (e) =>{
+    if (localStorage.getItem("skill-visible")!== null){
+        console.log('Cet item est visible')
+        console.log(localStorage.getItem("skill-visible"))
+        idElemToHide = "desc-" + localStorage.getItem("skill-visible")
+        elemToHide = document.getElementById(idElemToHide)
+        elemToHide.classList.toggle('visible')
+        console.log('Cet item a été effacé')
+        if (localStorage.getItem("skill-visible") !== e.target.id){
+            description = document.getElementById("desc-" + e.target.id)
+            description.classList.toggle('visible')
+            localStorage.removeItem("skill-visible")
+            localStorage.setItem("skill-visible", e.target.id);
+            console.log('Cet item est visible')
+            console.log(localStorage.getItem("skill-visible"))
+            return
+        }
+        localStorage.removeItem("skill-visible")
+        containerSkill.classList.toggle('centered-skill-circle')
+    }else{
+        description = document.getElementById("desc-" + e.target.id)
+        description.classList.toggle('visible')
+        localStorage.setItem("skill-visible", e.target.id);
+        containerSkill.classList.toggle('centered-skill-circle')
+    }
+}
+elems.reverse()
+const checkTheBox = elem => {
+  return sleep(200).then(v => {
+    elem.parentElement.classList.toggle('opacity-0')
+    elem.checked = true
+    if (elem.id == 'ch1'){
+        return sleep(800).then(v =>{
+            elem.checked = false
+            elem.parentElement.classList.toggle('bg-primary')
+        })
+    }
+})
+}
+
+const forLoop = async _ => {
+    for (let index = 0; index < elems.length; index++) {
+        const elem = elems[index]
+        const checkedBox = await checkTheBox(elem)
+    }
+}
 //for the nav bar
 if (window.innerWidth <= limitSmallBiggScreen){
     btnToggleMenu.onclick = () => {
-        navMenu.classList.toggle('visible')
+        console.log("sleep")
+        sleep(50).then(() => {
+            console.log("then")
+            navMenu.classList.toggle('slide-in')
+        })
     }
     navMenuUlLi.forEach(entry => {
-        entry.onclick = () => {
-            if (entry.children[0].id == "success"){
-                forLoop()
-                visible = true
+        entry.onclick = (elem) => {
+            console.log(elem.target.parentElement.id)
+            if (elem.target.parentElement.id == "nav-success"){
+                paragrapheSuccess.classList.toggle('hover-effect')
+                sleep(800).then(() => {
+                    forLoop()
+                    visible = true
+                })
             }
-            navMenu.classList.toggle('visible')
+            navMenu.classList.toggle('slide-in')
             sleep(800).then(() => {
                 scrollBy(0, -60)
             })
@@ -206,13 +264,13 @@ const displayDescription = function(){
 let paragrapheSkill = document.getElementById("paragraphe-skill")
 if (paragrapheSkill){
     heightParagrapheSkill = paragrapheSkill.offsetHeight
-    console.log('paragrapheSkill:', paragrapheSkill)
+    // console.log('paragrapheSkill:', paragrapheSkill)
     let radius = heightParagrapheSkill / 3.2; // adjust to move out skills in and out 
     if (window.innerWidth <= limitSmallBiggScreen){
         console.log("small")
-        radius = heightParagrapheSkill / 5; // adjust to move out skills in and out 
+        radius = heightParagrapheSkill / 4; // adjust to move out skills in and out 
     }
-    console.log("radius : " + radius)
+    // console.log("radius : " + radius)
     let fields = $('.skill'),
     container = $('#container-skill'),
     width = container.width(),
@@ -223,7 +281,7 @@ if (paragrapheSkill){
         var x = Math.round(width / 2 + radius * Math.cos(angle) - $(this).width() / 2);
         var y = Math.round(height / 2 + radius * Math.sin(angle) - $(this).height() / 2);
         if (window.console) {
-            console.log($(this).text(), x, y);
+            // console.log($(this).text(), x, y);
         }
         $(this).css({
             left: x + 'px',
@@ -232,65 +290,30 @@ if (paragrapheSkill){
         angle += step;
     });
 }
-    
 
-    containerSkill = document.getElementById("container-skill")
 
-    for (element of document.getElementsByClassName("skill")){
-        element.onclick = function(e){
-            console.log("***")
-            console.log("id = " + e.target.id)
-            console.log("ls = ")
-            console.log(localStorage)
-            if (localStorage.getItem("skill-visible")!== null){
-                console.log('Cet item est visible')
-                console.log(localStorage.getItem("skill-visible"))
-                idElemToHide = "desc-" + localStorage.getItem("skill-visible")
-                elemToHide = document.getElementById(idElemToHide)
-                elemToHide.classList.toggle('visible')
-                console.log('Cet item a été effacé')
-                if (localStorage.getItem("skill-visible") !== e.target.id){
-                    description = document.getElementById("desc-" + e.target.id)
-                    description.classList.toggle('visible')
-                    localStorage.clear()
-                    localStorage.setItem("skill-visible", e.target.id);
-                    console.log('Cet item est visible')
-                    console.log(localStorage.getItem("skill-visible"))
-                    return
-                }
-                localStorage.clear()
-                containerSkill.classList.toggle('centered-skill-circle')
-            }else{
-                description = document.getElementById("desc-" + e.target.id)
-                description.classList.toggle('visible')
-                localStorage.setItem("skill-visible", e.target.id);
-                containerSkill.classList.toggle('centered-skill-circle')
-            }
+for (element of document.getElementsByClassName("skill")){
+    element.onclick = function(e){
+        DisplayHideSkill(e)
+    }
+}
+if (window.innerWidth <= limitSmallBiggScreen){
+
+    paragrapheSkill.onclick = (e) => {
+        console.log("je click sur "+ e.target.parentElement.tagName)
+        if (e.target.parentElement.tagName == 'ARTICLE' && localStorage.getItem("skill-visible") != null){
+            elemToRemove = document.getElementById("desc-" + localStorage.getItem("skill-visible"))
+            console.log('je dois enlever : ')
+            console.log(elemToRemove)
+            elemToRemove.classList.toggle('visible')
+            localStorage.removeItem("skill-visible")
         }
     }
+}
 
 //success part
 
-elems.reverse()
-const checkTheBox = elem => {
-  return sleep(200).then(v => {
-    elem.parentElement.classList.toggle('opacity-0')
-    elem.checked = true
-    if (elem.id == 'ch1'){
-        return sleep(800).then(v =>{
-            elem.checked = false
-            elem.parentElement.classList.toggle('bg-primary')
-        })
-    }
-})
-}
 
-const forLoop = async _ => {
-  for (let index = 0; index < elems.length; index++) {
-    const elem = elems[index]
-    const checkedBox = await checkTheBox(elem)
-}
-}
 
 firstLi = allSuccessLi[0]
 if (firstLi.firstElementChild.checked != false){
@@ -300,30 +323,45 @@ if (firstLi.firstElementChild.checked != false){
 let topOfWindow = $("#success").offset().top;
 visible = false
 $(".main-part").scroll(function () {
-        // console.log($(".main-part"))
-        var successPart = $("#success").offset().top;
-        calc = parseFloat(100 - (successPart/topOfWindow) * 100).toFixed(0)
-        // console.log( calc, '%')
-        if (calc >= 95){
-            console.log(visible)
-            if (visible == false){
-                console.log('trigger now !! ')
-                forLoop()
-                visible = true
-            }
+    // console.log($(".main-part"))
+    var successPart = $("#success").offset().top;
+    calc = parseFloat(100 - (successPart/topOfWindow) * 100).toFixed(0)
+    // console.log( calc, '%')
+    console.log(calc)
+    if (calc >= 95){
+        console.log(visible)
+        if (visible == false){
+            console.log('trigger now !! ')
+            forLoop()
+            visible = true
         }
-    });
-    // navSuccess.onclick = () => {
-    //     // document.getElementById('checkbox-container').classList.toggle('visible')
-    //     forLoop()
-    //     visible = true
-    // }
-    const main = function(){
-        localStorage.clear()
-        console.log(localStorage)
-        displayDescription()
     }
-    main()
+});
+if (window.innerWidth <= limitSmallBiggScreen){
+    let sectionSuccess = document.getElementById("success")
+    visible = false
+    sectionSuccess.onclick = () => {
+        // console.log($(".main-part"))
+        console.log(visible)
+        if (visible == false){
+            console.log('trigger now !! ')
+            forLoop()
+            visible = true
+        }
+        paragrapheSuccess.classList.toggle('hover-effect')
+    }
+}
+// navSuccess.onclick = () => {
+//     // document.getElementById('checkbox-container').classList.toggle('visible')
+//     forLoop()
+//     visible = true
+// }
+const main = function(){
+    localStorage.clear()
+    console.log(localStorage)
+    displayDescription()
+}
+main()
 
     // $(document).ready(function(){
     //     // hide all experiences

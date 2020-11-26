@@ -1,0 +1,56 @@
+@mixin load_small_educ{
+	grid-template-rows: repeat(8, 1fr);
+	article{
+		grid-row: 2/9;
+		#example-educ{
+			display: none;
+		}
+		.container-button-educ{
+			grid-row: 1; 
+			display: grid;
+			margin: 0 1rem;
+			text-align: center; 
+			grid-template-rows: repeat(2, 1fr); 
+			grid-template-columns: 0.5fr 0.5fr; 
+			div{
+				@extend .very-center;
+				width: 95%;
+				background-color: #fff;
+				border-radius: 10px 10px 0 0; 
+				height: 1.5rem;
+			}
+		}
+		.paragraphe{
+			grid-row: 2/7; 
+			margin: 1rem 0; 
+			padding-bottom: 1rem;  
+			height: 60vh;
+			&:hover{
+				height: 77vh;
+				transform: translateY(-17vh);
+			}
+
+			.title-line h3{
+				text-align: left; 
+				font-size:1.2rem;
+			}
+			.container-triangle{
+				display: none;
+			}
+			.first-line-right-part{
+				margin-top: 0.5rem;
+				.exp-period{
+					font-weight: bold;
+					color: $primary;
+				}
+			}
+			.description{
+				padding-bottom: 1rem; 
+				text-indent: 1rem; 
+				background-color: $third-color; 
+				margin: 3px 0;
+				padding: 5px;
+			}
+		}
+	}
+}

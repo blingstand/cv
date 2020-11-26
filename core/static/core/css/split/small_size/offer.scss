@@ -1,0 +1,36 @@
+@mixin load_small_offer{
+	.subheading{
+		display: none;
+	}
+	#paragraphe-offer{
+		grid-row: 2; 
+		height: 60vh; 
+		&:hover{
+			font-size:1.05rem; 
+			transform: translateY(-5vh);
+			height: 80vh; 
+		}
+		#ul-offer{
+			background-color: $third-color;
+			list-style: circle; 
+			padding: 0rem 5% 1rem 5%;
+			li{
+				margin-bottom: 0.2rem; 
+			}
+		}
+		.evoluting-skill-title{
+			margin: 1rem;
+		}
+		.evoluting-skill{
+			margin-bottom: 0; 
+			text-align: center; 
+			-webkit-column-count: 3;
+			-moz-column-count: 3;
+			column-count: 3; 
+			li{
+				list-style: none; 
+
+			} 
+		} 
+	}
+}

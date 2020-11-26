@@ -106,6 +106,7 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
 */
 ::-webkit-scrollbar {
   display: none;
+  scroll-padding-top: 0;
 }
 
 *, ::before, ::after {
@@ -142,28 +143,36 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
   }
 }
 @media only screen and (max-width: 768px) {
-  .imp {
-    font-weight: bold;
-  }
-
-  .visible {
-    display: block !important;
-  }
-
-  .hidden {
-    display: none;
-  }
-
-  .very-center, .paragraphe-success #checkbox-container, main #paragraphe-skill, main #formation article .container-button-educ div, main #experiences .container-exp-button p, body .social-icons {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  ::-webkit-scrollbar {
+    display: block;
+    scrollbar-width: 3vw;
+    scrollbar-height: 100vh;
   }
 
   body {
     scroll-behavior: smooth;
     scroll-y: auto;
     transition-duration: 500ms;
+  }
+  body .imp {
+    font-weight: bold;
+  }
+  body .visible {
+    display: block !important;
+  }
+  body .hidden {
+    display: none;
+  }
+  body .very-center, body #success .paragraphe-success #checkbox-container, #success .paragraphe-success body #checkbox-container, body #skill #paragraphe-skill, #skill body #paragraphe-skill, body #formation article .container-button-educ div, #formation article .container-button-educ body div, body #experiences .container-exp-button p, #experiences .container-exp-button body p, body .social-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  body .bg-primary {
+    background-color: #ea9f63 !important;
+  }
+  body .bg-primary .checkbox {
+    background-color: #fff;
   }
   body .social-icons {
     width: 100%;
@@ -180,14 +189,15 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
   }
 
   nav {
-    z-index: 2;
-    position: fixed;
-    top: 0;
-    background-color: #cc6a1b;
-    width: 100%;
-    height: 4rem;
-    margin-bottom: 2rem;
     text-align: center;
+    z-index: 2;
+    top: 0;
+    position: fixed;
+    height: 4rem;
+    width: 100vw;
+    background-color: #cc6a1b;
+    display: flex;
+    flex-wrap: wrap;
   }
   nav .nav-maj {
     display: none;
@@ -198,31 +208,35 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
   nav #menu-social-icons-grp {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    width: 75vw;
+    z-index: 2;
     margin-top: 0.5rem;
+    padding-left: 7vw;
   }
   nav #menu-toggle {
-    margin-left: 85%;
-    margin-top: 5%;
+    display: block;
     position: sticky;
     position: -webkit-sticky;
-    text-align: right;
-    display: block;
-    margin-right: 2rem;
+    text-align: center;
     font-size: 2rem;
+    padding-top: 1rem;
     z-index: 3;
     height: 4rem;
+    width: 25vw;
+  }
+  nav .slide-in {
+    transform: translateY(86vw);
   }
   nav .nav-menu {
     height: 18rem;
     position: relative;
-    top: 0;
-    z-index: 2;
-    display: none;
+    top: -87vw;
+    z-index: 1;
     margin: 0 auto;
     background-color: #cc6a1b;
     width: 100%;
-    transition: 1s;
-    transform: translateY(-6rem);
+    transition: transform 1s;
   }
   nav .nav-menu .nav-menu-stars {
     display: none;
@@ -241,184 +255,142 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
 
   main {
     display: grid;
-    grid-template-rows: repeat(7, 38rem);
-    overflow-y: scroll;
-    background-color: #066084;
-    padding: 1%;
-    margin: 0 default;
-    display: grid;
-    grid-template-rows: repeat(7, 100vh);
+    grid-template-rows: repeat(7, 93vh);
     margin-top: 4rem;
     width: 100%;
   }
-  main .container {
-    overflow-y: scroll;
-    display: grid;
-    grid-template-rows: repeat(4, 1fr);
-  }
-  main .container header {
-    grid-row: 1/2;
-    flex-direction: column;
-    transform: scale(1);
-    transform: translate(0);
-    transition: all 800ms;
-  }
-  main .container header:hover {
-    transform: scale(1.05) translate(5rem);
-  }
-  main .container header h1, main .container header .subheading {
-    color: #eef6f5;
-  }
-  main .container header h1 a, main .container header .subheading a {
-    color: #cc6a1b;
-    font-weight: bold;
-  }
-  main .container header h1 {
-    color: #d9e6f2;
-    font-size: 3rem;
-    margin: 2% 3% 0 3%;
-    text-align: left;
-  }
-  main .container header .additional_info {
-    font-size: 1rem;
-  }
-  main .container header .subheading {
-    font-size: 1rem;
-    margin: 0 3% 3% 3%;
-    font-weight: none;
-    text-decoration: italic;
-  }
-  main .container article {
-    grid-row: 2/5;
-    display: grid;
-    grid-template-rows: repeat(6, 1fr);
-    flex-direction: column;
-  }
-  main .container .paragraphe {
-    grid-row: 2/6;
-    margin: auto;
-    width: 80%;
-    height: 100%;
-    color: #001133;
-    font-size: 1rem;
-    background-color: #eef6f5;
-    padding: 2rem 1rem;
-    text-align: justify;
-    border-radius: 5rem 0;
-    overflow-y: scroll;
-  }
-  main .container .paragraphe .text {
-    text-indent: 1rem;
-    margin-bottom: 1rem;
-    width: 100%;
-  }
   main section.container {
+    display: grid;
+    grid-template-rows: 15vh 1fr;
+    scroll-padding-top: 0;
     overflow: hidden;
     height: 100vh;
+    width: 100vw;
   }
   main section.container header {
-    margin-top: 1rem;
-    text-align: left;
+    height: 12vh;
     display: flex;
+    justify-content: center;
+    z-index: 1;
   }
   main section.container header:hover {
     transform: inherit;
   }
+  main section.container .subheading {
+    display: none;
+  }
   main section.container .paragraphe {
     grid-row: 1/6;
-    margin: 0 10px;
-    width: auto;
-    transition: transform 2s, height 4s;
+    margin: 0 10vw 0 1vw;
+    width: 90vw;
+    transition: transform 1s, height 2s, font-size 2s;
   }
   main section.container .paragraphe:hover {
+    font-size: 1.2rem;
+    transform: translateY(-10vh);
+    height: 75vh;
+  }
+
+  #about .subheading {
+    display: block !important;
+  }
+  #about #paragraphe-resume {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    transform: translateY(-17vh);
-    height: 75vh !important;
   }
-  main .additional_info {
+  #about .additional_info {
     display: none;
   }
-  main #paragraphe-resume .social-icons {
+  #about #paragraphe-resume .social-icons {
     display: none;
   }
-  main #offer .subheading {
+
+  #offer .subheading {
     display: none;
   }
-  main #offer #paragraphe-offer #ul-offer {
+  #offer #paragraphe-offer {
+    grid-row: 2;
+    height: 60vh;
+  }
+  #offer #paragraphe-offer:hover {
+    font-size: 1.05rem;
+    transform: translateY(-5vh);
+    height: 80vh;
+  }
+  #offer #paragraphe-offer #ul-offer {
     background-color: #d9e6f2;
     list-style: circle;
     padding: 0rem 5% 1rem 5%;
   }
-  main #offer #paragraphe-offer #ul-offer li {
+  #offer #paragraphe-offer #ul-offer li {
     margin-bottom: 0.2rem;
   }
-  main #offer #paragraphe-offer .evoluting-skill-title {
+  #offer #paragraphe-offer .evoluting-skill-title {
     margin: 1rem;
   }
-  main #offer #paragraphe-offer .evoluting-skill {
+  #offer #paragraphe-offer .evoluting-skill {
     margin-bottom: 0;
     text-align: center;
     -webkit-column-count: 3;
     -moz-column-count: 3;
     column-count: 3;
   }
-  main #offer #paragraphe-offer .evoluting-skill li {
+  #offer #paragraphe-offer .evoluting-skill li {
     list-style: none;
   }
-  main #experiences {
+
+  #experiences {
     grid-template-rows: repeat(8, 1fr);
   }
-  main #experiences header {
+  #experiences header {
     grid-row: 1;
     margin-top: 0;
     margin-bottom: 1rem;
   }
-  main #experiences header .subheading {
+  #experiences header .subheading {
     display: none;
   }
-  main #experiences article {
-    grid-row: 2/9;
+  #experiences article {
+    grid-row: 2;
   }
-  main #experiences article #example-exp {
+  #experiences article #example-exp {
     display: none;
   }
-  main #experiences article .paragraphe {
+  #experiences article .paragraphe {
     grid-row: 2/7;
-    height: 85%;
+    height: 60vh;
   }
-  main #experiences article .paragraphe:hover {
-    scroll-padding-top: 0;
-    transform: translateY(0);
-    display: block;
+  #experiences article .paragraphe:hover {
+    height: 70vh;
+    transform: translateY(-14vh);
   }
-  main #experiences article .paragraphe .exp-content {
+  #experiences article .paragraphe .exp-content {
     margin: 1rem 0;
     padding-bottom: 1rem;
   }
-  main #experiences article .paragraphe .exp-content .title h3 {
+  #experiences article .paragraphe .exp-content .title h3 {
     text-align: left;
     font-size: 1.2rem;
   }
-  main #experiences article .paragraphe .exp-content .container-triangle {
+  #experiences article .paragraphe .exp-content .container-triangle {
     display: none;
   }
-  main #experiences article .paragraphe .exp-content .first-line-right-part {
+  #experiences article .paragraphe .exp-content .first-line-right-part {
     margin-top: 0.5rem;
   }
-  main #experiences article .paragraphe .exp-content .first-line-right-part .exp-period {
+  #experiences article .paragraphe .exp-content .first-line-right-part .exp-period {
     font-weight: bold;
     color: #cc6a1b;
   }
-  main #experiences article .paragraphe .exp-content .description {
+  #experiences article .paragraphe .exp-content .description {
     padding-bottom: 1rem;
     text-indent: 1rem;
     background-color: #d9e6f2;
     margin: 3px 0;
     padding: 5px;
   }
-  main #experiences .container-exp-button {
+  #experiences .container-exp-button {
     grid-row: 1;
     display: grid;
     margin: 0 1rem;
@@ -426,25 +398,26 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: 0.5fr 0.5fr;
   }
-  main #experiences .container-exp-button p .display-button {
+  #experiences .container-exp-button p .display-button {
     width: 80%;
     border-radius: 10px 10px 0 0;
     height: 1.5rem;
   }
-  main #experiences .container-exp-button p:last-child {
+  #experiences .container-exp-button p:last-child {
     grid-column: 1/3;
     padding: 0 25%;
   }
-  main #formation {
+
+  #formation {
     grid-template-rows: repeat(8, 1fr);
   }
-  main #formation article {
+  #formation article {
     grid-row: 2/9;
   }
-  main #formation article #example-educ {
+  #formation article #example-educ {
     display: none;
   }
-  main #formation article .container-button-educ {
+  #formation article .container-button-educ {
     grid-row: 1;
     display: grid;
     margin: 0 1rem;
@@ -452,54 +425,61 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: 0.5fr 0.5fr;
   }
-  main #formation article .container-button-educ div {
+  #formation article .container-button-educ div {
     width: 95%;
     background-color: #fff;
     border-radius: 10px 10px 0 0;
     height: 1.5rem;
   }
-  main #formation article .paragraphe {
+  #formation article .paragraphe {
     grid-row: 2/7;
-    height: 85%;
     margin: 1rem 0;
     padding-bottom: 1rem;
+    height: 60vh;
   }
-  main #formation article .paragraphe:hover {
-    scroll-padding-top: 0;
-    transform: translateY(0);
-    display: block;
+  #formation article .paragraphe:hover {
+    height: 77vh;
+    transform: translateY(-17vh);
   }
-  main #formation article .paragraphe .title h3 {
+  #formation article .paragraphe .title-line h3 {
     text-align: left;
     font-size: 1.2rem;
   }
-  main #formation article .paragraphe .container-triangle {
+  #formation article .paragraphe .container-triangle {
     display: none;
   }
-  main #formation article .paragraphe .first-line-right-part {
+  #formation article .paragraphe .first-line-right-part {
     margin-top: 0.5rem;
   }
-  main #formation article .paragraphe .first-line-right-part .exp-period {
+  #formation article .paragraphe .first-line-right-part .exp-period {
     font-weight: bold;
     color: #cc6a1b;
   }
-  main #formation article .paragraphe .description {
+  #formation article .paragraphe .description {
     padding-bottom: 1rem;
     text-indent: 1rem;
     background-color: #d9e6f2;
     margin: 3px 0;
     padding: 5px;
   }
-  main #paragraphe-skill {
-    margin: 0 auto;
+
+  #skill header h1 {
+    font-size: 2.6rem;
+  }
+  #skill #paragraphe-skill {
+    grid-row: 2/7;
+    margin: 0 10vw 0 0;
     padding-top: 3rem;
-    width: 90%;
-    height: 90%;
+    width: 90vw;
+    height: 45vh;
   }
-  main #paragraphe-skill:hover {
-    height: 83vh !important;
+  #skill #paragraphe-skill:hover {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    transform: translateY(-20vh);
+    height: 85vh;
   }
-  main #paragraphe-skill #container-skill {
+  #skill #paragraphe-skill #container-skill {
     grid-column: 1;
     width: 18rem;
     height: 18rem;
@@ -509,10 +489,10 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     border-radius: 50%;
     animation: spin 10s linear infinite;
   }
-  main #paragraphe-skill .centered-skill-circle {
+  #skill #paragraphe-skill .centered-skill-circle {
     grid-column: 1/3 !important;
   }
-  main #paragraphe-skill .skill {
+  #skill #paragraphe-skill .skill {
     text-transform: uppercase;
     width: 6rem;
     height: 6rem;
@@ -526,7 +506,7 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     background: #cc941b;
     animation: spin 10s linear reverse infinite;
   }
-  main #paragraphe-skill .skill:hover {
+  #skill #paragraphe-skill .skill:hover {
     cursor: pointer;
     background-color: #ffb733;
   }
@@ -535,16 +515,16 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
       transform: rotate(1turn);
     }
   }
-  main #paragraphe-skill #container-skill {
+  #skill #paragraphe-skill #container-skill {
     width: 10rem;
     height: 10rem;
   }
-  main #paragraphe-skill .skill {
+  #skill #paragraphe-skill .skill {
     width: 5rem;
     height: 5rem;
   }
-  main #paragraphe-skill .border {
-    height: 22rem;
+  #skill #paragraphe-skill .border {
+    height: 39vh;
     display: none;
     padding: 0;
     margin: 0;
@@ -552,7 +532,7 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     border: 1rem solid grey;
     background-color: white;
   }
-  main #paragraphe-skill .border::before {
+  #skill #paragraphe-skill .border::before {
     content: "";
     z-index: 0;
     position: absolute;
@@ -562,7 +542,7 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     right: 1.5rem;
     background-color: white;
   }
-  main #paragraphe-skill .border::after {
+  #skill #paragraphe-skill .border::after {
     content: "";
     z-index: 0;
     position: absolute;
@@ -572,7 +552,7 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     right: -1rem;
     background-color: white;
   }
-  main #paragraphe-skill .border .content {
+  #skill #paragraphe-skill .border .content {
     display: block;
     box-sizing: border-box;
     position: relative;
@@ -580,30 +560,30 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     z-index: 1;
     font-size: 1rem;
     overflow-y: scroll;
-    height: 35vh;
+    height: 34vh;
   }
-  main #paragraphe-skill .border .content .content-top {
+  #skill #paragraphe-skill .border .content .content-top {
     grid-row: 1/2;
   }
-  main #paragraphe-skill .border .content .content-top .title-comp {
+  #skill #paragraphe-skill .border .content .content-top .title-comp {
     text-align: center;
     margin: 0.5rem;
     font-size: 1.2rem;
   }
-  main #paragraphe-skill .border .content .content-top .middle-bar {
+  #skill #paragraphe-skill .border .content .content-top .middle-bar {
     width: 70%;
     margin: 0rem 15%;
   }
-  main #paragraphe-skill .border .content .content-top .skill-level-big {
+  #skill #paragraphe-skill .border .content .content-top .skill-level-big {
     display: none;
   }
-  main #paragraphe-skill .border .content .content-top .skill-level-small {
+  #skill #paragraphe-skill .border .content .content-top .skill-level-big .skill-level-small {
     display: flex;
     height: 2em;
     margin: 1rem 0.5rem;
     background-color: rgba(128, 128, 158, 0.4);
   }
-  main #paragraphe-skill .border .content .content-top .skill-level-small span {
+  #skill #paragraphe-skill .border .content .content-top .skill-level-big .skill-level-small span {
     background: #cc941b;
     margin: 0.5rem 0.3rem 0.3rem 0.5rem;
     border-radius: 50%;
@@ -612,77 +592,103 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     height: 12px;
     display: inline-block;
   }
-  main #paragraphe-skill .border .content-bottom {
+  #skill #paragraphe-skill .border .content .content-bottom {
     grid-row: 2/3;
     margin: 0;
     font-size: 1rem;
     padding: 1rem;
   }
-  main #paragraphe-skill .border .content-bottom p {
+  #skill #paragraphe-skill .border .content .content-bottom p {
     margin-bottom: 0.5rem;
   }
-  main #paragraphe-skill .border .content-bottom .underline {
+  #skill #paragraphe-skill .border .content .content-bottom p .underline {
     text-decoration: underline;
   }
-}
-#success {
-  display: grid;
-  grid-template-columns: 100vw;
-  height: 100%;
-  margin-bottom: 1rem;
-}
-#success header {
-  grid-row: 1;
-}
-#success .paragraphe {
-  grid-row: 2/5;
-}
 
-.paragraphe-success {
-  margin: 3rem auto;
-}
-.paragraphe-success #checkbox-container {
-  flex-direction: column;
-  height: 100%;
-  font-size: 1.2rem;
-  opacity: 1;
-  transition-duration: 2s;
-}
-.paragraphe-success #checkbox-container li {
-  background-color: #d9e6f2;
-  width: 100%;
-  list-style-type: none;
-  margin: 0;
-}
-.paragraphe-success .checkbox {
-  position: relative;
-  width: 1rem;
-  height: 1rem;
-  cursor: pointer;
-  appearance: none;
-  outline: 0;
-}
-.paragraphe-success .checkbox:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 1;
-  width: 1rem;
-  height: 1rem;
-  border: 2px solid black;
-  transition: all 0.3s ease-in-out;
-}
-.paragraphe-success .checkbox:checked:before {
-  height: 50%;
-  transform: rotate(-45deg);
-  border-top-style: none;
-  border-right-style: none;
-}
-.paragraphe-success .checkbox .checkbox--deep-orange:checked:before {
-  border-color: #ff5722;
-}
+  #hobbies .bg-velo {
+    grid-row: 2/4;
+    height: 60vh;
+  }
+  #hobbies .bg-velo #paragraphe-hobbies {
+    font-size: 1.3rem;
+  }
+  #hobbies .bg-velo #paragraphe-hobbies:hover {
+    height: 80vh;
+    transform: translateY(-5vh);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
 
+  #success {
+    display: grid;
+    grid-template-columns: 100vw;
+    height: 90vh;
+    margin-bottom: 1rem;
+  }
+  #success header {
+    grid-row: 1;
+  }
+  #success header h1 {
+    font-size: 2.6rem;
+  }
+  #success .hover-effect, #success .paragraphe:hover {
+    height: 75vh !important;
+    transform: translateY(-10vh);
+  }
+  #success .paragraphe {
+    grid-row: 2/5;
+    height: 50vh;
+  }
+  #success .paragraphe-success {
+    margin: 3rem auto;
+  }
+  #success .paragraphe-success #checkbox-container {
+    flex-direction: column;
+    height: 100%;
+    font-size: 1.2rem;
+    opacity: 1;
+    transition-duration: 2s;
+  }
+  #success .paragraphe-success #checkbox-container li {
+    background-color: #d9e6f2;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+  }
+  #success .paragraphe-success #checkbox-container .opacity-0 {
+    opacity: 0;
+  }
+  #success .paragraphe-success .checkbox {
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    appearance: none;
+    outline: 0;
+  }
+  #success .paragraphe-success .checkbox:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid black;
+    transition: all 0.3s ease-in-out;
+  }
+  #success .paragraphe-success .checkbox:checked:before {
+    height: 50%;
+    transform: rotate(-45deg);
+    border-top-style: none;
+    border-right-style: none;
+  }
+  #success .paragraphe-success .checkbox .checkbox--deep-orange:checked:before {
+    border-color: #ff5722;
+  }
+}
 @media only screen and (min-width: 769px) {
   body {
     background-color: #066084;
@@ -1273,6 +1279,11 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
   main .bg-velo #paragraphe-hobbies:hover {
     border: 0.2rem transparent solid !important;
     opacity: 0.9;
+  }
+  main .bg-velo #paragraphe-hobbies:hover {
+    height: initial;
+    transform: translateY(0);
+    display: block;
   }
   main #success {
     height: 100%;

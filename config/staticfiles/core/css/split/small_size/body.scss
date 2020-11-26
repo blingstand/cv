@@ -1,0 +1,39 @@
+@mixin load_small_body{
+	scroll-behavior: smooth;
+	scroll-y: auto;
+	transition-duration: 500ms;
+	.imp{
+		font-weight: bold;
+	}
+	.visible{
+		display: block !important;
+	}
+	.hidden{
+		display: none ;
+	}
+	.very-center{
+		display: flex; 
+		justify-content: space-around;
+		align-items: center; 
+	}
+	.bg-primary{
+		background-color: lighten($primary, 20) !important;
+		.checkbox{
+			background-color: #fff;
+		}
+	}
+	.social-icons{
+		@extend .very-center; 
+		width: 100%;
+		.logo{
+			width: 3rem;
+		}
+	}
+	.hint{
+		text-align: center; 
+		display:none;
+	}
+	.example-exp, .example-educ{
+		display:none;
+	}
+}

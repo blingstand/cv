@@ -1,0 +1,17 @@
+@mixin load_small_hobbies{
+	.bg-velo{
+		grid-row: 2/4;
+		height: 60vh;
+		#paragraphe-hobbies{
+			font-size:1.3rem; 
+			&:hover{
+				height: 80vh;
+				transform: translateY(-5vh);
+				display:flex; 
+				flex-direction: column; 
+				justify-content: space-around;
+				align-items: center; 
+			}
+		}
+	}
+}

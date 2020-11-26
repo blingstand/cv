@@ -1,0 +1,18 @@
+@mixin load_small_about{
+	.subheading{
+		display: block !important;
+	}
+	#paragraphe-resume{
+		display:flex;
+		flex-direction: column; 
+		justify-content: space-around;
+	}
+	.additional_info{
+		display: none; 
+	}
+	#paragraphe-resume{
+		.social-icons{
+			display:none;
+		}
+	}
+}
