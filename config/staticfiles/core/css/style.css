@@ -255,8 +255,75 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
 
   main {
     display: grid;
+    grid-template-rows: repeat(7, 38rem);
+    overflow-y: scroll;
+    background-color: #066084;
+    padding: 1%;
+    margin: 0 default;
+    display: grid;
     grid-template-rows: repeat(7, 93vh);
     margin-top: 4rem;
+    width: 100%;
+  }
+  main .container {
+    overflow-y: scroll;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+  }
+  main .container header {
+    grid-row: 1/2;
+    flex-direction: column;
+    transform: scale(1);
+    transform: translate(0);
+    transition: all 800ms;
+  }
+  main .container header:hover {
+    transform: scale(1.05) translate(5rem);
+  }
+  main .container header h1, main .container header .subheading {
+    color: #eef6f5;
+  }
+  main .container header h1 a, main .container header .subheading a {
+    color: #cc6a1b;
+    font-weight: bold;
+  }
+  main .container header h1 {
+    color: #d9e6f2;
+    font-size: 3rem;
+    margin: 2% 3% 0 3%;
+    text-align: left;
+  }
+  main .container header .additional_info {
+    font-size: 1rem;
+  }
+  main .container header .subheading {
+    font-size: 1rem;
+    margin: 0 3% 3% 3%;
+    font-weight: none;
+    text-decoration: italic;
+  }
+  main .container article {
+    grid-row: 2/5;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    flex-direction: column;
+  }
+  main .container .paragraphe {
+    grid-row: 2/6;
+    margin: auto;
+    width: 80%;
+    height: 100%;
+    color: #001133;
+    font-size: 1rem;
+    background-color: #eef6f5;
+    padding: 2rem 1rem;
+    text-align: justify;
+    border-radius: 5rem 0;
+    overflow-y: scroll;
+  }
+  main .container .paragraphe .text {
+    text-indent: 1rem;
+    margin-bottom: 1rem;
     width: 100%;
   }
   main section.container {
@@ -298,6 +365,13 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    height: 60vh;
+    margin-top: 5vh;
+  }
+  #about #paragraphe-resume:hover {
+    font-size: 1.2rem;
+    transform: translateY(-7vh);
+    height: 75vh;
   }
   #about .additional_info {
     display: none;
@@ -362,8 +436,8 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     height: 60vh;
   }
   #experiences article .paragraphe:hover {
-    height: 70vh;
-    transform: translateY(-14vh);
+    height: 75vh;
+    transform: translateY(-12vh);
   }
   #experiences article .paragraphe .exp-content {
     margin: 1rem 0;

@@ -83,6 +83,7 @@ $media_query: (
 		@include load_small_nav(); 
 	}
 	main{
+		@include load_main();
 		@include load_small_main(); 
 	}
 	//about
