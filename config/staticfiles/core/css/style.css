@@ -143,12 +143,6 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
   }
 }
 @media only screen and (max-width: 768px) {
-  ::-webkit-scrollbar {
-    display: block;
-    scrollbar-width: 3vw;
-    scrollbar-height: 100vh;
-  }
-
   body {
     scroll-behavior: smooth;
     scroll-y: auto;
@@ -182,6 +176,7 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
   }
   body .hint {
     text-align: center;
+    font-style: italic;
     display: none;
   }
   body .example-exp, body .example-educ {
@@ -226,12 +221,11 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     width: 25vw;
   }
   nav .slide-in {
-    transform: translateY(86vw);
+    transform: translateY(94vw);
   }
   nav .nav-menu {
-    height: 18rem;
     position: relative;
-    top: -87vw;
+    top: -95vw;
     z-index: 1;
     margin: 0 auto;
     background-color: #cc6a1b;
@@ -251,6 +245,40 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
   }
   nav .nav-menu .nav-menu-ul .nav-menu-ul-li:last-child {
     margin-bottom: 1rem;
+  }
+  nav .nav-menu .tips {
+    width: 100vw;
+    height: 4rem;
+    display: grid;
+    grid-template-columns: 70vw 20vw;
+    margin-bottom: 1rem;
+  }
+  nav .nav-menu .tips .addition {
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: 15% 20% 0% 60% 5%;
+  }
+  nav .nav-menu .tips .addition .small-div {
+    margin: auto 0;
+    height: 2rem;
+    grid-column: 2;
+    border-radius: 1.55rem 0;
+    background-color: #fff;
+  }
+  nav .nav-menu .tips .addition .calcul {
+    margin: auto 0;
+    grid-column: 4;
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+  }
+  nav .nav-menu .tips .big-div {
+    grid-column: 2;
+    height: 4rem;
+    grid-column: 2;
+    border-radius: 2rem 0;
+    background-color: #fff;
+    width: 7rem;
   }
 
   main {
@@ -342,9 +370,6 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
   }
   main section.container header:hover {
     transform: inherit;
-  }
-  main section.container .subheading {
-    display: none;
   }
   main section.container .paragraphe {
     grid-row: 1/6;
@@ -485,6 +510,9 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
   #formation {
     grid-template-rows: repeat(8, 1fr);
   }
+  #formation header .subheading {
+    display: none;
+  }
   #formation article {
     grid-row: 2/9;
   }
@@ -537,8 +565,11 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     padding: 5px;
   }
 
-  #skill header h1 {
+  #skill header header h1 {
     font-size: 2.6rem;
+  }
+  #skill header .subheading {
+    display: none;
   }
   #skill #paragraphe-skill {
     grid-row: 2/7;
@@ -679,6 +710,9 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     text-decoration: underline;
   }
 
+  #hobbies header .subheading {
+    display: none;
+  }
   #hobbies .bg-velo {
     grid-row: 2/4;
     height: 60vh;
@@ -706,6 +740,9 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
   }
   #success header h1 {
     font-size: 2.6rem;
+  }
+  #success header .subheading {
+    display: none;
   }
   #success .hover-effect, #success .paragraphe:hover {
     height: 75vh !important;
@@ -912,6 +949,9 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
   }
   nav .nav-menu .nav-menu-ul a:hover {
     font-weight: bold;
+  }
+  nav .nav-menu .tips {
+    display: none;
   }
 
   main {

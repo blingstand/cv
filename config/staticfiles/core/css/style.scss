@@ -70,11 +70,11 @@ $media_query: (
 // }
 
 //small screen
-@media #{$tablet-and-lower}{
+@media #{$tablet-and-lower}{ 
 	::-webkit-scrollbar {
-		display: block;
-		scrollbar-width: 3vw;
-		scrollbar-height: 100vh;
+		// display: block;
+		// scrollbar-width: 3vw;
+		// scrollbar-height: 100vh; 
 	}
 	body{
 		@include load_small_body();

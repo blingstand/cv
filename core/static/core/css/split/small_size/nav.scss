@@ -33,12 +33,11 @@
 		height : $height-nav-bar; width: 25vw;
 	}
 	.slide-in{
-		transform: translateY(86vw);
+		transform: translateY(94vw);
 	}
 	.nav-menu{ 
-		height : $height-nav-bar * 4 + 2rem;
 		position: relative;
-		top: -87vw;
+		top: -95vw;
 		z-index:1; 
 		margin: 0 auto; 
 		background-color: $primary;
@@ -60,5 +59,41 @@
 				}
 			}
 		}
+		.tips{
+			width: 100vw;
+			height: $height-nav-bar;
+			display: grid;
+			grid-template-columns: 70vw 20vw; 
+			margin-bottom: 1rem; 
+			.addition{
+				grid-column: 1; 
+				display: grid;
+				grid-template-columns: 15% 20% 0% 60% 5%; 
+				.small-div{
+					margin: auto 0;
+					height: 2rem;
+					grid-column: 2; 
+					border-radius: 1.55rem 0; 
+					background-color: #fff;
+				}
+				.calcul{
+					margin: auto 0;
+					grid-column: 4; 
+					font-size: 2rem; 
+					color: white;
+					font-weight: bold; 
+				}
+
+			}
+			.big-div{
+				grid-column: 2;
+				height: 4rem;
+				grid-column: 2;
+				border-radius: 2rem 0;
+				background-color: #fff;
+				width: 7rem;
+			}
+		}
+
 	}
 }

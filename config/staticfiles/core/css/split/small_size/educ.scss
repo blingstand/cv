@@ -1,5 +1,10 @@
 @mixin load_small_educ{
 	grid-template-rows: repeat(8, 1fr);
+	header{
+		.subheading{
+			display: none;
+		}
+	}
 	article{
 		grid-row: 2/9;
 		#example-educ{

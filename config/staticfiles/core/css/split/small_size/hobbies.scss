@@ -1,4 +1,9 @@
 @mixin load_small_hobbies{
+	header{
+		.subheading{
+			display: none;
+		}
+	}
 	.bg-velo{
 		grid-row: 2/4;
 		height: 60vh;

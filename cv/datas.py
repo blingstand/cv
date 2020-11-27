@@ -1,14 +1,14 @@
 all_btn = [ 'PROGRAMATION', 'PROFESSORAT', 'DIRECTION', 'ANIMATION', 'AUTRES']
 all_success = [
-"Travailler en tant que développeur,", 
-"Finir ma formation de développeur Python/Django,", 
-"Vivre un an dans une base militaire,",
-"Réaliser un Poitiers - Kaunas(Lituanie) à vélo,", 
-"Réussir mes oraux de licence devant un jury russophone,",
-"Devenir directeur de centre de vacances,",
-"Apprendre à danser,", 
-"Obtenir mon <a href='https://www.nageur-sauveteur.com/BNSSA'>BNSSA,</a>",
-"Traverser la France à moto,"
+"Travailler en tant que développeur.", 
+"Finir ma formation de développeur Python/Django.", 
+"Vivre un an dans une base militaire.",
+"Réaliser un Poitiers - Kaunas (Lituanie) à vélo.", 
+"Réussir mes oraux de licence devant un jury russophone.",
+"Devenir directeur de centre de vacances.",
+"Apprendre à danser.", 
+"Obtenir mon <a href='https://www.nageur-sauveteur.com/BNSSA'>BNSSA</a>.",
+"Traverser la France à moto."
 ]
 exp_prof = [
 {
@@ -17,7 +17,7 @@ exp_prof = [
 'url': 'https://www.proman-emploi.fr/agences/bergerac' ,
 'employer': 'Proman Bergerac', 
 'period': 'en cours depuis octobre 2019' ,
-'description': '''Toutes sortes de missions ne demandant pas de qualifications, que je tiens à faire pour gagner ma vie sans avoir recours aux prestations sociales. Je les ai cumulées avec les heures de formation en développement d'application. <span class="imp"> Cela me permet de gader un contact avec la réalité et de me rappeler d'où je viens.</span>''' },
+'description': '''Toutes sortes de missions ne demandant pas de qualifications, que je tiens à faire pour gagner ma vie sans avoir recours aux prestations sociales. Je les ai cumulées avec les heures de formation en développement d'application. <span class="imp"> Cela me permet de garder un contact avec la réalité et de me rappeler où j'ai commencé ma vie professionnelle.</span>''' },
 {
 'category': 'cat0',
 'job': "Développeur d'App Python Django (FR24)",
@@ -39,7 +39,7 @@ exp_prof = [
 'url': 'https://www.afgrenoble.org/fr/' ,
 'employer': 'Alliance Française de Grenoble', 
 'period': 'mars 2018 - juin 2018' ,
-'description': '''Stage de conception pédagogique. J'ai mis en place un parcours pédagogique pour un niveau faux débutant intermédiaire (A2). Il m'a été demandé de former les agents à l'utilisation d'une plateforme (<a href='https://apolearn.com/'>Apolearn</a>), de créer un parcours avec eux et d'utiliser mes compétences en programmation pour faire des "compléments d'apprentissage" sous forme de petits jeux.<span class="imp"> J'en ai gardé une très bonne impression et l'envie de continuer à m'investir dans le rôle de technicien.</span>'''
+'description': '''Stage de conception pédagogique. J'ai mis en place un parcours pédagogique pour un niveau faux débutant-intermédiaire (A2 en français). Il m'a été demandé de former les agents à l'utilisation d'une plateforme (<a href='https://apolearn.com/'>Apolearn</a>), de créer un parcours avec eux et d'utiliser mes compétences en programmation pour faire des "compléments d'apprentissage" sous forme de petits jeux.<span class="imp"> J'en ai gardé une très bonne impression et l'envie de continuer à m'investir dans le rôle de technicien.</span>'''
 },
 {
 'category': 'cat4',
@@ -47,7 +47,7 @@ exp_prof = [
 'url': 'https://www.crous-grenoble.fr/restaurant/ru-diderot/' ,
 'employer': 'Restauration Universitaire CROUS', 
 'period': 'février 2018 - juin 2018' ,
-'description': '''Emploi en qualité d'agent de service de restauration. Service des plats, gestion de l'approvisionnement, plonge, caisse, préparation des boissons J'en garde une bonne capacité d'accueil et de bienveillance envers les clients ainsi qu'une grande polyvalence.'''
+'description': '''Emploi en qualité d'agent de service de restauration. Service des plats, gestion de l'approvisionnement, plonge, caisse, préparation des boissons. J'en garde une bonne capacité d'accueil et de bienveillance envers les clients ainsi qu'une grande polyvalence.'''
 }, 
 {
 'category': 'cat2' ,
@@ -80,7 +80,7 @@ exp_prof = [
 'url': 'https://avl.fr/' ,
 'employer': 'Animation Vacances Loisir' ,
 'period': 'Juillet 2016' ,
-'description': '''Premier poste de direction, je me suis occupé de tout sur le centre, à l'exception de la livraison des denrées alimentaires, ce qui signifie : anticipation du séjour, montage du centre (hébergement marabout), recrutement de l'équipe, élaboration du projet pédagogique, location véhicule, prise de contact avec les services locaux (médecin, pharmacie, mairie ...), gestion du matériel pédagogique,	gestion du budget alloué, gestion de l'équipe, du contact avec les parents, ... 4 semaines sans sommeil, de loin l'expérience professionnelle la plus difficile mais aussi la plus formatrice.<span class="imp"> J'ai développé au cours de cette expérience une capacité à avoir une vision globale pour prendre des décisions et à organiser mon temps sans me laisser surprendre.</span>'''
+'description': '''Premier poste de direction, je me suis occupé de tout sur le centre, à l'exception de la livraison des denrées alimentaires, ce qui signifie : anticipation du séjour, montage du centre (hébergement marabout), recrutement de l'équipe, élaboration du projet pédagogique, location de véhicules, prise de contact avec les services locaux (médecin, pharmacie, mairie ...), gestion du matériel pédagogique,	gestion du budget alloué, gestion de l'équipe, du contact avec les parents ... Il s'agit de mon expérience professionnelle la plus difficile mais aussi la plus formatrice.<span class="imp"> J'ai développé au cours de cette expérience une capacité à avoir une vision globale pour prendre des décisions et à organiser mon temps sans me laisser surprendre.</span>'''
 },
 {
 'category': 'cat4' ,
@@ -96,7 +96,7 @@ exp_prof = [
 'url': 'href="https://www.telligo.fr/a-fond-les-manettes"' ,
 'employer': 'Telligo' ,
 'period': 'Août 2015' ,
-'description': '''Poste d'animateur en séjour spécialisé sport mécanique où j'ai assisté le prestataire sport mécanique pendant ses séances. Mon rôle a aussi été de préparer les enfants en amont en les aidant à anticiper la difficulté mais aussi à gérer leurs peurs. Cela demandait de prendre en compte leur rythme. De plus étant l'animateur le plus expérimenté j'ai dû prendre sous mon aile un stagiaire.<span class="imp"> J'ai amélioré ma compréhension du rythme de chacun et j'ai découvert le mentorat pendant un mois.</span>'''
+'description': '''Poste d'animateur en séjour spécialisé sport mécanique. J'ai assisté le prestataire pendant ses séances. Mon rôle a aussi été de préparer les enfants en amont en les aidant à anticiper la difficulté mais aussi à gérer leurs peurs. Cela demandait de prendre en compte leur rythme. De plus j'ai guidé un stagiaire dans sa formation sur le terrain.<span class="imp"> J'ai amélioré ma compréhension du rythme de chacun et j'ai découvert le mentorat pendant un mois.</span>'''
 },
 {
 'category': 'cat3' ,
@@ -112,7 +112,7 @@ exp_prof = [
 'url': 'https://wwoof.de/' ,
 'employer': 'Wwoofing Allemagne' ,
 'period': 'Juin 2015' ,
-'description': '''J'ai travaillé dans une ferme agricole biologique en Allemagne près de Hanovre. J'ai fait du maraîchage et des travaux de construction. J'ai passé un mois avec des personnes très différentes de celui que j'étais, je m'y suis adapté et cela m'a amené à prendre conscience de mon mode de vie.<span class="imp"> J'en ai gardé l'habitude de me lever de bonne heure et de travailler tous les jours .</span>'''
+'description': '''J'ai travaillé dans une ferme agricole biologique en Allemagne près de Hanovre. J'ai fait du maraîchage et des travaux de construction. J'ai passé un mois avec des personnes très différentes culturellement, je m'y suis adapté et cela m'a amené à reconsidérer mon mode de vie.<span class="imp"> J'en ai gardé l'habitude de me lever de bonne heure et de travailler tous les jours.</span>'''
 },
 {
 'category': 'cat3' ,
@@ -120,7 +120,7 @@ exp_prof = [
 'url': 'www.montreuil.fr/education-jeunesse/sejours-de-vacances' ,
 'employer': 'Ville de Montreuil' ,
 'period': 'Février 2015' ,
-'description': '''Poste d'animateur spécialisé ski pour jeunes issus de milieu défavorisé. Le directeur avait pris le parti de poser un cadre souple, pour une équipe qui avait besoin d'être accompagnée.<span class="imp"> J'ai pu expérimenter qu'une situation où le cadre est fixé avant la prise en compte de l'équipe crée rapidement des difficultés.</span>'''
+'description': '''Poste d'animateur spécialisé ski pour jeunes issus de milieu défavorisé. Le directeur avait pris le parti de poser un cadre souple, pour une équipe qui avait besoin d'être encadrée.<span class="imp"> J'ai pu voir que même une situation avec un cadre souple, demande de la flexibilité quand il fait face à l'expérience du terrain.</span>'''
 },
 {
 'category': 'cat4' ,
@@ -128,7 +128,7 @@ exp_prof = [
 'url': 'https://usine.crous-clermont.fr/restauration/' ,
 'employer': 'Restaurant Universitaire Crous',
 'period': 'septembre 2014 - décembre 2014',
-'description': '''Poste de plongeur au sein des cuisine du Restaurant Universitaire de Clermont-Ferrand. <span class="imp"> J'ai pu vivre une situation d'auto gestion ratée en l'absence de chef.</span>'''
+'description': '''Poste de plongeur au sein des cuisine du Restaurant Universitaire de Clermont-Ferrand. <span class="imp"> J'ai pu vivre une situation avec un encadrement peu présent et reconsidérer la nécessité du rôle de chef.</span>'''
 },
 {
 'category': 'cat3' ,
@@ -136,7 +136,7 @@ exp_prof = [
 'url': 'http://www.laligue33.org/' ,
 'employer': "La Ligue de l'Enseignement" ,
 'period': 'Juillet 2014' ,
-'description': '''Poste d'animateur spécialisé qui m'a demandé de préparer des cours pratiques mais aussi d'arriver à intégrer les adultes accompagnateurs. Colo assez spéciale avec beaucoup plus de problèmes de vie en collectivité que précédemment.<span class="imp"> J'en retiens l'importance d'une direction cohérente et unie lorsque la situation s'envenime.</span>'''
+'description': '''Poste d'animateur spécialisé qui m'a demandé de préparer des cours pratiques mais aussi d'arriver à intégrer les adultes accompagnateurs. Centre de vacances assez spéciale avec plus de problèmes de vie en collectivité que ce que j'avais connu par le passé.<span class="imp"> J'en retiens l'importance de la cohérence entre les membres de la direction lorsque les difficultés se présentent.</span>'''
 },
 {
 'category': 'cat4' ,
@@ -176,7 +176,7 @@ exp_prof = [
 'url': 'https://www.carrefour.fr/magasin/market-bordeaux-ferryv' ,
 'employer': 'Carrefour Market' ,
 'period': 'mai 2011 - août 2013' ,
-'description': '''Poste d'employé chez carrefour en contrat étudiant pendant mes années de licence de psychologie.<span class="imp"> J'y ai appris à m'auto-discipliner et à me lever chaque matin le week-end de bonne heure.</span>'''
+'description': '''Poste d'employé chez Carrefour en contrat étudiant pendant mes années de licence de psychologie.<span class="imp"> J'y ai appris à m'auto-discipliner et à me lever chaque matin le week-end de bonne heure.</span>'''
 },
 {
 'category': 'cat3' ,
