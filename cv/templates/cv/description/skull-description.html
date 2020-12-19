@@ -1,0 +1,52 @@
+{% extends 'core/core.html' %}
+{% load static %} 
+
+{% block content %}
+<section class="container-description" id="description">
+	<header>
+		<h1 class="">Présentation du projet 13 </h1>
+		<p class="subheading "><a href="http://15.237.4.227/p13/"></a>Découvrir mon site.</p>
+	</header>
+
+	<article class="description-project">
+		<div class="description-context">
+			<div class="oc-context">
+				<div class="description-text">
+					<h1>Gérez un projet numérique</h1>
+					<p>Menez un projet numérique de la forme qui vous semblera la plus adaptée (réalisez une application web ; codez un site ou une application mobile…) pour répondre à un besoin autour de vous. Il peut s’agir d’un site de réservation pour l’association de théâtre de votre ville, d’une application pour localiser et référencer les objets trouvés pendant un festival, etc. Prenez le temps de choisir un sujet qui vous touche et pour lequel vous ressentez un véritable besoin.</p>
+					<p>Vous pouvez également contribuer à un projet Open Source qui vous tient à cœur. La communauté Python est très attachée à l’esprit d’entraide, de partage et de liberté. Contribuer à un projet vous donnera de la visibilité et vous permettra de leur renvoyer l’ascenseur !</p>
+				</div>
+			</div>
+			<div class="spa-context">
+				<div class="description-text">
+					<h1>Besoin de la SPA</h1>
+					<p>La SPA reçoit l'aide de beaucoup de bénévoles en temps normale et n'a que partiellement réalisé sa transition numérique. Avec le covid et les confinements en cours et peut-être à venir l'automatisation de certaines tâche paraît nécessaire. </p>
+					<ul>
+						<li>Limiter le temps au téléphone ou à écrire des mails,</li>
+						<li>Se débarasser d'un classeur de suivi,</li>
+						<li>Faciliter la recherche d'informations,</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="solution" id="paragraphe-dp13">
+			<div class="container-logos">
+				<div class="logo1">
+					<img class="logo-desc" src="{% static 'core/assets/img/mail.png'%}" alt="">					
+				</div>
+				<div class="logo2">
+					<img class="logo-desc" src="{% static 'core/assets/img/db.png'%}" alt="">
+				</div>
+				<div class="logo3">
+					<img class="logo-desc" src="{% static 'core/assets/img/loupe.png'%}" alt="">
+				</div>
+			</div>
+			<div class="detail">
+				<p>L'application envoie des mails automatiquement en fonction des paramètres donnés par l'administrateur</p>
+				<p>Une base de données organise : fiches adoption, mail, suivi des contacts avec les propriétaires.</p>
+				<p>Une barre de recherche permet de trouver rapidement une fiche adoption ou propriétaire.</p>
+			</div>
+		</div>
+	</article>
+</section>
+{% endblock%}

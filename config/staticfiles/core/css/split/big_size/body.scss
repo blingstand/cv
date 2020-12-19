@@ -58,6 +58,10 @@
 		opacity: 1 !important;   
 		transition-delay: 200ms;
 	}
+	.content-centered{
+		display: grid;
+		place-items: center; 
+	}
 	@for $i from 1 through 5 {
 		.mt-#{$i} {
 			margin-top: $i * 1rem; 

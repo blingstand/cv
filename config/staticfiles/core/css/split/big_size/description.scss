@@ -1,0 +1,95 @@
+
+@mixin load-description{
+	.x-context{
+		height: 40vh;
+		width: 35vw;
+	}
+	.description-project{
+		display: grid;
+		grid-template-rows: 40vh 1fr;
+		grid-gap: 1rem; 
+
+		.description-context{
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			.oc-context{
+				@extend .content-centered; 
+				width: 100%;
+				grid-column: 1;
+				grid-gap: 15px;
+				.description-text{
+					font-size: 0.8rem; 
+					padding: 0.5rem;
+					@extend .x-context;
+					background-color: white; 
+					h1{
+						margin-bottom: 1rem; 
+					}
+					p{
+						margin-bottom: 1rem; 
+					}
+				}
+				.description-small-text{
+					@extend .description-text; 
+					font-size: 0.7rem; 
+					ul{
+						padding-left: 1rem; 
+					}
+
+				}				
+			}
+			.spa-context{
+				grid-column: 2;
+				@extend .content-centered;
+				.description-text{
+					padding: 0.5rem;
+					@extend .x-context;
+					background-color: white; 
+					h1{
+						margin-bottom: 1rem; 
+					}
+					p{
+						margin-bottom: 1rem; 
+					}
+					ul{
+						padding-left: 1rem; 
+					}
+
+				} 
+			}
+		}
+	}
+	.solution{
+		grid-row: 2;
+		display: grid;
+		grid-template-rows: 40% 1fr; 
+
+		.container-logos{
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			place-items: center; 
+			.logo1, .logo2, .logo3{
+				background-color: white;
+				border-radius: 2rem 2rem 0 0; 
+				@extend .content-centered; 
+				width: 50%;
+			}
+			.logo-desc{
+				height: 12vh;
+				width: 7vw;
+			}
+		}
+		.detail{
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			place-items: center; 
+			p{
+				@extend .content-centered; 
+				background-color: #fff;
+				height: 18vh;
+				width: 20vw;
+				padding: 0.3rem; 
+			}
+		}
+	}
+} 

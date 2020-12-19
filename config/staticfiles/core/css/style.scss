@@ -11,6 +11,8 @@
 @import "split/big_size/body.scss";
 @import "split/big_size/main.scss";
 @import "split/big_size/nav.scss";
+@import "split/big_size/header.scss";
+@import "split/big_size/description.scss";
 
 @import "split/small_size/body.scss";
 @import "split/small_size/nav.scss";
@@ -130,6 +132,7 @@ $media_query: (
 
 	main{
 		@include load_main();
+		@include load-description(); 
 		// my-resume
 		#paragraphe-resume{
 			grid-row: 1/7;

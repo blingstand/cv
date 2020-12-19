@@ -1,0 +1,32 @@
+@mixin load-header(){
+	grid-row: 1/2;  
+	flex-direction: column; 
+	transform: scale(1);
+	transform: translate(0);
+	transition: all 800ms;
+	&:hover{
+		transform: scale(1.05) translate(5rem);
+	}
+	h1 , .subheading{
+		color: $fourth-color;  
+		a{
+			color: $primary;
+			font-weight: bold;
+		}
+	}
+	h1{
+		color: $third_color;
+		font-size: 3rem; 
+		margin: 2% 3% 0 3%;
+		text-align: left; 
+	}
+	.additional_info{
+		font-size: 1rem;
+	}
+	.subheading{
+		font-size: 1rem; 
+		margin: 0 3% 3% 3%;
+		font-weight: none; 
+		text-decoration: italic; 
+	}
+}

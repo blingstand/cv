@@ -25,44 +25,46 @@
 				</p>
 			</div>
 
-			<div class="description "> <ul class="projects">
-				<span class="">Voici mes projets (retouvables sur github)</span>
-
-				<li class=""><a href="#">projet13 - site pour la SPA</a></li>
-				<li class="">projet12 - Construction d'un outil de veille</li>
-				<li class="">projet11 - Amélioration + Tests de mon App du projet 8 </li>
-				<li class="">projet10 - Déploiement de mon App du projet 8</li>
-				<li class="">projet9 - Documentation d'une application fictive</li>
-				<li class=""><a href="#">projet8 - Site web avec Django</a></li>
-				<li class=""><a href="#">projet7 - Chat avec Flask</a></li>
-				<li class="">projet6 - Rédaction dossier spécifications techniques</li>
-				<li class="">projet5 - Importer des données d'une api dans une base de données <br>relationnelle</li>
-				<li class="">projet4 - Rédaction dossier spécification fonctionnelle, diagramme UML</li>
-				<li class="">projet3 - Mini jeu en pygame (POO)</li>
-				<li class="">projet2 - Découverte github</li>
-				<li class="">projet1 - Projet de bienvenue</li></ul></div>
+			<div class="description "> 
+				<ul class="projects">
+					<span class="">Voici mes projets (retouvables sur github)</span>
+					<li class=""><a href="{% url 'cv:dp-13' %}" title="Accéder à la description">projet13 - site pour la SPA</a></li>
+					<li class="">projet12 - Construction d'un outil de veille</li>
+					<li class="">projet11 - Amélioration + Tests de mon App du projet 8 </li>
+					<li class="">projet10 - Déploiement de mon App du projet 8</li>
+					<li class="">projet9 - Documentation d'une application fictive</li>
+					<li class=""><a href="{% url 'cv:dp-8' %}" title="Accéder à la description">projet8 - Site web avec Django</a></li>
+					<li class="">projet7 - Chat avec Flask (note : il n'est plus hébergé en ligne)</li>
+					<li class="">projet6 - Rédaction dossier spécifications techniques</li>
+					<li class="">projet5 - Importer des données d'une api dans une base de données <br>relationnelle</li>
+					<li class="">projet4 - Rédaction dossier spécification fonctionnelle, diagramme UML</li>
+					<li class="">projet3 - Mini jeu en pygame (POO)</li>
+					<li class="">projet2 - Découverte github</li>
+					<li class="">projet1 - Projet de bienvenue</li>
+				</ul>
 			</div>
-
-
-
-			{% for educ in education%}
-			<div class="hidden {{educ.category}}">
-				<div class="first-line mt-1">
-					<div class="first-line-left-part">
-						<div class="title-line">
-							<h3 class="exp">{{educ.degree}}</h3>
-						</div>
-						<p class="subheading"><a href="{{educ.url}}" target="_blank"> {{educ.text_url}}</a></p>
-						<h4 class="degree">{{educ.level}}</h4>
-					</div>
-					<p class="first-line-right-part">
-						<span class="exp-period">{{educ.period}}</span>
-					</p>
-				</div>
-
-				<div class="description ">{{educ.description|safe}}</div>
-			</div>
-			{%endfor%}
 		</div>
 
-	</article>
+
+
+		{% for educ in education%}
+		<div class="hidden {{educ.category}}">
+			<div class="first-line mt-1">
+				<div class="first-line-left-part">
+					<div class="title-line">
+						<h3 class="exp">{{educ.degree}}</h3>
+					</div>
+					<p class="subheading"><a href="{{educ.url}}" target="_blank"> {{educ.text_url}}</a></p>
+					<h4 class="degree">{{educ.level}}</h4>
+				</div>
+				<p class="first-line-right-part">
+					<span class="exp-period">{{educ.period}}</span>
+				</p>
+			</div>
+
+			<div class="description">{{educ.description|safe}}</div>
+		</div>
+		{%endfor%}
+	</div>
+
+</article>

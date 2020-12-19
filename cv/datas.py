@@ -199,14 +199,13 @@ educ= [
 'level': "Diplôme niveau 6 (Bac+3/4)",
 'description': """ <ul class="projects">
 	<span class="">Voici mes projets (retouvables sur github)</span>
-
-	<li class=""><a href="#">projet13 - site pour la SPA</a></li>
+	<li class=""><a id='cv:dp-13' href="" title="Accéder à la description">projet13 - site pour la SPA</a></li>
 	<li class="">projet12 - Construction d'un outil de veille</li>
 	<li class="">projet11 - Amélioration + Tests de mon App du projet 8 </li>
 	<li class="">projet10 - Déploiement de mon App du projet 8</li>
 	<li class="">projet9 - Documentation d'une application fictive</li>
-	<li class=""><a href="#">projet8 - Site web avec Django</a></li>
-	<li class=""><a href="#">projet7 - Chat avec Flask</a></li>
+	<li class=""><a id='cv:dp-8' href="" title="Accéder à la description">projet8 - Site web avec Django</a></li>
+	<li class="">projet7 - Chat avec Flask (note : il n'est plus hébergé en ligne)</li>
 	<li class="">projet6 - Rédaction dossier spécifications techniques</li>
 	<li class="">projet5 - Importer des données d'une api dans une base de données <br>relationnelle</li>
 	<li class="">projet4 - Rédaction dossier spécification fonctionnelle, diagramme UML</li>

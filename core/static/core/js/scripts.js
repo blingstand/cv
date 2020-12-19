@@ -56,6 +56,8 @@ containerSkill = document.getElementById("container-skill")
 const elems = Array.from(document.getElementsByClassName('checkbox'))
 paragrapheSuccess = document.getElementsByClassName("paragraphe-success")[0]
 
+const cat5Btn = document.getElementById('cat5')
+
 
 
 //*** CALCULS   ***
@@ -183,7 +185,14 @@ if (window.innerWidth <= limitSmallBiggScreen){
         }
     })
 }
-
+const AddUrlToA = (target) => {
+    if(target.id == "cat5"){
+        urlDP13 = document.getElementById("cv:dp-13")
+        urlDP8 = document.getElementById("cv:dp-8")
+        urlDP8.href = "/description-p8"
+        urlDP13.href = "/description-p13"
+    }
+}
 //display description when user clicks on btn for exp and educ
 const displayDescription = function(){
     for (butt of document.getElementsByClassName('display-button')){
@@ -198,6 +207,7 @@ const displayDescription = function(){
                 hintId = "hint-educ" 
                 exampleId = "example-educ"
                 DisplayHide(elem.target, "educ-visible", hintId, exampleId)
+                AddUrlToA(elem.target)
             }  
         }
     }
@@ -311,9 +321,8 @@ if (window.innerWidth <= limitSmallBiggScreen){
     }
 }
 
+
 //success part
-
-
 
 firstLi = allSuccessLi[0]
 if (firstLi.firstElementChild.checked != false){

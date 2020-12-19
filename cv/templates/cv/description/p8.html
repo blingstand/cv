@@ -1,0 +1,65 @@
+{% extends 'core/core.html' %}
+{% load static %} 
+
+{% block content %}
+<section class="container-description" id="description">
+	<header>
+		<h1 class="">Présentation du projet 8 </h1>
+		<p class="subheading "><a href="http://15.237.4.227/p8-10/">Découvrir mon site.</a></p>
+	</header>
+
+	<article class="description-project">
+		<div class="description-context">
+			<div class="oc-context">
+				<div class="description-small-text">
+					<h1>Gérez un projet numérique</h1>
+					<p>La startup Pur Beurre, avec laquelle vous avez déjà travaillé, souhaite développer une plateforme web à destination de ses clients. Ce site permettra à quiconque de trouver un substitut sain à un aliment considéré comme "Trop gras, trop sucré, trop salé". Ce projet suppose que vous ayez déjà acquis les compétences suivantes</p>
+					<ul>	
+						<li>
+							Créer des scripts pour le web en utilisant Python.
+						</li>
+						<li>
+							Travailler en respectant une méthodologie de projet agile.
+						</li>
+						<li>
+							Mettre en œuvre des tests unitaires.
+						</li>
+						<li>
+							Versionner son projet et travailler en collaboration.
+						</li>
+						<li>
+							Créer un site statique.
+						</li>
+						<li>
+						Coder efficacement en utilisant les outils adéquats.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="spa-context">
+				<div class="description-text">
+					<h1>Le projet que j'ai créé</h1>
+					<p>Le client désire remplacer ses produits du quotidien par d'autres plus éthiques ou meilleur pour la santé. Le site permet de se créer un compte et de lister ses produits favoris. Le client se connecte sur l'application et entre le nom d'un produit dans la recherche rapide. L'application consulte sa base de données (créée à partir de l'API OpenFoodFact) et retourne ensuite une liste de produits très proches. Le client peut les ajouter à sa liste de favoris ou accéder à plus d'infos e allant directement sur le site.</p>
+				</div>
+			</div>
+		</div>
+		<div class="solution" id="paragraphe-dp13">
+			<div class="container-logos">
+				<div class="logo1">
+					<img class="logo-desc" src="{% static 'core/assets/img/account_logo.png'%}" alt="">					
+				</div>
+				<div class="logo2">
+					<img class="logo-desc" src="{% static 'core/assets/img/db.png'%}" alt="">
+				</div>
+				<div class="logo3">
+					<img class="logo-desc" src="{% static 'core/assets/img/fav.png'%}" alt="">
+				</div>
+			</div>
+			<div class="detail">
+				<p>L'application dispose d'un système d'authentification et de restriction d'accès</p>
+				<p>Une base de données modifiable par l'utilisateur grâce à une interface.</p>
+				<p>Un système de gestion de favoris.</p>
+			</div>
+		</div>
+		</article>
+	</section>
+	{% endblock%}

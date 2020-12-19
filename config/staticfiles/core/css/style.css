@@ -354,6 +354,42 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     margin-bottom: 1rem;
     width: 100%;
   }
+  main .container-description {
+    display: grid;
+    grid-template-rows: 20vh 1fr;
+  }
+  main .container-description header {
+    grid-row: 1/2;
+    flex-direction: column;
+    transform: scale(1);
+    transform: translate(0);
+    transition: all 800ms;
+  }
+  main .container-description header:hover {
+    transform: scale(1.05) translate(5rem);
+  }
+  main .container-description header h1, main .container-description header .subheading {
+    color: #eef6f5;
+  }
+  main .container-description header h1 a, main .container-description header .subheading a {
+    color: #cc6a1b;
+    font-weight: bold;
+  }
+  main .container-description header h1 {
+    color: #d9e6f2;
+    font-size: 3rem;
+    margin: 2% 3% 0 3%;
+    text-align: left;
+  }
+  main .container-description header .additional_info {
+    font-size: 1rem;
+  }
+  main .container-description header .subheading {
+    font-size: 1rem;
+    margin: 0 3% 3% 3%;
+    font-weight: none;
+    text-decoration: italic;
+  }
   main section.container {
     display: grid;
     grid-template-rows: 15vh 1fr;
@@ -865,6 +901,10 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     opacity: 1 !important;
     transition-delay: 200ms;
   }
+  body .content-centered, body main .solution .detail p, main .solution .detail body p, body main .solution .container-logos .logo1, main .solution .container-logos body .logo1, body main .solution .container-logos .logo2, main .solution .container-logos body .logo2, body main .solution .container-logos .logo3, main .solution .container-logos body .logo3, body main .description-project .description-context .spa-context, main .description-project .description-context body .spa-context, body main .description-project .description-context .oc-context, main .description-project .description-context body .oc-context {
+    display: grid;
+    place-items: center;
+  }
   body .mt-1 {
     margin-top: 1rem;
   }
@@ -1022,6 +1062,123 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
     text-indent: 1rem;
     margin-bottom: 1rem;
     width: 100%;
+  }
+  main .container-description {
+    display: grid;
+    grid-template-rows: 20vh 1fr;
+  }
+  main .container-description header {
+    grid-row: 1/2;
+    flex-direction: column;
+    transform: scale(1);
+    transform: translate(0);
+    transition: all 800ms;
+  }
+  main .container-description header:hover {
+    transform: scale(1.05) translate(5rem);
+  }
+  main .container-description header h1, main .container-description header .subheading {
+    color: #eef6f5;
+  }
+  main .container-description header h1 a, main .container-description header .subheading a {
+    color: #cc6a1b;
+    font-weight: bold;
+  }
+  main .container-description header h1 {
+    color: #d9e6f2;
+    font-size: 3rem;
+    margin: 2% 3% 0 3%;
+    text-align: left;
+  }
+  main .container-description header .additional_info {
+    font-size: 1rem;
+  }
+  main .container-description header .subheading {
+    font-size: 1rem;
+    margin: 0 3% 3% 3%;
+    font-weight: none;
+    text-decoration: italic;
+  }
+  main .x-context, main .description-project .description-context .spa-context .description-text, main .description-project .description-context .oc-context .description-text, main .description-project .description-context .oc-context .description-small-text {
+    height: 40vh;
+    width: 35vw;
+  }
+  main .description-project {
+    display: grid;
+    grid-template-rows: 40vh 1fr;
+    grid-gap: 1rem;
+  }
+  main .description-project .description-context {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  main .description-project .description-context .oc-context {
+    width: 100%;
+    grid-column: 1;
+    grid-gap: 15px;
+  }
+  main .description-project .description-context .oc-context .description-text, main .description-project .description-context .oc-context .description-small-text {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    background-color: white;
+  }
+  main .description-project .description-context .oc-context .description-text h1, main .description-project .description-context .oc-context .description-small-text h1 {
+    margin-bottom: 1rem;
+  }
+  main .description-project .description-context .oc-context .description-text p, main .description-project .description-context .oc-context .description-small-text p {
+    margin-bottom: 1rem;
+  }
+  main .description-project .description-context .oc-context .description-small-text {
+    font-size: 0.7rem;
+  }
+  main .description-project .description-context .oc-context .description-small-text ul {
+    padding-left: 1rem;
+  }
+  main .description-project .description-context .spa-context {
+    grid-column: 2;
+  }
+  main .description-project .description-context .spa-context .description-text, main .description-project .description-context .spa-context .oc-context .description-small-text, main .description-project .description-context .oc-context .spa-context .description-small-text {
+    padding: 0.5rem;
+    background-color: white;
+  }
+  main .description-project .description-context .spa-context .description-text h1, main .description-project .description-context .spa-context .oc-context .description-small-text h1, main .description-project .description-context .oc-context .spa-context .description-small-text h1 {
+    margin-bottom: 1rem;
+  }
+  main .description-project .description-context .spa-context .description-text p, main .description-project .description-context .spa-context .oc-context .description-small-text p, main .description-project .description-context .oc-context .spa-context .description-small-text p {
+    margin-bottom: 1rem;
+  }
+  main .description-project .description-context .spa-context .description-text ul, main .description-project .description-context .spa-context .oc-context .description-small-text ul, main .description-project .description-context .oc-context .spa-context .description-small-text ul {
+    padding-left: 1rem;
+  }
+  main .solution {
+    grid-row: 2;
+    display: grid;
+    grid-template-rows: 40% 1fr;
+  }
+  main .solution .container-logos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+  }
+  main .solution .container-logos .logo1, main .solution .container-logos .logo2, main .solution .container-logos .logo3 {
+    background-color: white;
+    border-radius: 2rem 2rem 0 0;
+    width: 50%;
+  }
+  main .solution .container-logos .logo-desc {
+    height: 12vh;
+    width: 7vw;
+  }
+  main .solution .detail {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+  }
+  main .solution .detail p {
+    background-color: #fff;
+    height: 18vh;
+    width: 20vw;
+    padding: 0.3rem;
   }
   main #paragraphe-resume {
     grid-row: 1/7;
