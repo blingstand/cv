@@ -13,7 +13,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -123,12 +126,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Static files settings
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_DIRS = (os.path.join(
+    BASE_DIR, "core", "static"),)
+STATIC_ROOT = os.path.join(
+    BASE_DIR, "deployment", "collected_static")
+MEDIA_ROOT = os.path.join(
+    BASE_DIR, "deployment", "media")
 
-# Extra places for collectstatic to find static files.
-# STATICFILES_DIRS = (
-#     os.path.join(PROJECT_ROOT, 'static'),
-#     )
-
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+print("staticfile >", STATICFILES_DIRS)
+print("collected >", STATIC_ROOT)
+print("media >", MEDIA_ROOT)
