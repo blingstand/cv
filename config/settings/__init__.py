@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
  
 ]
 
@@ -132,6 +132,8 @@ STATIC_ROOT = os.path.join(
     BASE_DIR, "deployment", "collected_static")
 MEDIA_ROOT = os.path.join(
     BASE_DIR, "deployment", "media")
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 print("staticfile >", STATICFILES_DIRS)
 print("collected >", STATIC_ROOT)

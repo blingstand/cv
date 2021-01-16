@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* page of scss style for nav */
-/* easy to modify now */
+/* easy to modify */
 .ulcol-1 {
   -webkit-column-count: 1;
   -moz-column-count: 1;
@@ -90,7 +90,8 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  scrollbar-width: none; }
 
 @media only screen and (max-width: 500px) {
   html {
@@ -888,15 +889,7 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
           main .description-project .description-context .oc-context .description-text, main .description-project .description-context .oc-context .description-small-text {
             font-size: 0.8rem;
             padding: 0.5rem;
-            overflow-y: scroll;
             background-color: white; }
-            main .description-project .description-context .oc-context .description-text::-webkit-scrollbar, main .description-project .description-context .oc-context .description-small-text::-webkit-scrollbar {
-              display: unset;
-              width: 9px;
-              height: 9px;
-              scroll-padding-top: 0; }
-            main .description-project .description-context .oc-context .description-text::before, main .description-project .description-context .oc-context .description-small-text::before, main .description-project .description-context .oc-context .description-text::after, main .description-project .description-context .oc-context .description-small-text::after {
-              scrollbar-width: 2rem; }
             main .description-project .description-context .oc-context .description-text h1, main .description-project .description-context .oc-context .description-small-text h1 {
               margin-bottom: 1rem; }
             main .description-project .description-context .oc-context .description-text p, main .description-project .description-context .oc-context .description-small-text p {
@@ -1290,4 +1283,4 @@ mobile	 |	tablet 	 | tab-land	 | laptop	 | desktop
         main .paragraphe-success .checkbox .checkbox--deep-orange:checked:before {
           border-color: #ff5722; } }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=:.map */

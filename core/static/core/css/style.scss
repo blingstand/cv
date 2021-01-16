@@ -1,6 +1,6 @@
 /* page of scss style for nav */ 
 
-/* easy to modify */
+/* easy to modify now */
 
 @import "libs/loops.scss";
 @import "libs/mixins.scss";
@@ -48,7 +48,6 @@ $height-nav-bar: 4rem;
 	margin:  0;
 	padding:  0; 
 	scroll-behavior: smooth;
-	scrollbar-width: none;
 }
 
 $media_query: (
