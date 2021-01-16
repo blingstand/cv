@@ -27,7 +27,7 @@ SECRET_KEY = '#91@b+!b2f-*y(&3x8zzszg!lt)p948c#7=*q6adhr)6%i9v+i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["adrienclupot-cv.herokuapp.com", '127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -138,3 +138,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 print("staticfile >", STATICFILES_DIRS)
 print("collected >", STATIC_ROOT)
 print("media >", MEDIA_ROOT)
+
+if os.environ['ENV']=="heroku": 
+
+    ALLOWED_HOSTS = ["adrienclupot-cv.herokuapp.com"]
+    

@@ -10,7 +10,7 @@ urlpatterns = [
     path('cv/', include(('cv.urls', 'cv'), namespace='cv')),
 ]
 
-if os.environ["ENV"] == "local":
+if os.environ["ENV"] == "local" or os.environ["ENV"] == "heroku":
 	urlpatterns.append(
 		path('', include(('cv.urls', 'cv'), namespace='cv')),
 		)
