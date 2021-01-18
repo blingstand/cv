@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.views import View
 
 from .datas import exp_prof, educ, all_btn, skills, ten_spans, all_success
+from .descriptions_p13_datas import overviews
 from .utils import get_projects
 
 class IndexView(View): 
@@ -34,5 +35,6 @@ class DP13View(View):
 	"""this class renders description for p13"""
 	def get(self, request): 
 		"""renders the get request for /description-p13 path"""
-		return render(request, "cv/description/p13.html")
+		context = { "overviews" : overviews }
+		return render(request, "cv/description/p13.html", context)
 

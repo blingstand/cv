@@ -5,7 +5,7 @@
 <section class="container-description" id="description">
 	<header>
 		<h1 class="">Présentation du projet 13 </h1>
-		<p class="subheading "><a href="http://15.237.4.227/p13/">Découvrir mon site.</a></p>
+		<p class="subheading "><a href="#p13-overview">Découvrir mon projet.</a></p>
 	</header>
 
 	<article class="description-project">
@@ -48,5 +48,25 @@
 			</div>
 		</div>
 	</article>
+	<article id="p13-overview" class="overview">
+		<h1>Aperçu de mon projet</h1>
+		<div class="scrollable-part">
+			{% for overview in overviews %}
+			<div class="overview-container">
+				<div class="overview-container-left-side">
+					<div class="overview-container-left-side-description">
+					<h4>{{ overview.title }}</h4>
+					<p class="description">{{ overview.description|safe }}</p>
+					</div>	
+				</div>
+				
+				<div class="overview-container-right-side">
+					<img class="overview-screenshot" src="{% static '/core/assets/img/overview/p13/' %}/{{overview.picture}}"/>
+				</div>
+			</div>
+			{% endfor%}
+		</div>	
+	</article>
+
 </section>
 {% endblock%}

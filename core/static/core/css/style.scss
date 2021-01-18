@@ -301,6 +301,8 @@ $media_query: (
 				grid-row: 1; 
 				width: 95%;
 				height: 90%;
+				display: grid;
+				place-items: center; 
 
 				.first-line{
 					display: grid;
